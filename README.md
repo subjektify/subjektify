@@ -59,8 +59,4 @@ We welcome contributions! See our [Contribution Guide](CONTRIBUTING.md) for more
 
 ## License
 
-Subjektify CLI is open-source software [licensed as MIT](LICENSE).
-
----
-
-This README.md should provide a comprehensive guide to get users started with the Subjektify CLI, including how to install, initialize a new project, and perform common tasks. Feel free to customize this template to better suit the specific features and functionalities of Subjektify CLI.
+Subjektify CLI is open-source software [licensed as Apache-2.0](LICENSE).
