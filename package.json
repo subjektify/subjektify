@@ -1,7 +1,7 @@
 {
   "name": "subjektify",
   "version": "0.0.1",
-  "description": "> Building the Future of Decentralized Applications",
+  "description": "Building the Future of Decentralized Applications.",
   "author": "subjektify",
   "license": "Apache-2.0",
   "main": "index.js",
