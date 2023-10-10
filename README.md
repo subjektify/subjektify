@@ -1,5 +1,9 @@
 # Subjektify
 
+[![NPM Version](http://img.shields.io/npm/v/subjektify.svg?style=flat)](https://www.npmjs.org/package/subjektify)
+[![NPM Downloads](https://img.shields.io/npm/dm/subjektify.svg?style=flat)](https://npmcharts.com/compare/subjektify?minimal=true)
+[![Install Size](https://packagephobia.now.sh/badge?p=subjektify)](https://packagephobia.now.sh/result?p=subjektify)
+
 > Building the Future of Decentralized Applications
 
 Subjektify is your all-in-one toolkit for developing, testing, and deploying subjekt files. It's designed to work seamlessly with the Subjektify framework, offering a streamlined workflow for decentralized application development.

@@ -4,9 +4,36 @@
   "description": "Building the Future of Decentralized Applications.",
   "author": "subjektify",
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "dist/index",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "clean": "rimraf dist/",
+    "build": "npm run clean && npm run compile",
+    "compile": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": []
+  "bin": {
+    "subjektify": "bin/index.js"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subjektify/subjektify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/subjektify/subjektify/issues"
+  },
+  "homepage": "https://github.com/subjektify/subjektify#readme",
+  "dependencies": {
+    "colorts": "^0.1.63",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  }
 }
