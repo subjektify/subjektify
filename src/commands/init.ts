@@ -27,20 +27,4 @@ export const initCommand = (namespace: string, options: InitOptions) => {
     const serialized = JSON.stringify(subjektifyConfig, null, 2);
     fs.writeFileSync(configPath, serialized);
     console.log(`Initialized subject namespace "${namespace}" successfully! 🎉`.green.bold);
-
-/*
-    // Create subjects directory
-    const subjectsDirectory = path.join(process.cwd(), 'subjects');
-    if (!fs.existsSync(subjectsDirectory)) {
-        fs.mkdirSync(subjectsDirectory);
-    }
-
-    // Create <namespace>.subject
-    const namespacePath = path.join(subjectsDirectory, `${namespace}.subject`)
-    if (fs.existsSync(namespacePath)) {
-        console.log(`Namespace ${namespace} already exists! Please choose a different name.`.red.bold);
-        return;
-    }
-
-    console.log(`Initialized subject namespace "${namespace}" successfully! 🎉`.green.bold);*/
 };
