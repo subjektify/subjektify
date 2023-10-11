@@ -4,14 +4,14 @@ import path from 'path';
 
 const build = () => {
 
-    // Get subjects-build.json
-    const configPath = path.join(process.cwd(), 'subjects-build.json');
+    // Get subjektify.json
+    const configPath = path.join(process.cwd(), 'subjektify.json');
     if (!fs.existsSync(configPath)) {
-        console.log(`Missing "subjects-build.json"! Run 'gsx init <namespace>' to create a default configuration file.`.red.bold);
+        console.log(`Missing "subjektify.json"! Run 'subjektify init <namespace>' to create a default configuration file.`.red.bold);
         return;
     }
     
-    console.log(`Built subjects successfully! 🎉`.green.bold);
+    console.log(`Subjektify build successful! 🎉`.green.bold);
 }
 
 export default build;
