@@ -37,7 +37,7 @@ program
     .command('init')
     .description('Start a new namespace.')
     .argument('<namespace>', 'The namespace to associate your subjects with.')
-    .option('-b, --blueprint <name>', 'Use a specific blueprint from subjektify\'s registry.')
+    .option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
     .action(initCommand);
 /*
 program
