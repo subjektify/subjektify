@@ -3,11 +3,13 @@ import fs from 'fs';
 import path from 'path';
 
 interface InitOptions {
-    template?: string;
+    blueprint?: string;
 }
 
-const init = (namespace: string, options: InitOptions) => {
-
+export const initCommand = (namespace: string, options: InitOptions) => {
+    console.log(namespace);
+    console.log(options);
+/*
     // Create subjects directory
     const subjectsDirectory = path.join(process.cwd(), 'subjects');
     if (!fs.existsSync(subjectsDirectory)) {
@@ -21,7 +23,5 @@ const init = (namespace: string, options: InitOptions) => {
         return;
     }
 
-    console.log(`Initialized subject namespace "${namespace}" successfully! 🎉`.green.bold);
+    console.log(`Initialized subject namespace "${namespace}" successfully! 🎉`.green.bold);*/
 };
-
-export default init;

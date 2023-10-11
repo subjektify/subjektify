@@ -3,6 +3,10 @@
 const program = require('commander');
 
 const {
+    initCommand
+} = require('../dist');
+
+/*const {
     init,
     build,
     docs,
@@ -21,7 +25,7 @@ const {
     importCmd,
     exportCmd,
     share
-} = require('../dist');
+} = require('../dist');*/
 
 program
     .name("subjektify")
@@ -29,6 +33,13 @@ program
     .usage('<command> [options]')
     .option('-h, --help', 'Show help for a command');
 
+program
+    .command('init')
+    .description('Start a new namespace.')
+    .argument('<namespace>', 'The namespace to associate your subjects with.')
+    .option('-b, --blueprint <name>', 'Use a specific blueprint from subjektify\'s registry.')
+    .action(initCommand);
+/*
 program
     .command('init')
     .description('Begin a new subject namespace.')
@@ -126,5 +137,10 @@ program
     .command('share <subject>')
     .description('Share a subject with others.')
     .action(share);
+*/
+program.addHelpText('after', `
+
+Example call:
+  $ subjektify init my.namespace`);
 
 program.parse(process.argv);
