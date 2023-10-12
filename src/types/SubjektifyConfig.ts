@@ -1,9 +1,3 @@
-// Enum for default registries
-export enum DefaultRegistries {
-    NPM = 'npm',
-    Blueprints = 'blueprints',
-}
-
 // Enum for default plugins
 export enum DefaultBuildPlugins {
     AST = 'ast',
@@ -23,15 +17,8 @@ export type CustomPlugin = string;
 // Type for all possible plugins
 export type PluginName = DefaultBuildPlugins | CustomPlugin;
 
-// Type for custom registries
-export type CustomRegistry = string;
-
-// Type for all possible registries
-export type RegistryName = DefaultRegistries | CustomRegistry;
-
-export interface SubjektifyImport {
-    name: string;
-    version: string; // Using Semantic Versioning (semver)
+export interface NamespaceImport {
+    [key: string]: string; // namespace name : version
 }
 
 export interface SubjektifyPlugin {
@@ -49,7 +36,8 @@ export interface SubjektifyConfig {
     author?: string; // Namespace author
     blueprint?: boolean; // Sets the namespace to be considered as a blueprint
     sources?: string[]; // Source file paths
-    imports?: Map<RegistryName, SubjektifyImport[]>; // Imports from various registries
+    imports?: NamespaceImport; // Imports namespaces from blueprints
     plugins?: SubjektifyPlugin[]; // Plugins for code generation and other tasks
     projections?: SubjektifyProjection[]; // Optional projections to be applied
+    npm?: NamespaceImport; // Imports namespaces from npm
 }
