@@ -1,20 +1,17 @@
-import 'colorts/lib/string';
 import fs from 'fs';
 import path from 'path';
+import { Log } from '../util';
 import { SubjektifyConfig } from '../types';
 
-interface InitOptions {
-    blueprint?: string;
-}
-
-export const initCommand = (namespace: string, options: InitOptions) => {
+export const initCommand = (namespace: string) => {
     
-    const projectDirectory = process.cwd();
-    const configPath = path.join(projectDirectory, 'subjektify.json');
+    // Resolve config path
+    const projectPath = process.cwd();
+    const configPath = path.join(projectPath, 'subjektify.json');
 
     // Fail if subjektify.json exists
     if (fs.existsSync(configPath)) {
-        console.log(`Namespace already initialized! Exiting...`.yellow.bold);
+        Log.warn(`Namespace already initialized! Exiting...`);
         return;
     }
 
@@ -22,9 +19,12 @@ export const initCommand = (namespace: string, options: InitOptions) => {
     const subjektifyConfig: SubjektifyConfig = {
         namespace,
         version: "0.0.1",
-        license: "Apache-2.0"
+        license: "MIT"
     }
+
+    // Write subjektify.json
     const serialized = JSON.stringify(subjektifyConfig, null, 2);
     fs.writeFileSync(configPath, serialized);
-    console.log(`Initialized subject namespace "${namespace}" successfully! 🎉`.green.bold);
+
+    Log.success(`Initialized namespace "${namespace}" successfully! 🎉`);
 };

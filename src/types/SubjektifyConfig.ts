@@ -1,43 +1,62 @@
-// Enum for default plugins
-export enum DefaultBuildPlugins {
-    AST = 'ast',
-    Java = 'java',
-    JavaScript = 'javascript',
-    Python = 'python',
-    Solidity = 'solidity',
-    Swift = 'swift',
-    TypeScript = 'typescript',
-}
+import {
+    NamespaceImport,
+    SubjektifyPlugin,
+    SubjektifyProjection
+} from "./";
 
-export type SPDXLicense = string;
-
-// Type for custom plugins
-export type CustomPlugin = string;
-
-// Type for all possible plugins
-export type PluginName = DefaultBuildPlugins | CustomPlugin;
-
-export interface NamespaceImport {
-    [key: string]: string; // namespace name : version
-}
-
-export interface SubjektifyPlugin {
-    name: PluginName;
-}
-
-export interface SubjektifyProjection {
-    name: string;
-}
+/**
+ * Namespace configuration interface for Subjektify.
+ * This schema defines the subjektify.json file within a project.
+ */
 
 export interface SubjektifyConfig {
-    namespace: string; // Namespace for all subjects and shapes
-    version: string; // Version of the namespace following semver
-    license: SPDXLicense; // SPDX license identifier for the namespace
-    author?: string; // Namespace author
-    blueprint?: boolean; // Sets the namespace to be considered as a blueprint
-    sources?: string[]; // Source file paths
-    imports?: NamespaceImport; // Imports namespaces from blueprints
-    plugins?: SubjektifyPlugin[]; // Plugins for code generation and other tasks
-    projections?: SubjektifyProjection[]; // Optional projections to be applied
-    npm?: NamespaceImport; // Imports namespaces from npm
+    /**
+     * Namespace for all subjects and shapes.
+     */
+    namespace: string;
+
+    /**
+     * Version of the namespace, following Semantic Versioning (semver).
+     */
+    version: string;
+
+    /**
+     * SPDX license identifier for the namespace.
+     */
+    license: string;
+
+    /**
+     * Optional: Author of the namespace.
+     */
+    author?: string;
+
+    /**
+     * Optional: Flag to indicate if the namespace should be considered as a blueprint.
+     */
+    blueprint?: boolean;
+
+    /**
+     * Optional: Array of source file paths.
+     */
+    sources?: string[];
+
+    /**
+     * Optional: Imports namespaces from blueprints.
+     */
+    imports?: NamespaceImport;
+
+    /**
+     * Optional: Plugins for code generation and other tasks.
+     */
+    plugins?: SubjektifyPlugin[];
+
+    /**
+     * Optional: Projections to be applied.
+     */
+    projections?: SubjektifyProjection[];
+
+    /**
+     * Optional: Imports namespaces from npm packages.
+     */
+    npm?: NamespaceImport;
 }

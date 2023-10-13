@@ -3,7 +3,8 @@
 const program = require('commander');
 
 const {
-    initCommand
+    initCommand,
+    createCommand
 } = require('../dist');
 
 /*const {
@@ -35,10 +36,16 @@ program
 
 program
     .command('init')
-    .description('Start a new namespace.')
+    .description('Intialize a new namespace in an existing project.')
     .argument('<namespace>', 'The namespace to associate your subjects with.')
-    .option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
     .action(initCommand);
+
+program
+.command('create')
+.description('Create a new namespace.')
+.argument('<namespace>', 'The namespace to associate your subjects with.')
+.option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
+.action(createCommand);
 /*
 program
     .command('init')
