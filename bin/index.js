@@ -4,7 +4,8 @@ const program = require('commander');
 
 const {
     initCommand,
-    createCommand
+    createCommand,
+    buildCommand
 } = require('../dist');
 
 /*const {
@@ -41,11 +42,17 @@ program
     .action(initCommand);
 
 program
-.command('create')
-.description('Create a new namespace.')
-.argument('<namespace>', 'The namespace to associate your subjects with.')
-.option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
-.action(createCommand);
+    .command('create')
+    .description('Create a new namespace.')
+    .argument('<namespace>', 'The namespace to associate your subjects with.')
+    .option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
+    .action(createCommand);
+
+program
+    .command('build')
+    .description('Executes build plugins on the Subjekt model to generate clients, contracts, and SDKs.')
+    .action(buildCommand);
+
 /*
 program
     .command('init')
