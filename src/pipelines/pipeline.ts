@@ -35,6 +35,9 @@ export abstract class Pipeline implements Command {
      * @returns The built context.
      */
     private buildContext(): Context {
+
+        const results = {};
+
         // Resolve config path
         const namespacePath = process.cwd();
         const configPath = path.join(namespacePath, 'subjektify.json');
@@ -50,7 +53,8 @@ export abstract class Pipeline implements Command {
 
         return {
             config,
-            namespacePath
+            namespacePath,
+            results
         }
     }
 

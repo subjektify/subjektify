@@ -13,4 +13,5 @@ export interface Command {
 export type Context = {
     config: SubjektifyConfig;
     namespacePath: string;
+    results: Record<string, any>;
 }
