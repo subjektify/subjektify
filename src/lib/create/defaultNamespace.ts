@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { Log } from '../../util';
@@ -9,6 +10,7 @@ export const createDefaultNamespace = (namespace: string, projectPath: string) =
     const configPath = path.join(projectPath, 'subjektify.json');
     const sourcesPath = path.join(projectPath, 'subjects');
     const subjektPath = path.join(sourcesPath, `${namespace}.subjekt`);
+    const packageJsonPath = path.join(projectPath, 'package.json');
 
     // Create directories
     fs.mkdirSync(projectPath);
@@ -29,6 +31,47 @@ export const createDefaultNamespace = (namespace: string, projectPath: string) =
     // Write {namespace}.subjekt
     fs.writeFileSync(subjektPath, `// This is the starting point for defining your decentralized application's subjects, contracts, and data structures.
 `);
+
+    // Create package.json
+    const packageJson = {
+        name: namespace,
+        version: '0.0.1',
+        description: 'My decentralized application built with Subjektify.',
+        main: 'dist/index',
+        scripts: {
+            build: 'subjektify build',
+            clean: 'subjektify clean',
+            compile: 'subjektify compile',
+            deploy: 'subjektify deploy',
+            test: 'subjektify test'
+        },
+        keywords: [
+            namespace,
+            'decentralized',
+            'application',
+            'dapp',
+            'subjekt'
+        ],
+        devDependencies: {
+            "rimraf": "^3.0.2",
+            "subjektify": "^0.0.1",
+        }
+    }
+
+    // Write package.json
+    const packageJsonSerialized = JSON.stringify(packageJson, null, 2);
+    fs.writeFileSync(packageJsonPath, packageJsonSerialized);
+
+    // Install dependencies
+    try {
+        execSync('npm install', {
+            cwd: projectPath,
+            stdio: 'inherit'
+        });
+    } catch (error) {
+        Log.error('Failed to install dependencies.');
+        process.exit(1);
+    }
 
     Log.success(`Created namespace "${namespace}" successfully! 🎉`);
 }
