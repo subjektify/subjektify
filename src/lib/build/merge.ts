@@ -6,11 +6,10 @@ export const mergeModels = (context: Context, models: SubjektModel[]): SubjektMo
 
     // Merge the models
     const mergedModel = models.reduce((mergedModel, model) => {
+        // TODO: fix this
         mergedModel.prelude = Object.assign(mergedModel.prelude, model.prelude);
         return mergedModel;
     });
-
-    Log.debug(`Merged models: ${mergedModel}`);
 
     return mergedModel;
 }
