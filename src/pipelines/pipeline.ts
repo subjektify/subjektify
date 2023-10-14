@@ -36,8 +36,8 @@ export abstract class Pipeline implements Command {
      */
     private buildContext(): Context {
         // Resolve config path
-        const projectPath = process.cwd();
-        const configPath = path.join(projectPath, 'subjektify.json');
+        const namespacePath = process.cwd();
+        const configPath = path.join(namespacePath, 'subjektify.json');
     
         // Fail if subjektify.json doesn't exists
         if (!fs.existsSync(configPath)) {
@@ -49,7 +49,8 @@ export abstract class Pipeline implements Command {
         const config: SubjektifyConfig = JSON.parse(serialized);
 
         return {
-            config
+            config,
+            namespacePath
         }
     }
 
@@ -58,7 +59,6 @@ export abstract class Pipeline implements Command {
      * @param context The context data.
      */
     private preProcess(context: Context): void {
-        console.log(context);
         // TODO: Add any preprocessing logic here.
     }
 
@@ -67,7 +67,6 @@ export abstract class Pipeline implements Command {
      * @param context The context data.
      */
     private postProcess(context: Context): void {
-        console.log("Postprocessing...");
         // TODO: Add any postprocessing logic here.
     }
 }

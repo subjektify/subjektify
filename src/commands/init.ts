@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { Log } from '../util';
 import { SubjektifyConfig } from '../types';
+import { Log } from '../util';
 
 export const initCommand = (namespace: string) => {
     
