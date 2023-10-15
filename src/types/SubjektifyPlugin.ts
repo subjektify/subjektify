@@ -1,3 +1,12 @@
+export type InstallationType = "local" | "npm" | "github";
+
+export type PluginInstallation = {
+    type: InstallationType;
+    name: string;
+    branch?: string;
+    location?: string;
+}
+
 /**
  * Interface for Subjektify plugins.
  */
@@ -25,5 +34,5 @@ export interface SubjektifyPlugin {
     /**
      * Register a local plugin by passing the path to the plugin.
      */
-    location?: string;
+    install?: PluginInstallation;
 }
