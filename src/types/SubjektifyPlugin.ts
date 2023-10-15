@@ -25,5 +25,5 @@ export interface SubjektifyPlugin {
     /**
      * Register a local plugin by passing the path to the plugin.
      */
-    handler?: string;
+    location?: string;
 }

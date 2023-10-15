@@ -1,16 +1,23 @@
 import fs from 'fs';
 import path from 'path';
-import { Context, SubjektifyPlugin } from '../../types';
+import { PluginManager as LivePluginManager, PluginManagerOptions } from "live-plugin-manager";
+import { Context, IPlugin } from '../../types';
 import { Log } from '../../util';
 
 export class PluginManager {
-    private plugins: SubjektifyPlugin[];
+
+    private manager: LivePluginManager;
+    private plugins: IPlugin[];
 
     constructor(private pluginDir: string) {
+        this.manager = new LivePluginManager();
         this.plugins = [];
     }
 
     loadPlugins(): void {
+    }
+
+    /*loadPlugins(): void {
         const pluginFiles = fs.readdirSync(this.pluginDir)
             .filter(file => file.endsWith('.js'));
 
@@ -30,5 +37,5 @@ export class PluginManager {
                 //plugin.apply(context);
             }
         }
-    }
+    }*/
 }
