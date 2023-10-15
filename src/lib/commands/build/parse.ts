@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import { Context } from '../../types';
-import { Log } from '../../util';
+import { Context } from '../../../types';
+import { Log } from '../../../util';
 import { SubjektModel, parseSubjekt } from 'subjekt';
 
 export const parseSources = (context: Context): SubjektModel[] => {

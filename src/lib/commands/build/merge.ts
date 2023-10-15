@@ -1,5 +1,5 @@
-import { Context } from '../../types';
-import { Log } from '../../util';
+import { Context } from '../../../types';
+import { Log } from '../../../util';
 import { SubjektModel } from 'subjekt';
 
 export const mergeModels = (context: Context, models: SubjektModel[]): SubjektModel => {

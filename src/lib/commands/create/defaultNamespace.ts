@@ -1,8 +1,8 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import { Log } from '../../util';
-import { SubjektifyConfig } from '../../types';
+import { Log } from '../../../util';
+import { SubjektifyConfig } from '../../../types';
 
 export const createDefaultNamespace = (namespace: string, projectPath: string) => {
 
