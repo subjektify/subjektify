@@ -64,6 +64,8 @@ export abstract class Pipeline implements Command {
      */
     private preProcess(context: Context): void {
         // TODO: Add any preprocessing logic here.
+        // Validate config
+        // Register plugins
     }
 
     /**
@@ -72,5 +74,6 @@ export abstract class Pipeline implements Command {
      */
     private postProcess(context: Context): void {
         // TODO: Add any postprocessing logic here.
+        // Run plugins
     }
 }

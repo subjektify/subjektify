@@ -15,3 +15,19 @@ export type Context = {
     namespacePath: string;
     results: Record<string, any>;
 }
+
+/**
+ * Interface for Subjektify plugins.
+ */
+export interface IPlugin {
+
+    /**
+     * Target command to run the plugin.
+     */
+    target: string;
+
+    /**
+     * Function called to run the plugin.
+     */
+    apply(context: Context): void;
+}

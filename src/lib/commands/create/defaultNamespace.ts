@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-import { Log } from '../../../util';
+import { Log, Shell } from '../../../util';
 import { SubjektifyConfig } from '../../../types';
 
 export const createDefaultNamespace = (namespace: string, projectPath: string) => {
@@ -63,15 +63,7 @@ export const createDefaultNamespace = (namespace: string, projectPath: string) =
     fs.writeFileSync(packageJsonPath, packageJsonSerialized);
 
     // Install dependencies
-    try {
-        execSync('npm install', {
-            cwd: projectPath,
-            stdio: 'inherit'
-        });
-    } catch (error) {
-        Log.error('Failed to install dependencies.');
-        process.exit(1);
-    }
+    Shell.execSync('npm install', projectPath);
 
     Log.success(`Created namespace "${namespace}" successfully! 🎉`);
 }
