@@ -18,9 +18,9 @@ export interface SubjektifyPlugin {
     outputDirectory?: string;
 
     /**
-     * Options to pass to the plugin.
+     * Configurations to pass to the plugin.
      */
-    options?: Record<string, any>;
+    config?: Record<string, any>;
 
     /**
      * Register a local plugin by passing the path to the plugin.

@@ -3,7 +3,7 @@ import path from 'path';
 import { Log, Shell } from '../../../util';
 import { SubjektifyConfig } from '../../../types';
 
-export const createDefaultNamespace = (namespace: string, projectPath: string) => {
+export const createPluginNamespace = (namespace: string, projectPath: string) => {
 
     // Resolve project related paths
     const configPath = path.join(projectPath, 'subjektify.json');
@@ -35,7 +35,7 @@ export const createDefaultNamespace = (namespace: string, projectPath: string) =
     const packageJson = {
         name: namespace,
         version: '0.0.1',
-        description: 'My decentralized application built with Subjektify.',
+        description: 'My custom subjektify plugin.',
         main: 'dist/index',
         scripts: {
             build: 'subjektify build',

@@ -16,6 +16,8 @@ export type Context = {
     results: Record<string, any>;
 }
 
+export type PluginTarget = "build" | "clean" | "compile" | "create" | "deploy" | "publish" | "run" | "start" | "test";
+
 /**
  * Interface for Subjektify plugins.
  */
@@ -24,7 +26,7 @@ export interface IPlugin {
     /**
      * Target command to run the plugin.
      */
-    target: string;
+    target: PluginTarget;
 
     /**
      * Function called to run the plugin.

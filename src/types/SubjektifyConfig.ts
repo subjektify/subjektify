@@ -36,6 +36,11 @@ export interface SubjektifyConfig {
     blueprint?: boolean;
 
     /**
+     * Optional: Flag to indicate if the namespace should be considered as a plugin.
+     */
+    plugin?: boolean;
+
+    /**
      * Optional: Array of source file paths.
      */
     sources?: string[];
