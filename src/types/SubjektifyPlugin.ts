@@ -3,8 +3,8 @@ export type PluginRegistry = "local" | "npm" | "github";
 export type PluginDependency = {
     registry: PluginRegistry;
     version?: string;
-    branch?: string;
     location?: string;
+    force?: boolean;
 }
 
 /**

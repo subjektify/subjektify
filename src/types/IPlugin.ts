@@ -13,5 +13,5 @@ export interface IPlugin {
     /**
      * Function called to run the plugin.
      */
-    apply(context: Context): void;
+    apply(context: Context): Promise<void>;
 }

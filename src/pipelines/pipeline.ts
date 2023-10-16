@@ -13,12 +13,12 @@ export abstract class Pipeline implements Command {
     /**
      * Entry point for running the pipeline.
      */
-    public run(): void {
+    public async run(): Promise<void> {
         try {
             const context = this.buildContext();
-            this.preProcess(context);
-            this.execute(context);
-            this.postProcess(context);
+            await this.preProcess(context);
+            await this.execute(context);
+            await this.postProcess(context);
         } catch(e) {
             Log.error((e as Error).message);
         }
@@ -36,7 +36,7 @@ export abstract class Pipeline implements Command {
      * This needs to be implemented by each subclass.
      * @param context The context data.
      */
-    abstract execute(context: Context): void;
+    abstract execute(context: Context): Promise<void>;
 
     /**
      * Builds the context that will be passed through the pipeline.
@@ -72,20 +72,20 @@ export abstract class Pipeline implements Command {
      * Concrete method for preprocessing steps.
      * @param context The context data.
      */
-    private preProcess(context: Context): void {
+    private async preProcess(context: Context): Promise<void> {
         // TODO: Add any preprocessing logic here.
         // Validate config
         // Load plugins
-        PluginManager.instance().loadPlugins(context);
+        await PluginManager.instance().loadPlugins(context);
     }
 
     /**
      * Concrete method for postprocessing steps.
      * @param context The context data.
      */
-    private postProcess(context: Context): void {
+    private async postProcess(context: Context): Promise<void> {
         // TODO: Add any postprocessing logic here.
         // Run plugins
-        PluginManager.instance().applyPlugins(context);
+        await PluginManager.instance().applyPlugins(context);
     }
 }

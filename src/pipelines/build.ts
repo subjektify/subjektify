@@ -9,7 +9,7 @@ export class BuildPipeline extends Pipeline  {
         return "build";
     }
 
-    execute(context: Context): void {
+    execute(context: Context): Promise<void> {
 
         // Parse the subjekt model
         const models = parseSources(context);
@@ -24,5 +24,6 @@ export class BuildPipeline extends Pipeline  {
         context.results['models'] = projectedModels;
 
         Log.verbose('Build step completed. Running post processing...');
+        return Promise.resolve();
     }
 }

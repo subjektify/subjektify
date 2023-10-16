@@ -6,7 +6,7 @@ export type CommandTarget = "build" | "clean" | "compile" | "create" | "deploy" 
  * Command interface that all command classes should implement.
  */
 export interface Command {
-    run(): void;
+    run(): Promise<void>;
 }
 
 /**

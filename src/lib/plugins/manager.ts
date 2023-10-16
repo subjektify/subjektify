@@ -20,14 +20,11 @@ export class PluginManager {
         return PluginManager._instance;
     }
 
-    public loadPlugins(context: Context): void {
-        loadPluginsFromContext(context)
-        .then(plugins => {
-            this.plugins = plugins;
-        });
+    public async loadPlugins(context: Context): Promise<void> {
+        this.plugins = await loadPluginsFromContext(context);
     }
 
-    public applyPlugins(context: Context): void {
+    public async applyPlugins(context: Context): Promise<void> {
         applyPluginsInContext(this.plugins, context);
     }
 }
