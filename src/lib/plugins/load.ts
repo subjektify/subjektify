@@ -47,8 +47,8 @@ export const loadPluginFromDependency = async (plugin: SubjektifyPlugin, context
     const manager = PluginManagerAdapter.instance();
     await installPlugin(plugin);
     const dependency = manager.require(plugin.name);
-    const result = await dependency.plugins();
-    console.log(result);
+    const loader = dependency.plugins;
+    const result = loader();
     return result;
 }
 
