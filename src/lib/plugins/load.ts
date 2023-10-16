@@ -48,7 +48,7 @@ export const loadPluginFromDependency = async (plugin: SubjektifyPlugin, context
     await installPlugin(plugin);
     const dependency = manager.require(plugin.name);
     const loader = dependency.plugins;
-    const result = loader();
+    const result = loader?.() || [];
     return result;
 }
 
@@ -58,10 +58,10 @@ export const installPlugin = async (plugin: SubjektifyPlugin): Promise<void> => 
     switch (registry) {
         case "npm":
             await manager.installFromNpm(plugin.name);
-            return Promise.resolve();
+            break;
         case "github":
             await manager.installFromGithub(plugin.name);
-            return Promise.resolve();
+            break;
         case "local":
             const location = path.resolve(plugin.dependency?.location || "");
             if (!fs.existsSync(location)) {
@@ -70,10 +70,11 @@ export const installPlugin = async (plugin: SubjektifyPlugin): Promise<void> => 
             await manager.installFromPath(location, {
                 force: true
             });
-            return Promise.resolve();
+            break;
         default:
             throw new Error(`Unknown registry "${registry}"`);
     }
+    return Promise.resolve();
 }
 
 /**
