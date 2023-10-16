@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { Log } from '../util';
-import { Command, Context, SubjektifyConfig } from '../types';
+import { Command, CommandTarget, Context, SubjektifyConfig } from '../types';
+import { PluginManager } from '../lib/plugins';
 
 /**
  * Abstract Pipeline class that provides the skeleton for executing a series of operations.
@@ -24,6 +25,13 @@ export abstract class Pipeline implements Command {
     }
 
     /**
+     * Abstract method for defining the target of the pipeline.
+     * This needs to be implemented by each subclass.
+     * @returns The target of the pipeline.
+     */
+    abstract target(): CommandTarget;
+
+    /**
      * Abstract method for the main execution steps.
      * This needs to be implemented by each subclass.
      * @param context The context data.
@@ -37,6 +45,7 @@ export abstract class Pipeline implements Command {
     private buildContext(): Context {
 
         const results = {};
+        const commandTarget = this.target();
 
         // Resolve config path
         const namespacePath = process.cwd();
@@ -52,6 +61,7 @@ export abstract class Pipeline implements Command {
         const config: SubjektifyConfig = JSON.parse(serialized);
 
         return {
+            commandTarget,
             config,
             namespacePath,
             results
@@ -65,7 +75,8 @@ export abstract class Pipeline implements Command {
     private preProcess(context: Context): void {
         // TODO: Add any preprocessing logic here.
         // Validate config
-        // Register plugins
+        // Load plugins
+        PluginManager.instance().loadPlugins(context);
     }
 
     /**
@@ -75,5 +86,6 @@ export abstract class Pipeline implements Command {
     private postProcess(context: Context): void {
         // TODO: Add any postprocessing logic here.
         // Run plugins
+        PluginManager.instance().applyPlugins(context);
     }
 }

@@ -1,9 +1,13 @@
-import { Context } from '../types';
+import { CommandTarget, Context } from '../types';
 import { Log } from '../util';
 import { Pipeline } from './';
 import { applyProjections, mergeModels, parseSources } from '../lib';
 
 export class BuildPipeline extends Pipeline  {
+
+    target(): CommandTarget {
+        return "build";
+    }
 
     execute(context: Context): void {
 
@@ -19,6 +23,6 @@ export class BuildPipeline extends Pipeline  {
         // Store the results in the context
         context.results['models'] = projectedModels;
 
-        Log.debug('Build step successful. Running post processing...');
+        Log.verbose('Build step completed. Running post processing...');
     }
 }

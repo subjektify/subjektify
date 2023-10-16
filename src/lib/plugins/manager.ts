@@ -1,41 +1,33 @@
-import fs from 'fs';
-import path from 'path';
-import { PluginManager as LivePluginManager, PluginManagerOptions } from "live-plugin-manager";
 import { Context, IPlugin } from '../../types';
 import { Log } from '../../util';
 
+import { applyPluginsInContext } from './apply';
+import { loadPluginsFromContext } from './load';
+
 export class PluginManager {
 
-    private manager: LivePluginManager;
+    private static _instance: PluginManager;
     private plugins: IPlugin[];
 
-    constructor(private pluginDir: string) {
-        this.manager = new LivePluginManager();
+    private constructor() {
         this.plugins = [];
     }
 
-    loadPlugins(): void {
+    public static instance(): PluginManager {
+        if (!PluginManager._instance) {
+            PluginManager._instance = new PluginManager();
+        }
+        return PluginManager._instance;
     }
 
-    /*loadPlugins(): void {
-        const pluginFiles = fs.readdirSync(this.pluginDir)
-            .filter(file => file.endsWith('.js'));
-
-        for (const pluginFile of pluginFiles) {
-            const pluginPath = path.join(this.pluginDir, pluginFile);
-            const pluginModule = require(pluginPath);
-            const plugin: SubjektifyPlugin = new pluginModule();
-            this.plugins.push(plugin);
-            Log.debug(`Loaded plugin: ${plugin.name}`);
-        }
+    public loadPlugins(context: Context): void {
+        loadPluginsFromContext(context)
+        .then(plugins => {
+            this.plugins = plugins;
+        });
     }
 
-    applyPlugins(context: Context): void {
-        for (const plugin of this.plugins) {
-            if (plugin.enabled) {
-                Log.debug(`Applying plugin: ${plugin.name}`);
-                //plugin.apply(context);
-            }
-        }
-    }*/
+    public applyPlugins(context: Context): void {
+        applyPluginsInContext(this.plugins, context);
+    }
 }

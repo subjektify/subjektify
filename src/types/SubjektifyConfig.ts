@@ -1,4 +1,5 @@
 import {
+    Dependencies,
     NamespaceImport,
     SubjektifyPlugin,
     SubjektifyProjection
@@ -38,7 +39,7 @@ export interface SubjektifyConfig {
     /**
      * Optional: Flag to indicate if the namespace should be considered as a plugin.
      */
-    plugin?: boolean;
+    plugin?: true;
 
     /**
      * Optional: Array of source file paths.
@@ -63,5 +64,5 @@ export interface SubjektifyConfig {
     /**
      * Optional: Imports namespaces from npm packages.
      */
-    npm?: NamespaceImport;
+    dependencies?: Dependencies;
 }

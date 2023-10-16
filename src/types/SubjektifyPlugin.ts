@@ -1,8 +1,8 @@
-export type InstallationType = "local" | "npm" | "github";
+export type PluginRegistry = "local" | "npm" | "github";
 
-export type PluginInstallation = {
-    type: InstallationType;
-    name: string;
+export type PluginDependency = {
+    registry: PluginRegistry;
+    version?: string;
     branch?: string;
     location?: string;
 }
@@ -24,7 +24,7 @@ export interface SubjektifyPlugin {
     /**
      * Output directory for the plugin. Default is the plugin name.
      */
-    outputDirectory?: string;
+    output?: string;
 
     /**
      * Configurations to pass to the plugin.
@@ -34,5 +34,5 @@ export interface SubjektifyPlugin {
     /**
      * Register a local plugin by passing the path to the plugin.
      */
-    install?: PluginInstallation;
+    dependency?: PluginDependency;
 }

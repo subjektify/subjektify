@@ -18,7 +18,7 @@ export class Log {
     }
 
     static debug(message: string) {
-        console.log(`[DEBUG] ${message}`.yellow.italic);
+        console.log(`[DEBUG] ${message}`.magenta);
     }
 
     static verbose(message: string) {
