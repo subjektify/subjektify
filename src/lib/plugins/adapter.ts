@@ -1,7 +1,5 @@
-import fs from 'fs';
 import path from 'path';
-import { PluginManager as LivePluginManager, PluginManagerOptions } from "live-plugin-manager";
-import { Log } from '../../util';
+import { PluginManager as LivePluginManager } from "live-plugin-manager";
 
 export class PluginManagerAdapter {
 
@@ -12,7 +10,9 @@ export class PluginManagerAdapter {
 
     public static instance(): LivePluginManager {
         if (!PluginManagerAdapter._instance) {
-            PluginManagerAdapter._instance = new LivePluginManager();
+            PluginManagerAdapter._instance = new LivePluginManager({
+                pluginsPath: path.resolve('./.subjektify/deps'),
+            });
         }
         return PluginManagerAdapter._instance;
     }

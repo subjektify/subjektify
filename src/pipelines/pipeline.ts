@@ -86,6 +86,6 @@ export abstract class Pipeline implements Command {
     private async postProcess(context: Context): Promise<void> {
         // TODO: Add any postprocessing logic here.
         // Run plugins
-        await PluginManager.instance().applyPlugins(context);
+        await PluginManager.instance().runPlugins(context);
     }
 }
