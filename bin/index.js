@@ -5,7 +5,8 @@ const program = require('commander');
 const {
     initCommand,
     createCommand,
-    buildCommand
+    buildCommand,
+    runCommand
 } = require('../dist');
 
 /*const {
@@ -53,6 +54,16 @@ program
     .command('build')
     .description('Executes build plugins on the Subjekt model to generate clients, contracts, and SDKs.')
     .action(buildCommand);
+
+program
+    .command('deploy')
+    .description('Deploy a Subjekt to a decentralized network. Defaults to shimmer EVM.')
+    .action(() => runCommand('deploy'));
+
+program
+    .command('publish')
+    .description('Publish your Subjekt based on subjektify.json config. It also runs any plugins that are configured to run on publish.')
+    .action(() => runCommand('publish'));
 
 /*
 program
@@ -156,6 +167,6 @@ program
 program.addHelpText('after', `
 
 Example call:
-  $ subjektify init my.namespace`);
+  $ subjektify create my.namespace`);
 
 program.parse(process.argv);
