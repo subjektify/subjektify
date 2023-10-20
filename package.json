@@ -31,7 +31,7 @@
     "colorts": "^0.1.63",
     "commander": "^11.0.0",
     "live-plugin-manager": "^0.18.1",
-    "subjekt": "^0.0.2"
+    "subjekt": "^0.0.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",

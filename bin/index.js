@@ -5,30 +5,8 @@ const program = require('commander');
 const {
     initCommand,
     createCommand,
-    buildCommand,
     runCommand
 } = require('../dist');
-
-/*const {
-    init,
-    build,
-    docs,
-    install,
-    list,
-    publish,
-    uninstall,
-    update,
-    repo,
-    test,
-    start,
-    stop,
-    unpublish,
-    star,
-    unstar,
-    importCmd,
-    exportCmd,
-    share
-} = require('../dist');*/
 
 program
     .name("subjektify")
@@ -53,117 +31,29 @@ program
 program
     .command('build')
     .description('Executes build plugins on the Subjekt model to generate clients, contracts, and SDKs.')
-    .action(buildCommand);
+    .action(() => runCommand('build'));
+
+program
+    .command('compile')
+    .description('Compile your built artifacts from the Subjekt model.')
+    .action(() => runCommand('deploy'));
 
 program
     .command('deploy')
-    .description('Deploy a Subjekt to a decentralized network. Defaults to shimmer EVM.')
+    .description('Deploy a Subjekt to a decentralized network.')
     .action(() => runCommand('deploy'));
 
 program
     .command('publish')
     .description('Publish your Subjekt based on subjektify.json config. It also runs any plugins that are configured to run on publish.')
     .action(() => runCommand('publish'));
-
-/*
+    
 program
-    .command('init')
-    .description('Begin a new subject namespace.')
-    .argument('<namespace>', 'The namespace to associate your subjects with.')
-    .option('-b, --blueprint <name>', 'Use a specific blueprint from subjektify\'s registry.')
-    .action(init);
+    .command('run')
+    .description('Run your own command.')
+    .argument('<command>', 'The command to run.')
+    .action(runCommand);
 
-program
-    .command('install <subject>')
-    .description('Install a subject.')
-    .action(install);
-
-program
-    .command('uninstall <subject>')
-    .description('Uninstall a subject.')
-    .action(uninstall);
-
-program
-    .command('ls')
-    .description('List subjects in namespace.')
-    .action(list);
-
-program
-    .command('build')
-    .description('Compile and build your subject definitions.')
-    .action(build);
-
-program
-    .command('deploy <subject>')
-    .description('Deploy a subject to the decentralized network. (For staging/testing)')
-    .action(publish);
-
-program
-    .command('publish <subject>')
-    .description('Publish a subject to the decentralized network. (For production)')
-    .action(publish);
-
-program
-    .command('update <subject>')
-    .description('Update a published subject.')
-    .action(update);
-
-program
-    .command('docs <subject>')
-    .description('Access documentation for a specific subject.')
-    .action(docs);
-
-// TODO implementations
-program
-    .command('repo <subject>')
-    .description('Manage the subject repository.')
-    .action(repo);
-
-program
-    .command('test <subject>')
-    .description('Run tests for a subject.')
-    .action(test);
-
-program
-    .command('start <subject>')
-    .description('Start a subject.')
-    .action(start);
-
-program
-    .command('stop <subject>')
-    .description('Stop a subject.')
-    .action(stop);
-
-program
-    .command('unpublish <subject>')
-    .description('Unpublish a subject from the decentralized network.')
-    .action(unpublish);
-
-program
-    .command('star <subject>')
-    .description('Star a subject.')
-    .action(star);
-
-program
-    .command('unstar <subject>')
-    .description('Unstar a subject.')
-    .action(unstar);
-
-program
-    .command('import <file>')
-    .description('Import subjects from a file.')
-    .action(importCmd);
-
-program
-    .command('export <subject>')
-    .description('Export a subject to a file.')
-    .action(exportCmd);
-
-program
-    .command('share <subject>')
-    .description('Share a subject with others.')
-    .action(share);
-*/
 program.addHelpText('after', `
 
 Example call:
