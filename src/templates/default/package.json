@@ -1,0 +1,25 @@
+{
+    "name": "__NAMESPACE__",
+    "version": "0.0.1",
+    "description": "My decentralized application built with Subjektify.",
+    "license": "MIT",
+    "main": "dist/index",
+    "scripts": {
+        "build": "subjektify build",
+        "clean": "subjektify clean",
+        "compile": "subjektify compile",
+        "deploy": "subjektify deploy",
+        "test": "subjektify test"
+    },
+    "keywords": [
+        "namespace",
+        "decentralized",
+        "application",
+        "dapp",
+        "subjekt"
+    ],
+    "devDependencies": {
+        "rimraf": "^3.0.2",
+        "subjektify": "^0.0.1"
+    }
+}

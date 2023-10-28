@@ -10,9 +10,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && npm run compile",
+    "build": "npm run clean && npm run compile && npm run copy:templates",
     "clean": "rimraf dist/",
     "compile": "tsc",
+    "copy:templates": "ncp src/templates dist/templates",
     "patch": "npm version patch && npm publish",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,6 +38,7 @@
     "@types/jest": "^29.5.6",
     "@types/node": "^20.8.4",
     "jest": "^29.7.0",
+    "ncp": "^2.0.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"

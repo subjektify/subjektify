@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { CreateModule, Log } from '../core';
+import { CreateModule, Log, Shell } from '../core';
 import { CommandOptions } from "../types";
 
 export interface CreateOptions extends CommandOptions {
@@ -32,4 +32,10 @@ export const createCommand = (namespace: string, options?: CreateOptions) => {
     } else {
         module.defaultNamespace(namespace, projectPath);
     }
+    Log.debug(`Created namespace directories, installing dependencies...`);
+
+    // Install dependencies
+    Shell.execSync('npm install', projectPath);
+
+    Log.success(`Created namespace "${namespace}" successfully! 🎉`);
 }
