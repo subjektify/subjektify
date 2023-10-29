@@ -1,7 +1,6 @@
 {
     "namespace": "__NAMESPACE__",
     "version": "0.0.1",
-    "author": "My Name",
     "license": "MIT",
     "sources": [
         "subjects"

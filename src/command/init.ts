@@ -1,8 +1,6 @@
-import { CommandOptions } from "../types";
+import { InitModule } from "../core/modules/init/module"
 
-export interface InitOptions extends CommandOptions {
-    blueprint?: string;
-}
-
-export const initCommand = (name: string, options?: InitOptions) => {
+export const initCommand = (name: string) => {
+    const module = new InitModule();
+    module.init(name);
 }

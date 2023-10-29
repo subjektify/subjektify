@@ -12,7 +12,7 @@
         "test": "subjektify test"
     },
     "keywords": [
-        "namespace",
+        "__NAMESPACE__",
         "decentralized",
         "application",
         "dapp",
