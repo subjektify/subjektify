@@ -1,6 +1,7 @@
 import {
     Dependencies,
     NamespaceImport,
+    Repository,
     SubjektifyPlugin,
     SubjektifyProjection
 } from "./";
@@ -37,9 +38,24 @@ export interface SubjektifyConfig {
     blueprint?: boolean;
 
     /**
+     * Optional: Array of files to be included in the namespace.
+     */
+    files?: string[];
+
+    /**
+     * Optional: Array of keywords for the namespace.
+     */
+    keywords?: string[];
+
+    /**
      * Optional: Flag to indicate if the namespace should be considered as a plugin.
      */
     plugin?: true;
+
+    /**
+     * Optional: You can override the default commands here.
+     */
+    scripts?: Record<string, string>;
 
     /**
      * Optional: Array of source file paths.
@@ -60,6 +76,11 @@ export interface SubjektifyConfig {
      * Optional: Projections to be applied.
      */
     projections?: SubjektifyProjection[];
+
+    /**
+     * Optional: Repository information.
+     */
+    repository?: Repository;
 
     /**
      * Optional: Imports namespaces from npm packages.
