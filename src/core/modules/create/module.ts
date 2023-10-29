@@ -1,6 +1,6 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import { Log } from '../../util';
+import fs from 'fs';
+import path from 'path';
+import { FS, Log } from '../../util';
 
 export class CreateModule {
 
@@ -29,42 +29,10 @@ export class CreateModule {
         files.forEach((file) => {
             const curSource = path.join(templatePath, file);
             if (fs.lstatSync(curSource).isDirectory()) {
-                this.copyFolderSync(curSource, projectPath, namespace);
+                FS.copyFolderSync(curSource, projectPath, namespace);
             } else {
-                this.copyFileSync(curSource, projectPath, namespace);
+                FS.copyFileSync(curSource, projectPath, namespace);
             }
         });
-    }
-
-    private copyFileSync(source: string, target: string, namespace: string): void {
-        let targetFile = target;
-        // If target is a directory, a new file with the same name will be created
-        if (fs.existsSync(target) && fs.lstatSync(target).isDirectory()) {
-            targetFile = path.join(target, path.basename(source));
-        }
-        const content = fs.readFileSync(source, 'utf8');
-        const replacedContent = content.replace(/__NAMESPACE__/g, namespace);
-        fs.writeFileSync(targetFile, replacedContent);
-    }
-
-    private copyFolderSync(source: string, target: string, namespace: string): void {
-        let files = [];
-        // Check if folder needs to be created or integrated
-        const targetFolder = path.join(target, path.basename(source));
-        if (!fs.existsSync(targetFolder)) {
-            fs.mkdirSync(targetFolder);
-        }
-        // Copy
-        if (fs.lstatSync(source).isDirectory()) {
-            files = fs.readdirSync(source);
-            files.forEach((file) => {
-                const curSource = path.join(source, file);
-                if (fs.lstatSync(curSource).isDirectory()) {
-                    this.copyFolderSync(curSource, targetFolder, namespace);
-                } else {
-                    this.copyFileSync(curSource, targetFolder, namespace);
-                }
-            });
-        }
     }
 }
