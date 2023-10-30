@@ -18,10 +18,18 @@ export class Log {
     }
 
     static debug(message: string) {
-        console.log(`[DEBUG] ${message}`.magenta);
+        console.log(`[DEBUG] ${Log.pos()} ${message}`.magenta);
     }
 
     static verbose(message: string) {
-        console.log(`[VERBOSE] ${message}`.grey.italic);
+        console.log(`[VERBOSE] ${Log.pos()} ${message}`.grey.italic);
+    }
+
+    private static pos(): string {
+        const stackTrace = new Error().stack;
+        const stackTraceLines = stackTrace ? stackTrace.split('\n') : [];
+        const callerPositionLine = stackTraceLines.length > 3 ? stackTraceLines[3] : '';
+        const callerPosition = callerPositionLine.replace(/^\s+at\s+/g, '');
+        return callerPosition;
     }
 }

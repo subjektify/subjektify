@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import { Log } from '../util';
-import { Command, SubjektifyContext, SubjektifyConfig, CommandOptions } from '../../types';
+import { Command, SubjektifyContext, SubjektifyConfig, CommandOptions, PackageContext } from '../../types';
 import { PluginManager } from './plugin';
+import { Pack } from 'tar';
 
 /**
  * Abstract Pipeline class that provides the skeleton for executing a series of operations.
@@ -56,9 +57,18 @@ export abstract class Pipeline implements Command {
         const serialized = fs.readFileSync(configPath, 'utf-8');
         const config: SubjektifyConfig = JSON.parse(serialized);
 
+        // Read package.json
+        const packagePath = path.join(namespacePath, 'package.json');
+        const packageSerialized = fs.readFileSync(packagePath, 'utf-8');
+        const packageJson = JSON.parse(packageSerialized);
+        const packageContext: PackageContext = {
+            json: packageJson
+        };
+
         return {
             command,
             config,
+            package: packageContext,
             namespacePath,
             results
         }

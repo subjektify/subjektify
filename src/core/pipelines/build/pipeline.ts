@@ -1,11 +1,11 @@
-import { SubjektifyContext } from '../../../types';
+import { BuildContext } from '../../../types';
 import { Log } from '../../util';
 import { Pipeline } from '../../modules';
 import { applyProjections, mergeModels, parseSources } from './';
 
 export class BuildPipeline extends Pipeline  {
 
-    execute(context: SubjektifyContext): Promise<void> {
+    execute(context: BuildContext): Promise<void> {
 
         // Parse the subjekt model
         const models = parseSources(context);
@@ -17,7 +17,8 @@ export class BuildPipeline extends Pipeline  {
         const projectedModels = applyProjections(context, mergedModel);
 
         // Store the results in the context
-        context.results['models'] = projectedModels;
+        context.model = mergedModel;
+        context.projections = projectedModels;
 
         Log.verbose('Build step completed. Running post processing...');
         return Promise.resolve();
