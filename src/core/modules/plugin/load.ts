@@ -50,8 +50,9 @@ export class PluginLoader {
         await this.installPlugin(plugin);
 
         // Load the plugins method. Each plugin should export a plugins method that returns an array of IPlugin interface.
+        const name = plugin.dependency?.name || plugin.name;
         const manager = PluginManagerAdapter.instance();
-        const dependency = manager.require(plugin.name);
+        const dependency = manager.require(name);
         const loader = dependency.plugins;
         const result = loader?.() || [];
 
@@ -67,13 +68,14 @@ export class PluginLoader {
 
         const manager = PluginManagerAdapter.instance();
         const registry = plugin.dependency?.registry || "npm";
+        const name = plugin.dependency?.name || plugin.name;
 
         switch (registry) {
             case "npm":
-                await manager.installFromNpm(plugin.name);
+                await manager.installFromNpm(name);
                 break;
             case "github":
-                await manager.installFromGithub(plugin.name);
+                await manager.installFromGithub(name);
                 break;
             case "local":
                 const location = path.resolve(plugin.dependency?.location || "");
