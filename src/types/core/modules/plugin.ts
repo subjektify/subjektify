@@ -20,6 +20,7 @@ export type PluginRegistry = "local" | "npm" | "github";
 
 export type PluginDependency = {
     registry: PluginRegistry;
+    name?: string;
     version?: string;
     location?: string;
     force?: boolean;
@@ -50,7 +51,7 @@ export interface SubjektifyPlugin {
     config?: Record<string, any>;
 
     /**
-     * Register a local plugin by passing the path to the plugin.
+     * Register a plugin from external registries.
      */
     dependency?: PluginDependency;
 }
