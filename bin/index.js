@@ -24,7 +24,7 @@ program
     .command('create')
     .description('Create a new namespace.')
     .argument('<namespace>', 'The namespace to associate your subjects with.')
-    .option('-b, --blueprint <name>', 'Use a namespace blueprint from subjektify\'s registry.')
+    .option('-b, --blueprint <name>', 'Use a blueprint from subjektify\'s registry.')
     .option('-p, --plugin', 'Create the namespace as a subjektify plugin.')
     .action(createCommand);
 
@@ -54,9 +54,14 @@ program
     .argument('<command>', 'The command to run.')
     .action(runCommand);
 
+program
+    .command('test')
+    .description('Run multiple test suites on your namespae.')
+    .action(() => runCommand('test'));
+
 program.addHelpText('after', `
 
-Example call:
+Example:
   $ subjektify create my.namespace`);
 
 program.parse(process.argv);
