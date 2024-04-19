@@ -62,6 +62,6 @@ program
 program.addHelpText('after', `
 
 Example:
-  $ subjektify create my.namespace`);
+  $ subjektify create my-namespace`);
 
 program.parse(process.argv);
