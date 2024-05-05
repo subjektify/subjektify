@@ -34,6 +34,11 @@ program
     .action(() => runCommand('build'));
 
 program
+    .command('codegen')
+    .description('Generate contracts, clients, and server stubs by simply passing the preferred language.')
+    .action(() => runCommand('codegen'));
+
+program
     .command('compile')
     .description('Compile your built artifacts from the Subjekt model.')
     .action(() => runCommand('deploy'));
