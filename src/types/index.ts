@@ -1,2 +1,2 @@
-export * from './command';
-export * from './core';
+export * from './base';
+export * from './extensions';

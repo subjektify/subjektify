@@ -2,6 +2,9 @@
 
 const program = require('commander');
 
+const { CommandRunner } = require('../dist');
+const runner = new CommandRunner();
+
 const {
     initCommand,
     createCommand,
@@ -26,7 +29,7 @@ program
     .argument('<namespace>', 'The namespace to associate your subjects with.')
     .option('-b, --blueprint <name>', 'Use a blueprint from subjektify\'s registry.')
     .option('-p, --plugin', 'Create the namespace as a subjektify plugin.')
-    .action(createCommand);
+    .action((namespace, options, command) => runner.run(command.name(), namespace, options));
 
 program
     .command('build')

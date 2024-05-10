@@ -16,7 +16,8 @@
     "copy:templates": "ncp src/templates dist/templates",
     "patch": "npm version patch && npm publish",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:create": "node bin/index.js create test"
   },
   "bin": "bin/index.js",
   "keywords": [],
