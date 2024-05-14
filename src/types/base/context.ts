@@ -10,7 +10,7 @@ export interface SubjektifyContext {
 }
 
 export interface CommandContext {
-    target: string;
+    task: string;
     options?: CommandOptions;
 }
 

@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 
 const program = require('commander');
+//const figlet = require("figlet");
+//const chalk = require("chalk");
 
 const { CommandRunner } = require('../dist');
 const runner = new CommandRunner();
 
-const {
-    initCommand,
-    createCommand,
-    runCommand
-} = require('../dist');
+//console.log(chalk.blue(figlet.textSync("Subjektify", { horizontalLayout: "full" })));
 
 program
     .name("subjektify")
@@ -21,7 +19,7 @@ program
     .command('init')
     .description('Intialize a new namespace in an existing project.')
     .argument('<namespace>', 'The namespace to associate your subjects with.')
-    .action(initCommand);
+    .action((namespace, options, command) => runner.run(command.name(), namespace, options));
 
 program
     .command('create')
@@ -34,38 +32,38 @@ program
 program
     .command('build')
     .description('Executes build plugins on the Subjekt model to generate clients, contracts, and SDKs.')
-    .action(() => runCommand('build'));
+    .action((options, command) => runner.run(command.name(), options));
 
 program
     .command('codegen')
     .description('Generate contracts, clients, and server stubs by simply passing the preferred language.')
-    .action(() => runCommand('codegen'));
+    .action((options, command) => runner.run(command.name(), options));
 
 program
     .command('compile')
     .description('Compile your built artifacts from the Subjekt model.')
-    .action(() => runCommand('deploy'));
+    .action((options, command) => runner.run(command.name(), options));
 
 program
     .command('deploy')
     .description('Deploy a Subjekt to a decentralized network.')
-    .action(() => runCommand('deploy'));
+    .action((options, command) => runner.run(command.name(), options));
 
 program
     .command('publish')
     .description('Publish your Subjekt based on subjektify.json config. It also runs any plugins that are configured to run on publish.')
-    .action(() => runCommand('publish'));
+    .action((options, command) => runner.run(command.name(), options));
     
 program
     .command('run')
     .description('Run your own command.')
-    .argument('<command>', 'The command to run.')
-    .action(runCommand);
+    .argument('<name>', 'The command to run.')
+    .action((name, options, command) => runner.run(command.name(), name, options));
 
 program
     .command('test')
-    .description('Run multiple test suites on your namespae.')
-    .action(() => runCommand('test'));
+    .description('Run multiple test suites on your namespace.')
+    .action((options, command) => runner.run(command.name(), options));
 
 program.addHelpText('after', `
 

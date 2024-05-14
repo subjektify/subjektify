@@ -17,7 +17,8 @@
     "patch": "npm version patch && npm publish",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:create": "node bin/index.js create test"
+    "link": "npm link",
+    "unlink": "npm unlink"
   },
   "bin": "bin/index.js",
   "keywords": [],
@@ -32,10 +33,14 @@
   "dependencies": {
     "@helia/unixfs": "^1.4.2",
     "blockstore-fs": "^1.1.6",
+    "chalk": "^4.1.2",
     "colorts": "^0.1.63",
     "commander": "^11.0.0",
+    "figlet": "^1.7.0",
     "helia": "^2.0.3",
+    "inquirer": "^9.2.20",
     "live-plugin-manager": "^0.18.1",
+    "ora": "^8.0.1",
     "subjekt": "^0.0.3",
     "tar": "^6.2.0"
   },

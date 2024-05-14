@@ -13,7 +13,7 @@ export class CreateCommand implements Command {
     
         // Return if namespace exists
         if (fs.existsSync(projectPath)) {
-            Log.warn(`Namespace ${namespace} already created! Exiting...`);
+            Log.warn(`Namespace ${namespace} already exists! Exiting...`);
             return Promise.resolve();
         }
     

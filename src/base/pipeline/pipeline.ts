@@ -11,6 +11,8 @@ import { Pack } from 'tar';
  */
 export abstract class Pipeline implements Command {
 
+    protected pluggable: boolean = true;
+
     /**
      * Entry point for running the pipeline.
      */
@@ -40,7 +42,7 @@ export abstract class Pipeline implements Command {
 
         const results = {};
         const command = {
-            target: name,
+            task: name,
             options
         };
 
@@ -82,7 +84,7 @@ export abstract class Pipeline implements Command {
         // TODO: Add any preprocessing logic here.
         // Validate config
         // Load plugins
-        await PluginManager.instance().loadPlugins(context);
+        this.pluggable && await PluginManager.instance().loadPlugins(context);
     }
 
     /**
@@ -92,6 +94,6 @@ export abstract class Pipeline implements Command {
     private async postProcess(context: SubjektifyContext): Promise<void> {
         // TODO: Add any postprocessing logic here.
         // Run plugins
-        await PluginManager.instance().runPlugins(context);
+        this.pluggable && await PluginManager.instance().runPlugins(context);
     }
 }
