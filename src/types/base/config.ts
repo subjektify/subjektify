@@ -1,16 +1,12 @@
 import {
-    Dependencies,
-    NamespaceImport,
     Repository,
-    SubjektifyPlugin,
     SubjektifyProjection
 } from "./";
 
 /**
  * Namespace configuration interface for Subjektify.
- * This schema defines the subjektify.json file within a project.
+ * This schema defines the subjektify.config.(js|ts) file within a project.
  */
-
 export interface SubjektifyConfig {
     /**
      * Namespace for all subjects and shapes.
@@ -50,7 +46,7 @@ export interface SubjektifyConfig {
     /**
      * Optional: Flag to indicate if the namespace should be considered as a plugin.
      */
-    plugin?: true;
+    plugin?: boolean;
 
     /**
      * Optional: You can override the default commands here.
@@ -63,16 +59,6 @@ export interface SubjektifyConfig {
     sources?: string[];
 
     /**
-     * Optional: Imports namespaces from blueprints.
-     */
-    imports?: NamespaceImport;
-
-    /**
-     * Optional: Plugins for code generation and other tasks.
-     */
-    plugins?: SubjektifyPlugin[];
-
-    /**
      * Optional: Projections to be applied.
      */
     projections?: SubjektifyProjection[];
@@ -81,9 +67,4 @@ export interface SubjektifyConfig {
      * Optional: Repository information.
      */
     repository?: Repository;
-
-    /**
-     * Optional: Imports namespaces from npm packages.
-     */
-    dependencies?: Dependencies;
 }

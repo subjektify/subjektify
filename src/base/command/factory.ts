@@ -1,5 +1,4 @@
-import { CreateCommand } from "../../commands";
-import { RunCommand } from "../../commands/run";
+import { CreateCommand, InitCommand, RunCommand } from "../../commands";
 import { Command } from "../../types";
 
 export class CommandFactory {
@@ -7,17 +6,10 @@ export class CommandFactory {
         switch (name) {
             case 'create':
                 return new CreateCommand();
-            case 'build':
-            case 'compile':
-            case 'deploy':
-            case 'publish':
-            case 'start':
-            case 'test':
-            case 'run':
-                return new RunCommand();
-            // Add more cases for other commands as needed
+            case 'init':
+                return new InitCommand();
             default:
-                throw new Error(`Unknown command: ${name}`);
+                return new RunCommand();
         }
     }
 }
