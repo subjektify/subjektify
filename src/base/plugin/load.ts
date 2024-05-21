@@ -16,13 +16,13 @@ export class PluginLoader {
     private async loadFromContext(context: SubjektifyContext): Promise<IPlugin[]> {
         Log.verbose(`Loading plugins from context...`);
 
-        const contextPlugins = context.config.plugins || [];
+        //const contextPlugins = context.config.plugins || [];
         const plugins: IPlugin[] = [];
 
-        await Promise.all(contextPlugins.map(async plugin => {
-            const loadedPlugins = await this.loadPlugin(plugin);
-            plugins.push(...loadedPlugins);
-        }));
+        //await Promise.all(contextPlugins.map(async plugin => {
+        //    const loadedPlugins = await this.loadPlugin(plugin);
+        //    plugins.push(...loadedPlugins);
+        //}));
 
         return Promise.resolve(plugins);
     }

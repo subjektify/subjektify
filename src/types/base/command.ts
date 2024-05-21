@@ -8,5 +8,5 @@ export interface CommandOptions {
  * Command interface that all command classes should implement.
  */
 export interface Command {
-    run(command: string, ...args: any[]): Promise<void>;
+    run(...args: any[]): Promise<void>;
 }
