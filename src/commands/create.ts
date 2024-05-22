@@ -1,11 +1,18 @@
 import path from 'path';
 import fs from 'fs';
-import { Log, Shell } from '../util';
+import { Log, Prompt } from '../util';
 import { Command, CreateOptions } from "../types";
 
 export class CreateCommand implements Command {
     
-    run(namespace?: string, options?: CreateOptions): Promise<void> {
+    async run(command: string, namespace?: string, options?: CreateOptions): Promise<void> {
+        // Prompt for namespace if not provided
+        if (!namespace) {
+            namespace = await Prompt.input('Choose a namespace for your project:');
+        }
+
+        Log.info(`Creating namespace "${namespace}"...`);
+
         //const module = new CreateModule();
         
         // Resolve namespace path
