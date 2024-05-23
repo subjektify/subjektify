@@ -29,7 +29,7 @@ export class CreateCommand implements Command {
             this.defaultNamespace(namespace, projectPath);
         }
 
-        await this.installDependencies(projectPath);
+        await this.installDependencies(options?.install, projectPath);
 
         Log.success(`Created namespace "${namespace}" successfully! 🎉`);
         return Promise.resolve();
@@ -57,8 +57,8 @@ export class CreateCommand implements Command {
         return Promise.resolve();
     }
 
-    async installDependencies(projectPath: string): Promise<void> {
-        const install = await Prompt.confirm('Would you like to install the dependencies now?');
+    async installDependencies(autoInstall: boolean | undefined, projectPath: string): Promise<void> {
+        const install = autoInstall || await Prompt.confirm('Would you like to install the dependencies now?');
         if (install) {
             Log.info('Installing dependencies...');
             Shell.execSync('npm install', projectPath);

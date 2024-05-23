@@ -26,6 +26,7 @@ program
     .description('Create a new namespace.')
     .argument('[namespace]', 'The namespace to associate your subjects with.')
     .option('-b, --blueprint <name>', 'Use a blueprint from subjektify\'s registry.')
+    .option('-i, --install', 'Install the dependencies post creation. Will prompt if not provided.')
     .action((namespace, options, command) => runner.run(command.name(), namespace, options));
 
 program
