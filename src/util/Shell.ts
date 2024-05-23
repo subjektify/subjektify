@@ -8,8 +8,9 @@ export class Shell {
                 cwd,
                 stdio: 'inherit'
             });
-        } catch (error) {
-            Log.error('Failed to install dependencies.');
+        } catch (error: unknown) {
+            const errorMessage = (error as Error).message;
+            Log.error(errorMessage);
             process.exit(1);
         }
     }

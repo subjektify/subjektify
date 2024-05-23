@@ -10,6 +10,6 @@ export class CommandRunner {
     
     public async run(command: string, ...args: any[]): Promise<void> {
         const cmd = this.factory.command(command);
-        return cmd.run(command, ...args);
+        return cmd.run(...args);
     }
 }
