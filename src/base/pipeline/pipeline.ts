@@ -1,15 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import { Log } from '../../util';
-import { Command, SubjektifyContext, SubjektifyConfig, CommandOptions, PackageContext } from '../../types';
+import { Command, SubjektifyContext, SubjektifyConfig, CommandOptions } from '../../types';
 import { PluginManager } from '../plugin';
-import { Pack } from 'tar';
 
 /**
  * Abstract Pipeline class that provides the skeleton for executing a series of operations.
  * It uses the Template Method design pattern.
  */
-export abstract class Pipeline implements Command {
+export abstract class Pipeline {
 
     protected pluggable: boolean = true;
 
@@ -18,10 +17,10 @@ export abstract class Pipeline implements Command {
      */
     public async run(name: string, options?: CommandOptions): Promise<void> {
         try {
-            const context = this.buildContext(name, options);
-            await this.preProcess(context);
-            await this.execute(context);
-            await this.postProcess(context);
+            //const context = this.buildContext(name, options);
+            //await this.preProcess(context);
+            //await this.execute(context);
+            //await this.postProcess(context);
         } catch(e) {
             Log.error((e as Error).message);
         }
@@ -37,7 +36,7 @@ export abstract class Pipeline implements Command {
     /**
      * Builds the context that will be passed through the pipeline.
      * @returns The built context.
-     */
+     *
     private buildContext(name: string, options?: CommandOptions): SubjektifyContext {
 
         const results = {};
@@ -48,14 +47,14 @@ export abstract class Pipeline implements Command {
 
         // Resolve config path
         const namespacePath = process.cwd();
-        const configPath = path.join(namespacePath, 'subjektify.json');
+        const configPath = path.join(namespacePath, 'subjektify.config.js');
     
         // Fail if subjektify.json doesn't exists
         if (!fs.existsSync(configPath)) {
-            throw new Error(`Namespace not initialized! Either 'init' or 'create' a namespace and try again...`);
+            throw new Error(`Namespace not initialized! Either 'init' into an existing project or 'create' a namespace to try again...`);
         }
 
-        // Read subjektify.json
+        // Read subjektify.config.js
         const serialized = fs.readFileSync(configPath, 'utf-8');
         const config: SubjektifyConfig = JSON.parse(serialized);
 
@@ -74,7 +73,7 @@ export abstract class Pipeline implements Command {
             namespacePath,
             results
         }
-    }
+    }*/
 
     /**
      * Concrete method for preprocessing steps.

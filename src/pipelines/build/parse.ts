@@ -7,7 +7,7 @@ import { SubjektModel, parseSubjekt } from 'subjekt';
 export const parseSources = (context: SubjektifyContext): SubjektModel[] => {
 
     // Check for sources
-    const sources = context.config.sources;
+    const sources = context.environment.config.sources;
     if (!sources) {
         Log.warn(`Missing 'sources' configuration. Nothing to build. Skipping...`);
         process.exit(1);
@@ -15,7 +15,7 @@ export const parseSources = (context: SubjektifyContext): SubjektModel[] => {
 
     // Resolve sources directories
     const sourcesPaths = sources
-        .map(source => path.join(context.namespacePath, source))
+        .map(source => path.join(context.location, source))
         .filter(sourcePath => fs.statSync(sourcePath).isDirectory());
     Log.debug(`Building for sources: ${sourcesPaths}`);
 
@@ -32,7 +32,7 @@ export const parseSources = (context: SubjektifyContext): SubjektModel[] => {
 
     // Build the subjekt model
     const subjektContents = subjektFiles.map(subjektFile => fs.readFileSync(subjektFile, 'utf8'));
-    const models = subjektContents.map(subjektFile => parseSubjekt(context.config.namespace, subjektFile));
+    const models = subjektContents.map(subjektFile => parseSubjekt(context.environment.config.namespace, subjektFile));
 
     return models;
 }

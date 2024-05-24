@@ -1,19 +1,12 @@
-import { CommandOptions } from "./command";
-import { SubjektifyConfig } from "./";
+import { CommandOptions, SubjektifyRuntimeEnvironment } from "./";
 
 export interface SubjektifyContext {
     command: CommandContext;
-    config: SubjektifyConfig;
-    namespacePath: string;
-    package: PackageContext;
-    results: Record<string, any>;
+    environment: SubjektifyRuntimeEnvironment;
+    location: string;
 }
 
 export interface CommandContext {
     task: string;
     options?: CommandOptions;
-}
-
-export interface PackageContext {
-    json: Record<string, any>;
 }

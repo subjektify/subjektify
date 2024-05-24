@@ -6,3 +6,5 @@ export * from './imports';
 export * from './plugin';
 export * from './projection';
 export * from './repository';
+export * from './runtime';
+export * from './task';
