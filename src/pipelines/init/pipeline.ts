@@ -1,6 +1,6 @@
 import path from 'path';
 import { InitContext } from '../../types';
-import { FS, Log } from '../../util';
+import { Log } from '../../util';
 import { Pipeline } from '../../base';
 
 export class InitPipeline extends Pipeline  {
@@ -12,7 +12,7 @@ export class InitPipeline extends Pipeline  {
         const configPath = path.join(__dirname, '../../..', 'templates', 'default', 'subjektify.json');
         const targetPath = path.join(process.cwd(), 'subjektify.json');
         
-        FS.copyFileSync(configPath, targetPath, namespace);
+        //FS.copyFileSync(configPath, targetPath, namespace);
 
         Log.success(`Initialized namespace "${namespace}" successfully! 🎉`);
         return Promise.resolve();

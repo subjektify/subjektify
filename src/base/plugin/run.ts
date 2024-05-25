@@ -19,11 +19,11 @@ export class PluginRunner {
     private async runPlugin(plugin: IPlugin, context: SubjektifyContext): Promise<void> {
         const target = plugin.target();
         const run = plugin.run;
-        if (context.command.task === target) {
+        /*if (context.command.task === target) {
             await run(context);
             Log.verbose(`Plugin "${plugin.constructor.name}" executed successfully.`);
         } else {
             Log.verbose(`Plugin target "${target}" does not match command target "${context.command.task}". Skipping plugin.`);
-        }
+        }*/
     }
 }

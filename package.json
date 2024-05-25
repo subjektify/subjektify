@@ -6,7 +6,6 @@
   "license": "Apache-2.0",
   "main": "dist/index",
   "files": [
-    "bin",
     "dist"
   ],
   "scripts": {
@@ -18,9 +17,9 @@
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "link": "npm link",
-    "unlink": "npm unlink"
+    "unlink": "npm unlink ./"
   },
-  "bin": "bin/index.js",
+  "bin": "./dist/bin.js",
   "keywords": [],
   "repository": {
     "type": "git",

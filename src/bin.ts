@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
-const program = require('commander');
-//const figlet = require("figlet");
-//const chalk = require("chalk");
+import { Command } from "commander";
+import { CommandRunner } from "./base";
 
-const { CommandRunner } = require('../dist');
+const program = new Command();
 const runner = new CommandRunner();
-
-//console.log(chalk.blue(figlet.textSync("Subjektify", { horizontalLayout: "full" })));
 
 program
     .name("subjektify")

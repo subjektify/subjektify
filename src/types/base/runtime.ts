@@ -1,9 +1,10 @@
+import { Artifacts } from "./artifact";
 import { SubjektifyConfig } from "./config";
 import { TaskMap } from "./task";
 
 export interface SubjektifyRuntimeEnvironment {
-    readonly config: SubjektifyConfig;
-    readonly artifacts: string;
-    readonly tasks: TaskMap;
+    config: SubjektifyConfig;
+    artifacts: Artifacts;
+    tasks: TaskMap;
     readonly version: string;
 }

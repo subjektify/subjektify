@@ -1,0 +1,16 @@
+{
+  "name": "subjektify-codegen",
+  "version": "0.0.1",
+  "description": "The library providing code generation for popular languages.",
+  "author": "SubjektifyLabs",
+  "license": "Apache-2.0",
+  "main": "dist/index",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
