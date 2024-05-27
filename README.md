@@ -7,59 +7,49 @@
 
 Subjektify is your all-in-one toolkit for developing, testing, and deploying subjekt files. It's designed to work seamlessly with the Subjektify framework, offering a streamlined workflow for decentralized application development.
 
-## Installation
-
-Install Subjektify in your project using npm:
-
-```bash
-npm install subjektify
-```
-
-Or via Yarn:
-
-```bash
-yarn add subjektify
-```
-
 ## Quick Start
 
-Once installed, you can start a new Subjektify project in a snap:
+You can start a new Subjektify project in a snap:
 
 ```bash
-subjektify init my-namespace
+npx subjektify create my-dapp -b classic
+```
+
+or add Subjektify to your existing project:
+
+```bash
+npx subjektify init
 ```
 
 ## Features
 
-- 🌐 **Protocol-Agnostic**: Build subjekts that are compatible with any blockchain or decentralized network.
-- 🧬 **Designed to Evolve**: Create modular and extensible subjekts that adapt to changing requirements.
-- 📜 **Declarative Code Generation**: Use the Subjektify IDL to automate code generation across multiple languages.
+- 🌐 **Protocol-Agnostic**: Build subjekts that are compatible with any decentralized network.
+- 🧬 **Designed to Evolve**: Create modular and extensible subjects that adapt to changing requirements.
+- 📜 **Declarative Code Generation**: Use the Subjekt IDL to automate code generation across multiple languages.
 - 🎉 **Ease of Use**: Intuitive commands and options make it simple to get your project up and running.
 
-## Commands
+## Popular Commands
 
-- `subjektify init [name]`: Initialize a new Subjektify project.
-- `subjektify start`: Start the development server.
-- `subjektify build`: Build the project for production.
-- `subjektify test`: Run unit tests.
+- `npx subjektify start`: Start the development server.
+- `npx subjektify build`: Build the subjekt model.
+- `npx subjektify test`: Run unit tests.
 
 For a complete list of commands and options, run:
 
 ```bash
-subjektify --help
+npx subjektify --help
 ```
 
-## Contributing
+## Documentation
 
-We welcome contributions! See our [Contribution Guide](CONTRIBUTING.md) for more details.
+Comprehensive documentation for Subjektify is available to help you get started and make the most out of the ecosystem. The documentation covers everything from installation and configuration to advanced usage and best practices.
 
-## Support & Community
 
-- [Documentation](https://subjektify.dev/docs)
-- [FAQ](https://subjektify.dev/docs/faq)
-- [Discord Channel](https://discord.gg/subjektify)
-- [GitHub Issues](https://github.com/subjektify/subjektify-cli/issues)
+- [**Subjektify's Documentation**](https://subjektify.dev/)
+- [**Tutorials**](https://subjektify.dev/docs/learn/tutorial)
+- [**API Reference**](https://subjektify.dev/docs/reference)
+- [**Blog**](https://subjektify.dev/blog)
 
 ## License
 
-Subjektify CLI is open-source software [licensed as Apache-2.0](LICENSE).
+Subjektify is open-source software licensed as [Apache-2.0](LICENSE).

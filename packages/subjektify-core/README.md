@@ -1,1 +1,0 @@
-# subjektify-core

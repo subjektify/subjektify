@@ -1,25 +1,25 @@
 {
   "name": "subjektify",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Building the Future of Decentralized Applications.",
-  "author": "subjektify",
+  "author": "SubjektifyLabs",
   "license": "Apache-2.0",
   "main": "dist/index",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && npm run compile && npm run copy:templates",
+    "build": "npm run clean && npm run compile",
+    "build:ws": "npm run build --ws && npm run build",
     "clean": "rimraf dist/",
     "compile": "tsc",
-    "copy:templates": "ncp src/templates dist/templates",
     "patch": "npm version patch && npm publish",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "link": "npm link",
-    "unlink": "npm unlink ./"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": "./dist/bin.js",
+  "bin": {
+    "subjektify": "dist/cli/bootstrap.js"
+  },
   "keywords": [],
   "repository": {
     "type": "git",
@@ -29,28 +29,22 @@
     "url": "https://github.com/subjektify/subjektify/issues"
   },
   "homepage": "https://github.com/subjektify/subjektify#readme",
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
-    "@helia/unixfs": "^1.4.2",
-    "@inquirer/prompts": "^5.0.4",
-    "blockstore-fs": "^1.1.6",
-    "chalk": "^4.1.2",
-    "colorts": "^0.1.63",
-    "commander": "^11.0.0",
-    "figlet": "^1.7.0",
-    "helia": "^2.0.3",
-    "live-plugin-manager": "^0.18.1",
-    "ora": "^8.0.1",
-    "subjekt": "^0.0.3",
-    "tar": "^6.2.0"
+    "@subjektifylabs/subjektify-core": "workspace:*",
+    "semver": "^7.6.2",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",
     "@types/node": "^20.8.4",
+    "@types/semver": "^7.5.8",
     "jest": "^29.7.0",
     "ncp": "^2.0.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
