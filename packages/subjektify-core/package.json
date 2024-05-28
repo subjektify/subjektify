@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-core",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The fundamental library of the Subjektify ecosystem, providing essential building blocks, and utilities for developing decentralized applications.",
   "author": "SubjektifyLabs",
   "license": "Apache-2.0",

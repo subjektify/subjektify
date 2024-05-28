@@ -14,7 +14,7 @@
     "build:ws": "pnpm run build --ws && pnpm run build",
     "clean": "rimraf dist/",
     "compile": "tsc",
-    "patch": "pnpm version patch --ws && pnpm version patch && pnpm publish",
+    "patch": "pnpm version patch && pnpm publish",
     "prepublishOnly": "pnpm run build:ws",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
