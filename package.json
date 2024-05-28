@@ -14,7 +14,7 @@
     "build:ws": "npm run build --ws && npm run build",
     "clean": "rimraf dist/",
     "compile": "tsc",
-    "patch": "pnpm version patch && pnpm publish",
+    "patch": "pnpm version patch --ws && pnpm version patch && pnpm publish",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
