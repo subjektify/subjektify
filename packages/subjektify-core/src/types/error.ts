@@ -1,7 +1,20 @@
+export interface IError {
+    code: string;
+    message: string;
+}
+
 export class SubjektifyError extends Error {
     public code: string | undefined;
-    constructor(code: string | undefined, message: string | undefined) {
-        super(`${code} - ${message}`);
+    constructor(error: IError) {
+        super(`${error.code} - ${error.message}`);
+        this.code = error.code;
         this.name = 'SubjektifyError';
     }
+}
+
+export const ERRORS = {
+    CONTEXT_ALREADY_CREATED: {
+        code: 'SE002',
+        message: "Subjektify's context is already created"
+    },
 }
