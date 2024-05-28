@@ -27,6 +27,9 @@ importers:
       '@types/semver':
         specifier: ^7.5.8
         version: 7.5.8
+      '@types/yargs':
+        specifier: ^17.0.32
+        version: 17.0.32
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.12.12)
