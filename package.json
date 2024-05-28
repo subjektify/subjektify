@@ -10,12 +10,12 @@
     "packages"
   ],
   "scripts": {
-    "build": "npm run clean && npm run compile",
-    "build:ws": "npm run build --ws && npm run build",
+    "build": "pnpm run clean && pnpm run compile",
+    "build:ws": "pnpm run build --ws && pnpm run build",
     "clean": "rimraf dist/",
     "compile": "tsc",
     "patch": "pnpm version patch --ws && pnpm version patch && pnpm publish",
-    "prepublishOnly": "npm run build:ws",
+    "prepublishOnly": "pnpm run build:ws",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
