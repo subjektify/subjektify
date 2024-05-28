@@ -6,7 +6,8 @@
   "license": "Apache-2.0",
   "main": "dist/index",
   "files": [
-    "dist"
+    "dist",
+    "packages"
   ],
   "scripts": {
     "build": "npm run clean && npm run compile",
