@@ -1,0 +1,4 @@
+nodemodules/
+src/
+test/
+*.tsbuildinfo
