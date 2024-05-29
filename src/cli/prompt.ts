@@ -1,4 +1,6 @@
-import { confirm, input, select } from '@inquirer/prompts';
+import { prompt } from 'enquirer';
+
+export type Choice = { message: string, name: string };
 
 /**
  * A utility class for prompting the user for input.
@@ -7,25 +9,31 @@ import { confirm, input, select } from '@inquirer/prompts';
 export class Prompt {
 
     static async confirm(message: string): Promise<boolean> {
-        const answer = await confirm({
+        const answer: { value: boolean } = await prompt({
+            type: 'confirm',
+            name: 'value',
             message
         });
-        return answer;
+        return answer.value;
     }
 
     static async input(message: string): Promise<string> {
-        const answer = await input({
+        const answer: { value: string } = await prompt({
+            type: 'input',
+            name: 'value',
             message
         });
-        return answer;
+        return answer.value;
     }
 
-    static async select(message: string, choices: string[]): Promise<string> {
-        const mappedChoices = choices.map((choice: any) => ({ value: choice }));
-        const answer = await select({
+    static async select(message: string, choices: Choice[]): Promise<string> {
+        const answer: { value: string } = await prompt({
+            type: 'select',
+            name: 'value',
             message,
-            choices: mappedChoices
+            initial: 0,
+            choices
         });
-        return answer;
+        return answer.value;
     }
 }
