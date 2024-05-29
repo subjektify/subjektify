@@ -11,8 +11,7 @@ async function main() {
     args.verbose && Log.setVerbose(true);
 
     // Run the command
-    console.log(args);
-    run(args._);
+    return run(args);
 }
 
 function parseCli() {

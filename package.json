@@ -34,6 +34,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@inquirer/prompts": "^5.0.4",
     "@subjektifylabs/subjektify-core": "workspace:*",
     "semver": "^7.6.2",
     "yargs": "^17.7.2"

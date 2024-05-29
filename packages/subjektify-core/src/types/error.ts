@@ -12,9 +12,17 @@ export class SubjektifyError extends Error {
     }
 }
 
-export const ERRORS = {
+export const GENERAL_ERRORS = {
+    NOT_IN_NAMESPACE: {
+        code: 'SE001',
+        message: "You are not in a Subjektify namespace"
+    },
     CONTEXT_ALREADY_CREATED: {
         code: 'SE002',
         message: "Subjektify's context is already created"
     },
+}
+
+export const ERRORS = {
+    GENERAL: GENERAL_ERRORS
 }
