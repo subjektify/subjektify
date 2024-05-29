@@ -4,7 +4,7 @@ import { hideBin } from 'yargs/helpers';
 export function describeCli() {
     return yargs(hideBin(process.argv))
     .usage('Usage: $0 <command> [options]')
-    .command('create', 'Create a new namespace', () => { }, () => { })
+    .command('init', 'Create a new namespace', () => { }, () => { })
     .command('codegen', 'Generates contracts, clients, and server stubs after building the project', () => { }, () => { })
     .command('clean', 'Clears the cache and deletes all artifacts', () => { }, () => { })
     .command('build', 'Builds the Subjekt model', () => { }, () => { })
