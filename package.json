@@ -6,7 +6,9 @@
   "license": "Apache-2.0",
   "main": "dist/index",
   "files": [
-    "dist"
+    "dist",
+    "namespaces",
+    "packages"
   ],
   "scripts": {
     "build": "pnpm run clean && pnpm run compile",
