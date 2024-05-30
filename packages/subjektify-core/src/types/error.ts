@@ -17,8 +17,12 @@ const GENERAL_ERRORS = {
         code: 'SGE001',
         message: "You are not in a Subjektify namespace"
     },
-    CONTEXT_ALREADY_CREATED: {
+    NAMESPACE_ALREADY_EXISTS: {
         code: 'SGE002',
+        message: "Namespace already exists"
+    },
+    CONTEXT_ALREADY_CREATED: {
+        code: 'SGE003',
         message: "Subjektify's context is already created"
     },
 }

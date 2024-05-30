@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { SubjektifyConfig } from "../../types";
+import { DEFAULT_CONFIG } from "./defaults";
 
 export class SubjektifyConfigLoader {
 
@@ -10,7 +11,7 @@ export class SubjektifyConfigLoader {
 
     public load(): SubjektifyConfig {
         const configPath = this.resolvePath();
-        return {};
+        return DEFAULT_CONFIG;
     }
 
     public resolvePath(): string {

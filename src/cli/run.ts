@@ -25,6 +25,9 @@ export const run = async (args: any): Promise<void> => {
 
     // If the command is 'init', initialize a new namespace
     if (command === "init") {
+        if (configLoader.configExists()) {
+            return Promise.reject(new SubjektifyError(ERRORS.GENERAL.NAMESPACE_ALREADY_EXISTS));
+        }
         return init(commandArgs);
     }
 

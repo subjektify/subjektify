@@ -5,17 +5,11 @@
 
 > Building the Future of Decentralized Applications
 
-Subjektify is your all-in-one toolkit for developing, testing, and deploying subjekt files. It's designed to work seamlessly with the Subjektify framework, offering a streamlined workflow for decentralized application development.
+Subjektify offers a comprehensive toolkit that streamlines the process of dApp development. By leveraging a subject-oriented programming approach, Subjektify simplifies the creation, management, and scaling of dApps, making it easier for developers to build robust, scalable, and secure decentralized solutions.
 
 ## Quick Start
 
-You can start a new Subjektify project in a snap:
-
-```bash
-npx subjektify create my-dapp -b classic
-```
-
-or add Subjektify to your existing project:
+You can start a new Subjektify namespace in a snap:
 
 ```bash
 npx subjektify init

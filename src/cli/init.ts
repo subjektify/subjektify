@@ -13,6 +13,7 @@ export const init = async (args: any): Promise<void> => {
         case "empty":
             return createEmptyConfig();
         case "quit":
+            Log.verbose("Quitting...");
             return;
     }
 }
@@ -50,5 +51,4 @@ const createTypescriptNamespace = async () => {
 
 const createEmptyConfig = async () => {
     Log.verbose("Creating an empty configuration file.");
-    // Create an empty configuration file
 }
