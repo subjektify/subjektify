@@ -1,0 +1,12 @@
+subject Tree {
+    version: "1.0.0"
+    states: [Dimensions]
+    behaviors: [PlantTree]
+}
+
+state Dimensions {
+    length: string
+    radius: double
+}
+
+behavior PlantTree

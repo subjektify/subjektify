@@ -25,6 +25,10 @@ const GENERAL_ERRORS = {
         code: 'SGE003',
         message: "Subjektify's context is already created"
     },
+    ENVIRONMENT_ALREADY_CREATED: {
+        code: 'SGE004',
+        message: "Subjektify's environment is already created"
+    },
 }
 
 export const ERRORS = {

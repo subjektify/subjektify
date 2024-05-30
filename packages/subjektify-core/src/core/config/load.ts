@@ -9,9 +9,9 @@ export class SubjektifyConfigLoader {
         return this.resolvePath() !== "";
     }
 
-    public load(): SubjektifyConfig {
+    public load(): Promise<SubjektifyConfig> {
         const configPath = this.resolvePath();
-        return DEFAULT_CONFIG;
+        return Promise.resolve(DEFAULT_CONFIG);
     }
 
     public resolvePath(): string {
