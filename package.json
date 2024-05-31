@@ -7,7 +7,7 @@
     "scripts": {
         "clean": "pnpm clean -r",
         "build": "pnpm build -r",
-        "release:patch": "pnpm release:patch -r"
+        "release:patch": "pnpm -r release:patch"
     },
     "devDependencies": {
         "prettier": "^3.2.5",
