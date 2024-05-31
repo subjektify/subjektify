@@ -6,7 +6,8 @@
     "license": "SEE LICENSE IN EACH PACKAGE",
     "scripts": {
         "clean": "pnpm clean -r",
-        "build": "tsc"
+        "build": "pnpm build -r",
+        "release:patch": "pnpm release:patch -r"
     },
     "devDependencies": {
         "prettier": "^3.2.5",
