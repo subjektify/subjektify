@@ -1,4 +1,4 @@
-import { Log } from "@subjektifylabs/subjektify-core";
+import { Log } from "../util";
 import { Prompt } from "./prompt";
 
 export const init = async (args: any): Promise<void> => {

@@ -1,4 +1,4 @@
-import { Log } from "@subjektifylabs/subjektify-core";
+import { Log } from "../util";
 import { describeCli } from './def';
 import { run } from './run';
 

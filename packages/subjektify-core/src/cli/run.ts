@@ -1,5 +1,7 @@
 import yargs from "yargs";
-import { ERRORS, Log, SubjektifyError, SubjektifyConfigLoader, SubjektifyContext } from "@subjektifylabs/subjektify-core";
+import { SubjektifyConfigLoader, SubjektifyContext } from "../core";
+import { Log } from "../util";
+import { ERRORS, SubjektifyError } from "../types";
 import { init } from "./init";
 
 export const run = async (args: any): Promise<void> => {
