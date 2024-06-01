@@ -1,7 +1,14 @@
 import { SubjektifyConfig } from "./config";
-import { SubjektifyTask } from "./tasks";
+import { TaskArguments, TaskIdentifier, TaskMap } from "./tasks";
+
+export type RunTaskFunction = (
+    taskId: TaskIdentifier,
+    taskArgs: TaskArguments
+) => Promise<any>;
 
 export interface SubjektifyRuntimeEnvironment {
     config: SubjektifyConfig;
-    tasks: SubjektifyTask[];
+    run: RunTaskFunction;
+    tasks: TaskMap;
+    version: string;
 }
