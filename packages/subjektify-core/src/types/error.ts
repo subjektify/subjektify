@@ -31,6 +31,14 @@ const GENERAL_ERRORS = {
     },
 }
 
+const TASKS_ERRORS = {
+    ACTION_NOT_SET: {
+        code: 'SGE101',
+        message: "A task action was run without the action"
+    }
+}
+
 export const ERRORS = {
-    GENERAL: GENERAL_ERRORS
+    GENERAL: GENERAL_ERRORS,
+    TASKS: TASKS_ERRORS
 }
