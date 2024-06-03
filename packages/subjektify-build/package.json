@@ -1,0 +1,17 @@
+{
+    "name": "@subjektifylabs/subjektify-build",
+    "version": "0.0.13",
+    "description": "A core tool designed to facilitate the build process the Subjekt model.",
+    "author": "Subjektify Labs",
+    "license": "Apache-2.0",
+    "homepage": "https://subjektify.dev",
+    "repository": "github:subjektify/subjektify",
+    "main": "dist/index",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
