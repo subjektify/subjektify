@@ -63,6 +63,6 @@ export class SubjektifyContext {
     }
 
     private async _loadConfig(): Promise<SubjektifyConfig> {
-        return this.loader.loadConfig();
+        return this.loader.load();
     }
 }

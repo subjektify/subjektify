@@ -46,7 +46,19 @@ const TASK_ERRORS = {
     }
 }
 
+const CONFIG_ERRORS = {
+    LOAD_ERROR: {
+        code: 'SGE201',
+        message: "Error loading config file"
+    },
+    NO_CONFIG_FILE: {
+        code: 'SGE202',
+        message: "No config file found"
+    }
+}
+
 export const ERRORS = {
     GENERAL: GENERAL_ERRORS,
-    TASK: TASK_ERRORS
+    TASK: TASK_ERRORS,
+    CONFIG: CONFIG_ERRORS
 }

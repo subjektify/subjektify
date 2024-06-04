@@ -3,7 +3,7 @@
 [![NPM Version](http://img.shields.io/npm/v/subjektify.svg?style=flat)](https://www.npmjs.org/package/subjektify)
 [![NPM Downloads](https://img.shields.io/npm/dm/subjektify.svg?style=flat)](https://npmcharts.com/compare/subjektify?minimal=true)
 
-Subjektify offers a comprehensive toolkit that streamlines the process of dApp development. By leveraging a subject-oriented programming approach, Subjektify simplifies the creation, management, and scaling of dApps, making it easier for developers to build robust, scalable, and secure decentralized solutions.
+Subjektify offers a comprehensive platform that streamlines the process of dApp development. By leveraging a subject-oriented programming approach, Subjektify simplifies the creation, management, and scaling of dApps, making it easier for developers to build robust, scalable, and secure decentralized solutions.
 
 ## Quick Start
 
