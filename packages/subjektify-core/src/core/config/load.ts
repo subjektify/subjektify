@@ -24,7 +24,7 @@ export class SubjektifyConfigLoader {
 
         Log.debug(`Loading config file: ${this.filePath}`);
         let userConfig = this._importCjsOrEsm();
-        
+
         console.log(userConfig);
         return Promise.resolve(DEFAULT_CONFIG);
     }
@@ -41,7 +41,7 @@ export class SubjektifyConfigLoader {
         return "";
     }
 
-    private _importCjsOrEsm(): Promise<any> {
+    private _importCjsOrEsm(): any {
         try {
             const module = require(this.filePath);
             return module.default || module;
