@@ -19,7 +19,7 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "peerDependencies": {
-        "subjektify": "^0.0.15"
+        "subjektify": "^0.0.17"
     },
     "devDependencies": {
         "@types/node": "^20.12.13",

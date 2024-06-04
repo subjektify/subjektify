@@ -17,13 +17,13 @@ export class SubjektifyConfigLoader {
         return this.filePath !== "";
     }
 
-    public load(): Promise<SubjektifyConfig> {
+    public async load(): Promise<SubjektifyConfig> {
         if (!this.configExists()) {
             throw new SubjektifyError(ERRORS.CONFIG.NO_CONFIG_FILE);
         }
 
         Log.debug(`Loading config file: ${this.filePath}`);
-        let userConfig = this._importCjsOrEsm();
+        let userConfig = await this._importCjsOrEsm();
 
         console.log(userConfig);
         return Promise.resolve(DEFAULT_CONFIG);
@@ -34,19 +34,19 @@ export class SubjektifyConfigLoader {
         const tsPath = path.join(process.cwd(), "subjektify.config.ts");
 
         if (fs.existsSync(jsPath)) {
-            return jsPath;
+            return jsPath.normalize();
         } else if (fs.existsSync(tsPath)) {
-            return tsPath;
+            return tsPath.normalize();
         }
         return "";
     }
 
-    private _importCjsOrEsm(): any {
+    private async _importCjsOrEsm(): Promise<any> {
         try {
-            const module = require(this.filePath);
+            const module = await import(this.filePath);
             return module.default || module;
         } catch (e: any) {
-            Log.error(`Error loading config file: ${e.message}`);
+            Log.error(`Error loading config file: ${e}`);
             throw new SubjektifyError(ERRORS.CONFIG.LOAD_ERROR);
         }
     }
