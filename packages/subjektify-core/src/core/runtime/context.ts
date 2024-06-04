@@ -1,4 +1,4 @@
-import { ERRORS, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, TaskMap } from "../../types";
+import { ERRORS, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, TaskArguments, TaskMap } from "../../types";
 import { SubjektifyConfigLoader } from "../config";
 import { TaskManager } from "../tasks";
 import { Environment } from "./environment";
@@ -8,31 +8,22 @@ export type GlobalWithSubjektifyContext = typeof globalThis & { _subjektifyConte
 export class SubjektifyContext {
     
     public environment?: SubjektifyRuntimeEnvironment;
-    public taskName?: string;
-    public taskArgs?: string[];
+    public taskName: string;
+    public taskArgs: TaskArguments;
     public taskManager: TaskManager;
 
-    private constructor() {
+    private loader: SubjektifyConfigLoader;
+
+    private constructor(taskName: string, taskArgs: TaskArguments) {
+        this.taskName = taskName;
+        this.taskArgs = taskArgs;
         this.taskManager = new TaskManager();
+        this.loader = new SubjektifyConfigLoader();
     }
 
     public static isCreated(): boolean {
         const globalWithContext = global as GlobalWithSubjektifyContext;
         return globalWithContext._subjektifyContext !== undefined;
-    }
-
-    public static async create(name: string, args: string[]): Promise<SubjektifyContext> {
-        if (SubjektifyContext.isCreated()) {
-            throw new SubjektifyError(ERRORS.GENERAL.CONTEXT_ALREADY_CREATED);
-        }
-        const globalWithContext = global as GlobalWithSubjektifyContext;
-        const ctx = new SubjektifyContext();
-
-        ctx.taskName = name;
-        ctx.taskArgs = args;
-
-        globalWithContext._subjektifyContext = ctx;
-        return ctx;
     }
 
     public static get(): SubjektifyContext {
@@ -43,19 +34,35 @@ export class SubjektifyContext {
         return globalWithContext._subjektifyContext;
     }
 
+    public static async create(name: string, args: string[]): Promise<SubjektifyContext> {
+        if (SubjektifyContext.isCreated()) {
+            throw new SubjektifyError(ERRORS.GENERAL.CONTEXT_ALREADY_CREATED);
+        }
+        const globalWithContext = global as GlobalWithSubjektifyContext;
+        const ctx = new SubjektifyContext(name, args);
+
+        await ctx._createEnvironment();
+
+        globalWithContext._subjektifyContext = ctx;
+        return ctx;
+    }
+
     public static delete(): void {
         const globalWithContext = global as any;
         globalWithContext._subjektifyContext = undefined;
     }
 
-    private async createEnvironment(): Promise<SubjektifyRuntimeEnvironment> {
+    private async _createEnvironment(): Promise<SubjektifyRuntimeEnvironment> {
         if (this.environment) {
             throw new SubjektifyError(ERRORS.GENERAL.ENVIRONMENT_ALREADY_CREATED);
         }
-        const loader = new SubjektifyConfigLoader();
-        const config: SubjektifyConfig = await loader.load();
+        const config: SubjektifyConfig = await this._loadConfig();
         const tasks: TaskMap = this.taskManager.getTasks();
         this.environment = new Environment(config, tasks);
         return Promise.resolve(this.environment);
+    }
+
+    private async _loadConfig(): Promise<SubjektifyConfig> {
+        return this.loader.loadConfig();
     }
 }

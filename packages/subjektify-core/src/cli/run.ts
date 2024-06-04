@@ -39,4 +39,5 @@ export const run = async (args: any): Promise<void> => {
     }
 
     const ctx = await SubjektifyContext.create(command, commandArgs);
+    await ctx.environment?.run(command, commandArgs);
 }

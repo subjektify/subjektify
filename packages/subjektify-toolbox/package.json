@@ -1,7 +1,7 @@
 {
-    "name": "@subjektifylabs/subjektify-build",
-    "version": "0.0.13",
-    "description": "A core tool designed to facilitate the build process the Subjekt model.",
+    "name": "@subjektifylabs/subjektify-toolbox",
+    "version": "0.0.1",
+    "description": "A collection of essential tools and plugins recommended to start developing with Subjektify.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
     "homepage": "https://subjektify.dev",
@@ -18,9 +18,10 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "peerDependencies": {
-        "subjektify": "workspace:*"
+        "@subjektifylabs/subjektify-build": "workspace:*"
     },
     "devDependencies": {
+        "@subjektifylabs/subjektify-build": "workspace:*",
         "@types/node": "^20.12.13",
         "chai": "^5.1.1",
         "mocha": "^10.4.0",

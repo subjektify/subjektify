@@ -18,6 +18,34 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/subjektify-build:
+    dependencies:
+      subjektify:
+        specifier: workspace:*
+        version: link:../subjektify-core
+    devDependencies:
+      '@types/node':
+        specifier: ^20.12.13
+        version: 20.12.13
+      chai:
+        specifier: ^5.1.1
+        version: 5.1.1
+      mocha:
+        specifier: ^10.4.0
+        version: 10.4.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      sinon:
+        specifier: ^18.0.0
+        version: 18.0.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/subjektify-core:
     dependencies:
       chalk:
@@ -42,6 +70,33 @@ importers:
       '@types/yargs':
         specifier: ^17.0.32
         version: 17.0.32
+      chai:
+        specifier: ^5.1.1
+        version: 5.1.1
+      mocha:
+        specifier: ^10.4.0
+        version: 10.4.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      sinon:
+        specifier: ^18.0.0
+        version: 18.0.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/subjektify-toolbox:
+    devDependencies:
+      '@subjektifylabs/subjektify-build':
+        specifier: workspace:*
+        version: link:../subjektify-build
+      '@types/node':
+        specifier: ^20.12.13
+        version: 20.12.13
       chai:
         specifier: ^5.1.1
         version: 5.1.1
