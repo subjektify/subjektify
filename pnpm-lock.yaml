@@ -21,8 +21,8 @@ importers:
   packages/subjektify-build:
     dependencies:
       subjektify:
-        specifier: ^0.0.17
-        version: 0.0.17
+        specifier: ^0.0.18
+        version: 0.0.18
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -591,8 +591,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  subjektify@0.0.17:
-    resolution: {integrity: sha512-rAHOR/uqifzZvWyk9bt46GFU0FAHU8XVQyRAPrNESZvjA9YVkqunLKrIaBwhKc2alGZEQyLyIa28UlUxMOtBDw==}
+  subjektify@0.0.18:
+    resolution: {integrity: sha512-wXRNf3Pbi2JC9gfRiaw6Ead/NSrEiy5/rk6neNY6XAeiHwYfjKS/3j7xSFyuepdpuH5n4Hl+FqN6oa2iSOsXzA==}
     hasBin: true
 
   supports-color@7.2.0:
@@ -1127,7 +1127,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  subjektify@0.0.17:
+  subjektify@0.0.18:
     dependencies:
       chalk: 4.1.2
       enquirer: 2.4.1
