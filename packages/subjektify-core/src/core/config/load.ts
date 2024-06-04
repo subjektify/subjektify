@@ -14,6 +14,14 @@ export class SubjektifyConfigLoader {
         return Promise.resolve(DEFAULT_CONFIG);
     }
 
+    public loadConfig(): Promise<SubjektifyConfig> {
+        return this.load();
+    }
+
+    public loadPlugins(): Promise<void> {
+        return Promise.resolve();
+    }
+
     public resolvePath(): string {
         const jsPath = path.join(process.cwd(), "subjektify.config.js");
         const tsPath = path.join(process.cwd(), "subjektify.config.ts");

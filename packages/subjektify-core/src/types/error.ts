@@ -21,24 +21,32 @@ const GENERAL_ERRORS = {
         code: 'SGE002',
         message: "Namespace already exists"
     },
-    CONTEXT_ALREADY_CREATED: {
+    CONTEXT_NOT_CREATED: {
         code: 'SGE003',
+        message: "Subjektify's context is not created"
+    },
+    CONTEXT_ALREADY_CREATED: {
+        code: 'SGE004',
         message: "Subjektify's context is already created"
     },
     ENVIRONMENT_ALREADY_CREATED: {
-        code: 'SGE004',
+        code: 'SGE005',
         message: "Subjektify's environment is already created"
     },
 }
 
-const TASKS_ERRORS = {
-    ACTION_NOT_SET: {
+const TASK_ERRORS = {
+    TASK_NOT_FOUND: {
         code: 'SGE101',
+        message: "Task not found"
+    },
+    ACTION_NOT_SET: {
+        code: 'SGE102',
         message: "A task action was run without the action"
     }
 }
 
 export const ERRORS = {
     GENERAL: GENERAL_ERRORS,
-    TASKS: TASKS_ERRORS
+    TASK: TASK_ERRORS
 }

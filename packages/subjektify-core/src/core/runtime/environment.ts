@@ -1,4 +1,4 @@
-import { RunTaskFunction, SubjektifyConfig, SubjektifyRuntimeEnvironment, TaskMap } from "../../types";
+import { ERRORS, RunTaskFunction, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, SubjektifyTask, TaskArguments, TaskMap } from "../../types";
 
 export class Environment implements SubjektifyRuntimeEnvironment {
 
@@ -18,7 +18,16 @@ export class Environment implements SubjektifyRuntimeEnvironment {
         this.version = "0.0.1";
     }
 
-    run: RunTaskFunction = async (taskId, taskArgs) => {
+    run: RunTaskFunction = async (taskIdentifier, taskArguments) => {
+        const task = this.tasks[taskIdentifier];
+        if (!task) {
+            throw new SubjektifyError(ERRORS.TASK.TASK_NOT_FOUND)
+        }
+        return this._runTaskAction(task, taskArguments);
+    }
+
+    private _runTaskAction = async (task: SubjektifyTask, taskArguments: TaskArguments): Promise<any> => {
+        return task.action(taskArguments, this);
     }
 
 }

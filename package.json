@@ -5,8 +5,8 @@
     "author": "Subjektify Labs",
     "license": "SEE LICENSE IN EACH PACKAGE",
     "scripts": {
-        "clean": "pnpm clean -r",
-        "build": "pnpm build -r",
+        "clean": "pnpm -r clean",
+        "build": "pnpm -r build",
         "release:patch": "pnpm -r release:patch"
     },
     "devDependencies": {

@@ -3,7 +3,7 @@ import { SubjektifyTask, TaskAction, TaskIdentifier, TaskArguments, TaskMap, Sub
 /**
  * This class is used to define the domain specific language for handling tasks within subjektify.
  */
-export class TasksDsl {
+export class TaskManager {
 
     private tasks: TaskMap;
 
@@ -66,7 +66,7 @@ export class TasksDsl {
     }
 
     private _defaultTaskAction = () => {
-        throw new SubjektifyError(ERRORS.TASKS.ACTION_NOT_SET);
+        throw new SubjektifyError(ERRORS.TASK.ACTION_NOT_SET);
     }
 
 }

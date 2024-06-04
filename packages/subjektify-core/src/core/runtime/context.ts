@@ -1,5 +1,7 @@
-import { ERRORS, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, SubjektifyTask } from "../../types";
+import { ERRORS, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, TaskMap } from "../../types";
 import { SubjektifyConfigLoader } from "../config";
+import { TaskManager } from "../tasks";
+import { Environment } from "./environment";
 
 export type GlobalWithSubjektifyContext = typeof globalThis & { _subjektifyContext: SubjektifyContext };
 
@@ -8,8 +10,11 @@ export class SubjektifyContext {
     public environment?: SubjektifyRuntimeEnvironment;
     public taskName?: string;
     public taskArgs?: string[];
+    public taskManager: TaskManager;
 
-    private constructor() { }
+    private constructor() {
+        this.taskManager = new TaskManager();
+    }
 
     public static isCreated(): boolean {
         const globalWithContext = global as GlobalWithSubjektifyContext;
@@ -26,10 +31,16 @@ export class SubjektifyContext {
         ctx.taskName = name;
         ctx.taskArgs = args;
 
-        await ctx.createEnvironment();
-
         globalWithContext._subjektifyContext = ctx;
         return ctx;
+    }
+
+    public static get(): SubjektifyContext {
+        const globalWithContext = global as GlobalWithSubjektifyContext;
+        if (!globalWithContext._subjektifyContext) {
+            throw new SubjektifyError(ERRORS.GENERAL.CONTEXT_NOT_CREATED);
+        }
+        return globalWithContext._subjektifyContext;
     }
 
     public static delete(): void {
@@ -41,14 +52,10 @@ export class SubjektifyContext {
         if (this.environment) {
             throw new SubjektifyError(ERRORS.GENERAL.ENVIRONMENT_ALREADY_CREATED);
         }
-
         const loader = new SubjektifyConfigLoader();
         const config: SubjektifyConfig = await loader.load();
-        const tasks: SubjektifyTask[] = [];
-        this.environment = {
-            config,
-            tasks
-        };
+        const tasks: TaskMap = this.taskManager.getTasks();
+        this.environment = new Environment(config, tasks);
         return Promise.resolve(this.environment);
     }
 }
