@@ -1,4 +1,5 @@
 import { ERRORS, RunTaskFunction, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, SubjektifyTask, TaskArguments, TaskMap } from "../../types";
+import { Log } from "../../util";
 
 export class Environment implements SubjektifyRuntimeEnvironment {
 
@@ -27,6 +28,7 @@ export class Environment implements SubjektifyRuntimeEnvironment {
     }
 
     private _runTaskAction = async (task: SubjektifyTask, taskArguments: TaskArguments): Promise<any> => {
+        Log.verbose(`Running task: ${task.name}`);
         return task.action(taskArguments, this);
     }
 

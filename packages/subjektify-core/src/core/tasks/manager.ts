@@ -58,7 +58,6 @@ export class TaskManager {
             description = descriptionOrAction;
         }
         if (taskAction !== undefined) {
-            Log.verbose(`Setting task action for ${identifier}`);
             action = taskAction;
         }
 
