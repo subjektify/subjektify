@@ -21,8 +21,8 @@ importers:
   packages/subjektify-build:
     dependencies:
       subjektify:
-        specifier: ^0.0.18
-        version: 0.0.18
+        specifier: ^0.0.21
+        version: 0.0.21(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -591,9 +591,12 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  subjektify@0.0.18:
-    resolution: {integrity: sha512-wXRNf3Pbi2JC9gfRiaw6Ead/NSrEiy5/rk6neNY6XAeiHwYfjKS/3j7xSFyuepdpuH5n4Hl+FqN6oa2iSOsXzA==}
+  subjektify@0.0.21:
+    resolution: {integrity: sha512-lpu/Ep+ABoZvyXS+MSjbo1kmb9wgG4uKOciEYeXPbWJTG0l6WdBCSXpos9MvyYAKEH6nsKYiVtzTlJRjEYTc0A==}
     hasBin: true
+    peerDependencies:
+      ts-node: ^10.9.2
+      typescript: ^5.4.5
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -1127,11 +1130,13 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  subjektify@0.0.18:
+  subjektify@0.0.21(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
       chalk: 4.1.2
       enquirer: 2.4.1
       semver: 7.6.2
+      ts-node: 10.9.2(@types/node@20.12.13)(typescript@5.4.5)
+      typescript: 5.4.5
       yargs: 17.7.2
 
   supports-color@7.2.0:
