@@ -1,4 +1,5 @@
 import { SubjektifyTask, TaskAction, TaskIdentifier, TaskArguments, TaskMap, SubjektifyError, ERRORS } from "../../types";
+import { Log } from "../../util";
 
 /**
  * This class is used to define the domain specific language for handling tasks within subjektify.
@@ -33,32 +34,39 @@ export class TaskManager {
     public task<T extends TaskArguments>(
       name: TaskIdentifier,
       descriptionOrAction?: string | TaskAction<T>,
-      action?: TaskAction<T>
+      taskAction?: TaskAction<T>
     ): SubjektifyTask {
-      return this._addTask(name, descriptionOrAction, action);
+      return this._addTask(name, descriptionOrAction, taskAction);
     }
 
     private _addTask<T extends TaskArguments>(
         identifier: TaskIdentifier,
         descriptionOrAction?: string | TaskAction<T>,
-        action?: TaskAction<T>
+        taskAction?: TaskAction<T>
     ): SubjektifyTask {
+        let description: string | undefined;
+        let action: TaskAction<T> | undefined;
 
-        let taskDefinition: SubjektifyTask = {
-            name: identifier,
-            action: this._defaultTaskAction()
-        };
+        Log.verbose(`Adding task: ${identifier}`);
 
         if (descriptionOrAction instanceof Function) {
             action = descriptionOrAction;
+            description = undefined;
             descriptionOrAction = undefined;
         }
         if (descriptionOrAction !== undefined) {
-            taskDefinition.description = descriptionOrAction;
+            description = descriptionOrAction;
         }
-        if (action !== undefined) {
-            taskDefinition.action = action;
+        if (taskAction !== undefined) {
+            Log.verbose(`Setting task action for ${identifier}`);
+            action = taskAction;
         }
+
+        const taskDefinition: SubjektifyTask = {
+            name: identifier,
+            description: description,
+            action: action || this._defaultTaskAction()
+        };
 
         this.tasks[identifier] = taskDefinition;
 

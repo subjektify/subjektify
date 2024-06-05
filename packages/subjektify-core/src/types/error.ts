@@ -42,7 +42,7 @@ const TASK_ERRORS = {
     },
     ACTION_NOT_SET: {
         code: 'SGE102',
-        message: "A task action was run without the action"
+        message: "A task action was run without being set"
     }
 }
 
