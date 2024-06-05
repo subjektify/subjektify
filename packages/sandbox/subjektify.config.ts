@@ -1,5 +1,5 @@
-import "@subjektifylabs/subjektify-build";
 import { SubjektifyConfig, task } from "subjektify";
+import "@subjektifylabs/subjektify-build";
 
 const config: SubjektifyConfig = {
     namespace: "testers",
