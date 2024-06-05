@@ -1,14 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { ERRORS, SubjektifyConfig, SubjektifyError } from "../../types";
-import { DEFAULT_CONFIG } from "./defaults";
 import { Log } from "../../util";
-import { SUBJEKTIFY_JAVASCRIPT_CONFIG_NAME, SUBJEKTIFY_TYPESCRIPT_CONFIG_NAME } from "../constants";
+import { SUBJEKTIFY_CONFIG_NAME,  } from "../constants";
 
 export class SubjektifyConfigLoader {
 
     private filePath: string;
-    private config?: SubjektifyConfig;
 
     constructor() {
         this.filePath = this.resolvePath();
@@ -29,13 +27,12 @@ export class SubjektifyConfigLoader {
         require('ts-node').register();
         let userConfig = await this._importCjsOrEsm();
 
-        Log.debug(`loaded: ${JSON.stringify(userConfig)}`);
         return Promise.resolve(userConfig);
     }
 
     public resolvePath(): string {
-        const jsPath = path.join(process.cwd(), SUBJEKTIFY_JAVASCRIPT_CONFIG_NAME);
-        const tsPath = path.join(process.cwd(), SUBJEKTIFY_TYPESCRIPT_CONFIG_NAME);
+        const jsPath = path.join(process.cwd(), SUBJEKTIFY_CONFIG_NAME.JAVASCRIPT);
+        const tsPath = path.join(process.cwd(), SUBJEKTIFY_CONFIG_NAME.TYPESCRIPT);
 
         if (fs.existsSync(jsPath)) {
             return jsPath.normalize();

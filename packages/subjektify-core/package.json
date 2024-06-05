@@ -30,7 +30,7 @@
         "clean": "rimraf dist",
         "build": "tsc",
         "test": "mocha",
-        "release:patch": "npm version patch && npm publish",
+        "release": "pnpm publish",
         "prepublishOnly": "pnpm clean && pnpm build"
     },
     "dependencies": {
