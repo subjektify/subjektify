@@ -1,6 +1,6 @@
 {
     "name": "subjektify",
-    "version": "0.0.19",
+    "version": "0.0.21",
     "description": "Decentralized applications development environment for professionals",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
@@ -31,7 +31,7 @@
         "build": "tsc",
         "test": "mocha",
         "release:patch": "npm version patch && npm publish",
-        "prepublishOnly": "npm run clean && npm run build"
+        "prepublishOnly": "pnpm clean && pnpm build"
     },
     "dependencies": {
         "chalk": "4.1.2",
