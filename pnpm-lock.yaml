@@ -23,6 +23,9 @@ importers:
       '@subjektifylabs/subjektify-build':
         specifier: workspace:*
         version: link:../subjektify-build
+      '@subjektifylabs/subjektify-codegen':
+        specifier: workspace:*
+        version: link:../subjektify-codegen
       subjektify:
         specifier: workspace:*
         version: link:../subjektify-core
@@ -31,6 +34,36 @@ importers:
         version: 5.4.5
 
   packages/subjektify-build:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.12.13
+        version: 20.12.13
+      chai:
+        specifier: ^5.1.1
+        version: 5.1.1
+      mocha:
+        specifier: ^10.4.0
+        version: 10.4.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      sinon:
+        specifier: ^18.0.0
+        version: 18.0.0
+      subjekt:
+        specifier: ^0.0.4
+        version: 0.0.4
+      subjektify:
+        specifier: ^0.0.23
+        version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/subjektify-codegen:
     devDependencies:
       '@types/node':
         specifier: ^20.12.13

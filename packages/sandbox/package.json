@@ -16,6 +16,7 @@
     "keywords": [],
     "devDependencies": {
         "@subjektifylabs/subjektify-build": "workspace:*",
+        "@subjektifylabs/subjektify-codegen": "workspace:*",
         "subjektify": "workspace:*",
         "typescript": "^5.4.5"
     }

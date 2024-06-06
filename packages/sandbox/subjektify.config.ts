@@ -1,5 +1,6 @@
 import { SubjektifyConfig, extendEnvironment, task } from "subjektify";
 import "@subjektifylabs/subjektify-build";
+import "@subjektifylabs/subjektify-codegen";
 import "./src/type-extensions";
 
 const config: SubjektifyConfig = {
@@ -12,8 +13,7 @@ const config: SubjektifyConfig = {
 }
 
 extendEnvironment((sre) => {
-    sre.example = "Hello, Worldfjglkjdshjflk;gjsdl;kfjglk;td!";
-    console.log("Environment extended!");
+    sre.example = "Hello, World!";
 });
 
 task("test", "Hello, World", async (_, sre) => {

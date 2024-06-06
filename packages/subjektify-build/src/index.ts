@@ -1,4 +1,4 @@
-import { Log, extendEnvironment, task } from "subjektify";
+import { Log, SubjektifyRuntimeEnvironment, extendEnvironment, task } from "subjektify";
 import { parseSources } from "./parse";
 import { mergeModels } from "./merge";
 
@@ -12,7 +12,10 @@ extendEnvironment((sre) => {
 });
 
 task("build", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {
+    await subjektifyBuildTask(_, sre);
+});
 
+export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
     Log.info("Building model from sources...");
 
     const config = sre.config;
@@ -28,4 +31,4 @@ task("build", "Builds your Subjekt model and adds the artifacts to the runtime e
     sre.model = mergedModel;
 
     Log.success("Model built successfully.");
-});
+}
