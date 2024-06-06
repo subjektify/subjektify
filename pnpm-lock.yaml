@@ -31,10 +31,6 @@ importers:
         version: 5.4.5
 
   packages/subjektify-build:
-    dependencies:
-      subjektify:
-        specifier: ^0.0.21
-        version: 0.0.21(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -57,6 +53,9 @@ importers:
       subjekt:
         specifier: ^0.0.4
         version: 0.0.4
+      subjektify:
+        specifier: ^0.0.23
+        version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -616,8 +615,8 @@ packages:
   subjekt@0.0.4:
     resolution: {integrity: sha512-ct1S+fs6D6uMW+RQxwKVvoncN2r8SEsjmnCewMIBajaSJlwGPqIxvJZfKjB1Fae2MG6nWMAt0+Dy3JzoR45ZOA==}
 
-  subjektify@0.0.21:
-    resolution: {integrity: sha512-lpu/Ep+ABoZvyXS+MSjbo1kmb9wgG4uKOciEYeXPbWJTG0l6WdBCSXpos9MvyYAKEH6nsKYiVtzTlJRjEYTc0A==}
+  subjektify@0.0.23:
+    resolution: {integrity: sha512-qAs8WIimMUqOpZJ8zqy/v8hOnlpIsDeZqoyOTEHONA+pn6VN9lw5UseYz2FloYVylgIrKzvfPtThe6nkhvdqmg==}
     hasBin: true
     peerDependencies:
       ts-node: ^10.9.2
@@ -1164,7 +1163,7 @@ snapshots:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63
 
-  subjektify@0.0.21(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5):
+  subjektify@0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
       chalk: 4.1.2
       enquirer: 2.4.1

@@ -19,8 +19,8 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "peerDependencies": {
-        "subjektify": "^0.0.21",
-        "subjekt": "^0.0.4"
+        "subjekt": "^0.0.4",
+        "subjektify": "^0.0.23"
     },
     "devDependencies": {
         "@types/node": "^20.12.13",
@@ -30,6 +30,7 @@
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
         "subjekt": "^0.0.4",
+        "subjektify": "^0.0.23",
         "typescript": "^5.4.5"
     }
 }

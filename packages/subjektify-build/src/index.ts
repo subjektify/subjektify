@@ -1,7 +1,15 @@
-import { Log, task } from "subjektify";
+import { Log, extendEnvironment, task } from "subjektify";
 import { parseSources } from "./parse";
+import { mergeModels } from "./merge";
 
+import "./type-extensions";
+
+// TODO: Remove after adding development environment.
 Log.setVerbose(true);
+
+extendEnvironment((sre) => {
+    sre.model = {};
+});
 
 task("build", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {
 
@@ -16,4 +24,8 @@ task("build", "Builds your Subjekt model and adds the artifacts to the runtime e
     }
 
     const models = await parseSources(config.namespace, sources);
+    const mergedModel = mergeModels(models);
+    sre.model = mergedModel;
+
+    Log.success("Model built successfully.");
 });
