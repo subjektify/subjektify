@@ -1,5 +1,6 @@
-import { SubjektifyConfig, task } from "subjektify";
+import { SubjektifyConfig, extendEnvironment, task } from "subjektify";
 import "@subjektifylabs/subjektify-build";
+import "./src/type-extensions";
 
 const config: SubjektifyConfig = {
     namespace: "testers",
@@ -10,8 +11,13 @@ const config: SubjektifyConfig = {
     ]
 }
 
+extendEnvironment((sre) => {
+    sre.example = "Hello, Worldfjglkjdshjflk;gjsdl;kfjglk;td!";
+    console.log("Environment extended!");
+});
+
 task("test", "Hello, World", async (_, sre) => {
-    console.log("Hello, World!");
+    console.log(sre.example);
 });
 
 export default config;

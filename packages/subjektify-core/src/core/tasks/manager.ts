@@ -75,5 +75,4 @@ export class TaskManager {
     private _defaultTaskAction = () => {
         throw new SubjektifyError(ERRORS.TASK.ACTION_NOT_SET);
     }
-
 }

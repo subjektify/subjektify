@@ -1,4 +1,14 @@
-import { ERRORS, SubjektifyConfig, SubjektifyError, SubjektifyRuntimeEnvironment, TaskArguments, TaskIdentifier, TaskMap } from "../../types";
+import {
+    ConfigExtender,
+    ERRORS,
+    EnvironmentExtender,
+    SubjektifyConfig,
+    SubjektifyError,
+    SubjektifyRuntimeEnvironment,
+    TaskArguments,
+    TaskIdentifier,
+    TaskMap
+} from "../../types";
 import { SubjektifyConfigLoader } from "../config";
 import { TaskManager } from "../tasks";
 import { Environment } from "./environment";
@@ -11,12 +21,16 @@ export class SubjektifyContext {
     public taskName?: string;
     public taskArgs?: TaskArguments;
     public taskManager: TaskManager;
+    public configExtenders: ConfigExtender[];
+    public environmentExtenders: EnvironmentExtender[];
 
     private loader: SubjektifyConfigLoader;
 
     private constructor() {
         this.taskManager = new TaskManager();
         this.loader = new SubjektifyConfigLoader();
+        this.configExtenders = [];
+        this.environmentExtenders = [];
     }
 
     public static isCreated(): boolean {
@@ -58,7 +72,7 @@ export class SubjektifyContext {
         }
         const config: SubjektifyConfig = await this.loader.load();
         const tasks: TaskMap = this.taskManager.getTasks();
-        this.environment = new Environment(config, tasks);
+        this.environment = new Environment(config, tasks, this.configExtenders, this.environmentExtenders);
         return Promise.resolve(this.environment);
     }
 }

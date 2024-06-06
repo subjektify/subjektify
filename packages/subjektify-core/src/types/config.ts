@@ -33,3 +33,5 @@ export interface SubjektifyConfig {
      */
     projections?: Map<string, string>;
 }
+
+export type ConfigExtender = (config: SubjektifyConfig) => void;

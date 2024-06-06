@@ -23,8 +23,8 @@ export class SubjektifyConfigLoader {
 
         Log.debug(`Loading config file: ${this.filePath}`);
 
-        // Use ts-node to require TypeScript modules
-        require('ts-node').register();
+        this._loadTsNode();
+
         let userConfig = await this._importCjsOrEsm();
 
         return Promise.resolve(userConfig);
@@ -52,6 +52,19 @@ export class SubjektifyConfigLoader {
             }
             Log.error(`Error loading config file: ${e}`);
             throw new SubjektifyError(ERRORS.CONFIG.LOAD_ERROR);
+        }
+    }
+
+    private _loadTsNode(): void {
+        try {
+            require.resolve('typescript');
+        } catch (e) {
+            throw new SubjektifyError(ERRORS.GENERAL.TYPESCRIPT_NOT_INSTALLED);
+        }
+        try {
+            require('ts-node').register();
+        } catch (e) {
+            throw new SubjektifyError(ERRORS.GENERAL.TS_NODE_NOT_INSTALLED);
         }
     }
 }

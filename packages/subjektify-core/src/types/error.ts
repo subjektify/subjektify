@@ -33,26 +33,34 @@ const GENERAL_ERRORS = {
         code: 'SGE005',
         message: "Subjektify's environment is already created"
     },
+    TYPESCRIPT_NOT_INSTALLED: {
+        code: 'SGE006',
+        message: "typescript is not installed"
+    },
+    TS_NODE_NOT_INSTALLED: {
+        code: 'SGE007',
+        message: "ts-node is not installed"
+    },
 }
 
 const TASK_ERRORS = {
     TASK_NOT_FOUND: {
-        code: 'SGE101',
+        code: 'STE001',
         message: "Task not found"
     },
     ACTION_NOT_SET: {
-        code: 'SGE102',
+        code: 'STE002',
         message: "A task action was run without being set"
     }
 }
 
 const CONFIG_ERRORS = {
     LOAD_ERROR: {
-        code: 'SGE201',
+        code: 'SCE001',
         message: "Error loading config file"
     },
     NO_CONFIG_FILE: {
-        code: 'SGE202',
+        code: 'SCE002',
         message: "No config file found"
     }
 }
