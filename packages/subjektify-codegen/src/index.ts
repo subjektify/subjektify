@@ -1,10 +1,14 @@
-import { Log, SubjektifyRuntimeEnvironment, extendEnvironment, task } from "subjektify";
+import { Log, SubjektifyRuntimeEnvironment, extendConfig, extendEnvironment, task } from "subjektify";
+import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
 
 import "./type-extensions";
-import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
 
 // TODO: Remove after adding development environment.
 Log.setVerbose(true);
+
+extendConfig((config) => {
+    config.codegen = ["codegen"];
+});
 
 extendEnvironment((sre) => {
     sre.model = {};
@@ -12,4 +16,21 @@ extendEnvironment((sre) => {
 
 task("codegen", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {
     await subjektifyBuildTask(_, sre);
+    await subjektifyCodeGenTask(_, sre);
 });
+
+export const subjektifyCodeGenTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
+    Log.info("Generating code from model...");
+
+    const config = sre.config;
+    const model = sre.model;
+
+    if (!model) {
+        Log.warn("No model found to generate code. Exiting...");
+        return;
+    }
+
+    Log.debug(`Generating code for model: ${JSON.stringify(model)}`);
+
+    Log.success("Code generated successfully.");
+}

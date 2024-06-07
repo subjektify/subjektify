@@ -8,7 +8,8 @@ import "./type-extensions";
 Log.setVerbose(true);
 
 extendEnvironment((sre) => {
-    sre.model = {};
+    sre.astModel = {};
+    sre.semanticModel = {};
 });
 
 task("build", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {
@@ -28,7 +29,7 @@ export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRun
 
     const models = await parseSources(config.namespace, sources);
     const mergedModel = mergeModels(models);
-    sre.model = mergedModel;
+    sre.semanticModel = mergedModel;
 
     Log.success("Model built successfully.");
 }

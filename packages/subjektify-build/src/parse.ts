@@ -22,7 +22,7 @@ export const parseSources = async (namespace: string, sources: string[]): Promis
     .reduce((files, filesInPath) => files.concat(filesInPath), [])
     .filter(filePath => filePath.endsWith('.subjekt'))
     .map(filePath => filePath);
-    Log.debug(`Found .subjekt files: ${subjektFiles}`);
+    Log.verbose(`Found .subjekt files: ${subjektFiles}`);
 
     // Build the subjekt model
     const subjektContents = subjektFiles.map(subjektFile => fs.readFileSync(subjektFile, 'utf8'));
