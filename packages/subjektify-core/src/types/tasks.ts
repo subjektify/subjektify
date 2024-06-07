@@ -16,5 +16,5 @@ export interface SubjektifyTask {
 }
 
 export type TaskMap = {
-    [key: TaskIdentifier]: SubjektifyTask;
+    [key: TaskIdentifier]: SubjektifyTask[];
 };

@@ -4,9 +4,6 @@ import { mergeModels } from "./merge";
 
 import "./type-extensions";
 
-// TODO: Remove after adding development environment.
-Log.setVerbose(true);
-
 extendEnvironment((sre) => {
     sre.astModel = {};
     sre.semanticModel = {};

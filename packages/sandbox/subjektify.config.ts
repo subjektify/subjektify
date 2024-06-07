@@ -16,7 +16,7 @@ extendEnvironment((sre) => {
     sre.example = "Hello, World!";
 });
 
-task("test", "Hello, World", async (_, sre) => {
+task("clean", "Hello, World", async (_, sre) => {
     console.log(sre.example);
 });
 

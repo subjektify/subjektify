@@ -16,7 +16,7 @@ export class TaskManager {
         return this.tasks;
     }
 
-    public getTask(name: TaskIdentifier): SubjektifyTask | undefined {
+    public getTasksByName(name: TaskIdentifier): SubjektifyTask[] | undefined {
         return this.tasks[name];
     }
 
@@ -67,7 +67,11 @@ export class TaskManager {
             action: action || this._defaultTaskAction()
         };
 
-        this.tasks[identifier] = taskDefinition;
+        if (this.tasks[identifier]) {
+            this.tasks[identifier].push(taskDefinition);
+        } else {
+            this.tasks[identifier] = [taskDefinition];
+        }
 
         return taskDefinition;
     }

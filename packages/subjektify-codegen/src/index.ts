@@ -3,9 +3,6 @@ import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
 
 import "./type-extensions";
 
-// TODO: Remove after adding development environment.
-Log.setVerbose(true);
-
 extendConfig((config) => {
     config.codegen = ["codegen"];
 });

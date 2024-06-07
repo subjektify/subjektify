@@ -7,8 +7,8 @@ async function main() {
     let args = await parseCli();
 
     // Set global logging level
-    args.debug && Log.setDebug(true);
-    args.verbose && Log.setVerbose(true);
+    args.debug && Log.setDebug(args.debug);
+    args.verbose && Log.setVerbose(args.verbose);
 
     // Run the command
     return run(args);

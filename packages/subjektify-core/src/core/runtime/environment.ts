@@ -10,7 +10,6 @@ import {
     TaskArguments,
     TaskMap
 } from "../../types";
-import { Log } from "../../util";
 
 export class Environment implements SubjektifyRuntimeEnvironment {
 
@@ -36,16 +35,17 @@ export class Environment implements SubjektifyRuntimeEnvironment {
     }
 
     run: RunTaskFunction = async (taskIdentifier, taskArguments) => {
-        const task = this.tasks[taskIdentifier];
-        if (!task) {
+        const tasks = this.tasks[taskIdentifier];
+        if (!tasks) {
             throw new SubjektifyError(ERRORS.TASK.TASK_NOT_FOUND)
         }
-        return this._runTaskAction(task, taskArguments);
+        return this._runTaskActions(tasks, taskArguments);
     }
 
-    private _runTaskAction = async (task: SubjektifyTask, taskArguments: TaskArguments): Promise<any> => {
-        Log.verbose(`Running task: ${task.name}`);
-        return task.action(taskArguments, this);
+    private _runTaskActions = async (tasks: SubjektifyTask[], taskArguments: TaskArguments): Promise<any> => {
+        for (const task of tasks) {
+            await task.action(taskArguments, this);
+        }
     }
 
 }
