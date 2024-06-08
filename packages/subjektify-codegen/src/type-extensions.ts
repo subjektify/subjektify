@@ -1,5 +1,5 @@
 import "subjektify/dist/types/config";
-import "subjektify/dist/types/runtime";
+import "@subjektifylabs/subjektify-build/dist/type-extensions";
 
 export enum CodeGenTarget {
     Contract = "contract",

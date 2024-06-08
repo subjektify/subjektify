@@ -1,4 +1,4 @@
-import { Log, SubjektifyRuntimeEnvironment, extendConfig, extendEnvironment, task } from "subjektify";
+import { Log, SubjektifyRuntimeEnvironment, extendConfig, task } from "subjektify";
 import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
 
 import "./type-extensions";
@@ -16,7 +16,7 @@ export const subjektifyCodeGenTask = async (taskArguments: any, sre: SubjektifyR
     Log.info("Generating code from model...");
 
     const config = sre.config;
-    const model = sre.model;
+    const model = sre.model.semantic;
 
     if (!model) {
         Log.warn("No model found to generate code. Exiting...");

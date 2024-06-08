@@ -8,7 +8,7 @@
     "main": "dist/index",
     "scripts": {
         "build": "subjektify build",
-        "clean": "subjektify clean",
+        "clean": "node --version",
         "compile": "subjektify compile",
         "deploy": "subjektify deploy",
         "test": "subjektify test"
