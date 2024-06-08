@@ -4,11 +4,7 @@ import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
 import "./type-extensions";
 
 extendConfig((config) => {
-    config.codegen = ["codegen"];
-});
-
-extendEnvironment((sre) => {
-    sre.model = {};
+    config.codegen = [];
 });
 
 task("codegen", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {

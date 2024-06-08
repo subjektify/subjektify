@@ -1,21 +1,32 @@
-import { SubjektModel } from "subjekt";
 import "subjektify/dist/types/config";
 import "subjektify/dist/types/runtime";
 
+export enum CodeGenTarget {
+    Contract = "contract",
+    Client = "client",
+    Server = "server",
+}
+
+export enum CodeGenLanguage {
+    TypeScript = "typescript",
+    JavaScript = "javascript",
+    Solidity = "solidity"
+}
+
 export interface CodeGenConfig {
-    target: string;
+    target: CodeGenTarget;
+    language: CodeGenLanguage;
 }
 
 declare module "subjektify/dist/types/config" {
 
     export interface SubjektifyConfig {
-        codegen: string[];
+        codegen?: CodeGenConfig[];
     }
 }
 
-declare module "subjektify/dist/types/runtime" {
+declare module "@subjektifylabs/subjektify-build/dist/type-extensions" {
 
     export interface SubjektifyRuntimeEnvironment {
-        model: SubjektModel;
     }
 }
