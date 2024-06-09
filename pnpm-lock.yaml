@@ -27,8 +27,8 @@ importers:
         specifier: workspace:*
         version: link:../subjektify-codegen
       subjektify:
-        specifier: workspace:*
-        version: link:../subjektify-core
+        specifier: 0.0.23
+        version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5

@@ -12,11 +12,9 @@
         "dist"
     ],
     "scripts": {
-        "clean": "rimraf dist",
         "build": "tsc",
-        "test": "mocha",
-        "release:patch": "npm version patch && npm publish",
-        "prepublishOnly": "npm run clean && npm run build"
+        "clean": "rimraf dist",
+        "test": "mocha"
     },
     "peerDependencies": {
         "@subjektifylabs/subjektify-build": "^0.0.5",
