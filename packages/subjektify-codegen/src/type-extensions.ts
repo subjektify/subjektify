@@ -25,8 +25,8 @@ declare module "subjektify/dist/types/config" {
     }
 }
 
-declare module "@subjektifylabs/subjektify-build/dist/type-extensions" {
+/*declare module "@subjektifylabs/subjektify-build/dist/type-extensions" {
 
     export interface SubjektifyRuntimeEnvironment {
     }
-}
+}*/

@@ -1,6 +1,6 @@
 {
     "name": "@subjektifylabs/subjektify-codegen",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "A core tool designed to facilitate the build process the Subjekt model.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
