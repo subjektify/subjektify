@@ -28,8 +28,6 @@ This object contains both the AST model and the semantic model for the Subjekt f
 
 ## Usage
 
-## Configuration
-
 `subjektify-build` is configurable from the `subjektify.config.(js|ts)`. Here’s a basic example of how to use `subjektify-build` to parse and build a Subjekt model:
 
 ```ts title="subjektify.config.ts"
