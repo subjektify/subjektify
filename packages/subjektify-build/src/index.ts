@@ -32,3 +32,5 @@ export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRun
 
     Log.success("Model built successfully.");
 }
+
+export * from "./type-extensions";

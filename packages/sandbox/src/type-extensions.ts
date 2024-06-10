@@ -5,7 +5,7 @@ import "@subjektifylabs/subjektify-codegen/dist/type-extensions"
 /*declare module "@subjektifylabs/subjektify-codegen/dist/type-extensions" {
         export interface SubjektifyConfig {
         }
-}*/
+}*
 
 declare module "subjektify/dist/types/runtime" {
 
@@ -13,3 +13,4 @@ declare module "subjektify/dist/types/runtime" {
         model: string;
     }
 }
+*/

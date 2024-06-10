@@ -1,4 +1,6 @@
-# subjektify-build
+# @subjektifylabs/subjektify-build
+
+[![NPM Version](http://img.shields.io/npm/v/@subjektifylabs/subjektify-build.svg?style=flat)](https://www.npmjs.org/package/@subjektifylabs/subjektify-build)
 
 `subjektify-build` is a core package of the Subjektify toolkit, designed to facilitate the build process the Subjekt model. This package provides tools and utilities to parse, validate, and compile Subjekt model files, ensuring a seamless and efficient build workflow.
 
@@ -12,36 +14,55 @@
 
 `subjektify-build` is already included in the [`subjektify`](https://www.npmjs.com/package/subjektify) package.
 
+## Tasks
+
+```bash
+npx subjektify build
+```
+
+## Environment Extensions
+
+The plugin adds a `model` object to the Subjektify Runtime Environment.
+
+This object contains both the AST model and the semantic model for the Subjekt files configured.
+
 ## Usage
+
+## Configuration
 
 `subjektify-build` is configurable from the `subjektify.config.(js|ts)`. Here’s a basic example of how to use `subjektify-build` to parse and build a Subjekt model:
 
-```typescript
-import { SubjektifyConfig } from "subjektify";
+```ts title="subjektify.config.ts"
+import { SubjektifyConfig } from 'subjektify';
 
-
-const config = {
+const config: SubjektifyConfig = {
     namespace: "my.namespace",
     version: "0.1.0",
     license: "MIT",
-    projections: {
-        myProjection: {
-            transforms: [{
-                name: "excludeShapesByTrait",
-                args: {
-                    traits: ["internal"]
-                }
-            }]
-        }
+    build: {
+        sources: ["subjects"],
+        output: "build",
+        projections: [
+            {
+                abstract: false,
+                transformations: [
+                    {
+                        type: "excludeByTrait",
+                        args: { traits: ["internal"] }
+                    }
+                ]
+            }
+        ]
     }
 };
+
+export default config;
 ```
 
-## Contributing
+## How it Works
 
-We welcome contributions from the community! If you’d like to contribute to `subjektify-build`, please follow these steps:
+1. **Model Parsing**: The build process starts by parsing Subjekt model files from the specified `sources`. These files should be in `.subjekt` format.
+2. **Validation**: Once parsed, the models are validated to ensure they adhere to the expected syntax and semantics.
+3. **Projections and Transformations**: The build configuration allows defining projections and transformations that modify or generate different views of the model. These transformations are applied based on the specified `projections`.
+4. **Output**: Finally, the transformed models are  written to the specified `output` directory.
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix.
-3. Implement your changes and add tests if applicable.
-4. Open a pull request with a detailed description of your changes.
