@@ -1,5 +1,4 @@
 import "subjektify/dist/types/config";
-//import "@subjektifylabs/subjektify-build/dist/type-extensions";
 
 export enum CodeGenTarget {
     Contract = "contract",
@@ -16,6 +15,7 @@ export enum CodeGenLanguage {
 export interface CodeGenConfig {
     target: CodeGenTarget;
     language: CodeGenLanguage;
+    outputDirectory?: string;
 }
 
 declare module "subjektify/dist/types/config" {
@@ -24,9 +24,3 @@ declare module "subjektify/dist/types/config" {
         codegen?: CodeGenConfig[];
     }
 }
-
-/*declare module "@subjektifylabs/subjektify-build/dist/type-extensions" {
-
-    export interface SubjektifyRuntimeEnvironment {
-    }
-}*/

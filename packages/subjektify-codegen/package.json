@@ -17,12 +17,12 @@
         "test": "mocha"
     },
     "peerDependencies": {
-        "@subjektifylabs/subjektify-build": "^0.0.5",
+        "@subjektifylabs/subjektify-build": "^0.0.6",
         "subjekt": "^0.0.4",
         "subjektify": "^0.0.23"
     },
     "devDependencies": {
-        "@subjektifylabs/subjektify-build": "^0.0.5",
+        "@subjektifylabs/subjektify-build": "^0.0.6",
         "@types/node": "^20.12.13",
         "chai": "^5.1.1",
         "mocha": "^10.4.0",

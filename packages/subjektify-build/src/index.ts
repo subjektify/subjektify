@@ -7,7 +7,8 @@ import "./type-extensions";
 extendEnvironment((sre) => {
     sre.model = {
         ast: {},
-        semantic: {}
+        semantic: {},
+        projections: {}
     };
 });
 
