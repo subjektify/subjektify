@@ -17,9 +17,12 @@
         "test": "mocha",
         "prepublishOnly": "pnpm clean && pnpm build"
     },
+    "dependencies": {
+        "hygen": "^6.2.11",
+        "subjekt": "^0.0.4"
+    },
     "peerDependencies": {
         "@subjektifylabs/subjektify-build": "^0.0.7",
-        "subjekt": "^0.0.4",
         "subjektify": "^0.0.23"
     },
     "devDependencies": {
