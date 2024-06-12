@@ -14,7 +14,8 @@
     "scripts": {
         "build": "tsc",
         "clean": "rimraf dist",
-        "test": "mocha"
+        "test": "mocha",
+        "prepublishOnly": "pnpm clean && pnpm build"
     },
     "peerDependencies": {
         "@subjektifylabs/subjektify-build": "^0.0.7",
