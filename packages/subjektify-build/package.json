@@ -1,6 +1,6 @@
 {
     "name": "@subjektifylabs/subjektify-build",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A core tool designed to facilitate the build process the Subjekt model.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
@@ -18,8 +18,10 @@
         "release:patch": "npm version patch && npm publish",
         "prepublishOnly": "npm run clean && npm run build"
     },
+    "dependencies": {
+        "subjekt": "^0.0.4"
+    },
     "peerDependencies": {
-        "subjekt": "^0.0.4",
         "subjektify": "^0.0.23"
     },
     "devDependencies": {

@@ -12,14 +12,15 @@ extendEnvironment((sre) => {
 });
 
 task("build", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (_, sre) => {
-    await subjektifyBuildTask(_, sre);
+    await SubjektifyBuildTask(_, sre);
 });
 
-export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
+export const SubjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
     Log.info("Building model from sources...");
 
     const config = sre.config;
-    const sources = config.sources || [];
+    const buildConfig = config.build || {};
+    const sources = buildConfig.sources || [];
 
     if (sources?.length === 0) {
         Log.warn("No sources found to build. Exiting...");
@@ -28,6 +29,7 @@ export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRun
 
     const models = await parseSources(config.namespace, sources);
     const mergedModel = mergeModels(models);
+
     sre.model.semantic = mergedModel;
 
     Log.success("Model built successfully.");

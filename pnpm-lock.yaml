@@ -34,6 +34,10 @@ importers:
         version: 5.4.5
 
   packages/subjektify-build:
+    dependencies:
+      subjekt:
+        specifier: ^0.0.4
+        version: 0.0.4
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -53,9 +57,6 @@ importers:
       sinon:
         specifier: ^18.0.0
         version: 18.0.0
-      subjekt:
-        specifier: ^0.0.4
-        version: 0.0.4
       subjektify:
         specifier: ^0.0.23
         version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
