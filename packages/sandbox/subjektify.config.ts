@@ -5,12 +5,14 @@ import "@subjektifylabs/subjektify-codegen";
 import { CodeGenLanguage, CodeGenTarget } from "@subjektifylabs/subjektify-codegen/dist/type-extensions";
 
 const config: SubjektifyConfig = {
-    namespace: "testers",
+    namespace: "my.namespace",
     version: "0.0.1",
     license: "MIT",
-    sources: [
-        "subjects"
-    ],
+    build: {
+        sources: [
+            "subjects"
+        ]
+    },
     codegen: [
         {
             target: CodeGenTarget.Client,
