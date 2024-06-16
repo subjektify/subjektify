@@ -16,6 +16,7 @@ export interface CodeGenConfig {
     target: CodeGenTarget;
     language: CodeGenLanguage;
     outputDirectory?: string;
+    version?: string;
 }
 
 declare module "subjektify/dist/types/config" {
