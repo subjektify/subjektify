@@ -1,0 +1,8 @@
+subject Tester {
+    states: [MyString]
+    behaviors: [MyBehavior]
+}
+
+behavior MyBehavior
+
+string MyString
