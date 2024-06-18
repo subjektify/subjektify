@@ -1,6 +1,6 @@
 {
     "name": "subjektify",
-    "version": "0.0.23",
+    "version": "0.0.24",
     "description": "Decentralized applications development environment for professionals",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
@@ -40,8 +40,16 @@
         "yargs": "^17.7.2"
     },
     "peerDependencies": {
-        "ts-node": "^10.9.2",
-        "typescript": "^5.4.5"
+        "ts-node": "*",
+        "typescript": "*"
+    },
+    "peerDependenciesMeta": {
+        "ts-node": {
+            "optional": true
+        },
+        "typescript": {
+            "optional": true
+        }
     },
     "devDependencies": {
         "@types/node": "^20.12.13",

@@ -38,6 +38,6 @@ export const run = async (args: any): Promise<void> => {
         return Promise.reject(new SubjektifyError(ERRORS.GENERAL.NOT_IN_NAMESPACE));
     }
 
-    const ctx = await SubjektifyContext.create(command, commandArgs);
+    const ctx = SubjektifyContext.create(command, commandArgs);
     await ctx.environment?.run(command, commandArgs);
 }

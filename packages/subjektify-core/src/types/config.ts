@@ -11,27 +11,30 @@ export interface SubjektifyConfig {
     /**
      * Version of the namespace, following Semantic Versioning (semver).
      */
-    version: string;
+    version?: string;
 
     /**
      * SPDX license identifier for the namespace.
      */
-    license: string;
+    license?: string;
 
     /**
-     * List of relative files or directories that contain Subjekt models.
+     * Homepage URL for the namespace.
      */
-    sources?: string[];
+    homepage?: string;
 
     /**
-     * The location where project artifacts will be written.
+     * Description of the namespace.
      */
-    outputDirectory?: string;
+    description?: string;
 
     /**
-     * A map of projections to be applied to the Subjekt model.
+     * Keywords for the namespace.
      */
-    projections?: Map<string, string>;
+    keywords?: string[];
 }
 
+/**
+ * Configuration extensions for Subjektify.
+ */
 export type ConfigExtender = (config: SubjektifyConfig) => void;

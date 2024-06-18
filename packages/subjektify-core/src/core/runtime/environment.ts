@@ -10,6 +10,7 @@ import {
     TaskArguments,
     TaskMap
 } from "../../types";
+import { getVersion } from "./version";
 
 export class Environment implements SubjektifyRuntimeEnvironment {
 
@@ -28,7 +29,7 @@ export class Environment implements SubjektifyRuntimeEnvironment {
     ) {
         this.config = config;
         this.tasks = tasks;
-        this.version = "0.0.1";
+        this.version = getVersion();
 
         configExtenders.forEach(extender => extender(this.config));
         environmentExtenders.forEach(extender => extender(this));
@@ -46,6 +47,6 @@ export class Environment implements SubjektifyRuntimeEnvironment {
         for (const task of tasks) {
             await task.action(taskArguments, this);
         }
+        return;
     }
-
 }

@@ -16,7 +16,7 @@ export class SubjektifyConfigLoader {
         return this.filePath !== "";
     }
 
-    public async load(): Promise<SubjektifyConfig> {
+    public load(): SubjektifyConfig {
         if (!this.configExists()) {
             throw new SubjektifyError(ERRORS.CONFIG.NO_CONFIG_FILE);
         }
@@ -25,9 +25,9 @@ export class SubjektifyConfigLoader {
 
         this._loadTsNode();
 
-        let userConfig = await this._importCjsOrEsm();
+        let userConfig = this._importCjsOrEsm();
 
-        return Promise.resolve(userConfig);
+        return userConfig as SubjektifyConfig;
     }
 
     public resolvePath(): string {
@@ -42,7 +42,7 @@ export class SubjektifyConfigLoader {
         return "";
     }
 
-    private async _importCjsOrEsm(): Promise<any> {
+    private _importCjsOrEsm(): any {
         try {
             const module = require(this.filePath);
             return module.default || module;

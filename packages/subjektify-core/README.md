@@ -15,7 +15,7 @@ npx subjektify init
 
 ## Features
 
-- 🌐 **Protocol-Agnostic**: Build subjekts that are compatible with any decentralized network.
+- 🌐 **Protocol-Agnostic**: Build subjects that are compatible with any decentralized network.
 - 🧬 **Designed to Evolve**: Create modular and extensible subjects that adapt to changing requirements.
 - 📜 **Declarative Code Generation**: Use the Subjekt IDL to automate code generation across multiple languages.
 - 🎉 **Ease of Use**: Intuitive commands and options make it simple to get your project up and running.
