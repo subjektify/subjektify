@@ -1,6 +1,6 @@
 {
     "name": "@subjektifylabs/subjektify-build",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "A core tool designed to facilitate the build process the Subjekt model.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
@@ -21,7 +21,7 @@
         "subjekt": "^0.0.4"
     },
     "peerDependencies": {
-        "subjektify": "^0.0.23"
+        "subjektify": "^0.0.24"
     },
     "devDependencies": {
         "@types/node": "^20.12.13",
@@ -31,7 +31,7 @@
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
         "subjekt": "^0.0.4",
-        "subjektify": "^0.0.23",
+        "subjektify": "^0.0.24",
         "typescript": "^5.4.5"
     }
 }

@@ -17,6 +17,7 @@ export interface Transformation {
 }
 
 export interface Projection {
+    name: string;
     abstract?: boolean;
     imports?: string[];
     transformations?: Transformation[];
