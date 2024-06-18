@@ -148,10 +148,14 @@ importers:
         version: 5.4.5
 
   packages/subjektify-toolbox:
+    dependencies:
+      subjektify:
+        specifier: 0.0.24
+        version: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
     devDependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: workspace:*
-        version: link:../subjektify-build
+        specifier: 0.0.10
+        version: 0.0.10(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))
       '@types/node':
         specifier: ^20.12.13
         version: 20.12.13
@@ -212,6 +216,11 @@ packages:
 
   '@sinonjs/text-encoding@0.7.2':
     resolution: {integrity: sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ==}
+
+  '@subjektifylabs/subjektify-build@0.0.10':
+    resolution: {integrity: sha512-7QK5Wz/BgKfc5+BysmLnL48WvaqMezisitmMJ3kLHoRmXXi/AVLXdQYuslAnxbBNZn4ZwNjG1MG6gj/5JuuYHg==}
+    peerDependencies:
+      subjektify: ^0.0.24
 
   '@subjektifylabs/subjektify-build@0.0.7':
     resolution: {integrity: sha512-vyeWFBvUrh0fASccQXrs+1VNu8ptQ7mRw7IOwZwSR3EG8Sir6sdwEo2hm99usxx7BSoNhMgsYcJaDbWTed/fmQ==}
@@ -1042,6 +1051,11 @@ snapshots:
       type-detect: 4.0.8
 
   '@sinonjs/text-encoding@0.7.2': {}
+
+  '@subjektifylabs/subjektify-build@0.0.10(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))':
+    dependencies:
+      subjekt: 0.0.4
+      subjektify: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
 
   '@subjektifylabs/subjektify-build@0.0.7(subjektify@0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))':
     dependencies:
