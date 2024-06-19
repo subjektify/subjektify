@@ -26,6 +26,7 @@ export interface Projection {
 export interface BuildConfig {
     sources?: string[];
     outputDirectory?: string;
+    includePrelude?: boolean;
     projections?: Projection[];
 }
 
@@ -36,10 +37,15 @@ declare module "subjektify/dist/types/config" {
     }
 }
 
+export interface ProjectionArtifact {
+    ast: ASTModel;
+    semantic: SubjektModel;
+}
+
 export interface SubjektifyModel {
     ast: ASTModel;
     semantic: SubjektModel;
-    projections: Record<string, SubjektModel>;
+    projections: Record<string, ProjectionArtifact>;
 }
 
 declare module "subjektify/dist/types/runtime" {

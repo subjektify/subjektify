@@ -1,7 +1,7 @@
 import { extendEnvironment, task } from "subjektify";
-import { subjektifyBuildTask } from "./build";
+import { subjektifyBuildTask } from "./core/build";
 
-import "./type-extensions";
+import "./core/types";
 
 extendEnvironment((sre) => {
     sre.model = {
@@ -15,4 +15,4 @@ task("build", "Builds your Subjekt model and adds the artifacts to the runtime e
     await subjektifyBuildTask(_, sre);
 });
 
-export * from "./type-extensions";
+export * from "./core/types";

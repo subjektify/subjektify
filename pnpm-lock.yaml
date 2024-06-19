@@ -18,26 +18,11 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
-  packages/sandbox:
-    devDependencies:
-      '@subjektifylabs/subjektify-toolbox':
-        specifier: workspace:*
-        version: link:../subjektify-toolbox
-      subjektify:
-        specifier: 0.0.24
-        version: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
-      ts-node:
-        specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.12.13)(typescript@5.4.5)
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
   packages/subjektify-build:
     dependencies:
       subjekt:
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: ^0.0.5
+        version: 0.0.5
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -871,6 +856,9 @@ packages:
 
   subjekt@0.0.4:
     resolution: {integrity: sha512-ct1S+fs6D6uMW+RQxwKVvoncN2r8SEsjmnCewMIBajaSJlwGPqIxvJZfKjB1Fae2MG6nWMAt0+Dy3JzoR45ZOA==}
+
+  subjekt@0.0.5:
+    resolution: {integrity: sha512-oKhvcby5W29Fo5UzORX5xUldVuICD3rUTpogyZ0CT8pIGs6aZsvZv8PgV2R9RRAZlHcRM6mtdih2gVTPEtgSHw==}
 
   subjektify@0.0.23:
     resolution: {integrity: sha512-qAs8WIimMUqOpZJ8zqy/v8hOnlpIsDeZqoyOTEHONA+pn6VN9lw5UseYz2FloYVylgIrKzvfPtThe6nkhvdqmg==}
@@ -1718,6 +1706,11 @@ snapshots:
   strip-json-comments@3.1.1: {}
 
   subjekt@0.0.4:
+    dependencies:
+      antlr4ts: 0.5.0-alpha.4
+      colorts: 0.1.63
+
+  subjekt@0.0.5:
     dependencies:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63
