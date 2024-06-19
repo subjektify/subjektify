@@ -1,10 +1,16 @@
-import { SubjektModel } from "subjekt";
+import { ASTModel, SubjektModel } from "subjekt";
 
-export const mergeModels = (models: SubjektModel[]): SubjektModel => {
-    // Merge the models
-    const mergedModel = models.reduce((mergedModel, model) => {
-        return mergedModel;
-    });
+export class SubjektifyMerger {
 
-    return mergedModel;
+    public mergeAstModels(models: ASTModel[]): ASTModel {
+        return models.reduce((mergedModel, model) => {
+            return mergedModel;
+        });
+    }
+
+    public mergeSubjektModels(models: SubjektModel[]): SubjektModel {
+        return models.reduce((mergedModel, model) => {
+            return mergedModel;
+        });
+    }
 }

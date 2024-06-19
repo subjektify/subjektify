@@ -1,8 +1,8 @@
 import { Log, SubjektifyRuntimeEnvironment } from "subjektify";
-import { parseSources } from "./parse";
-import { mergeModels } from "./merge";
+import { SubjektifyParser } from "./parse";
+import { SubjektifyMerger } from "./merge";
 
-export const SubjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
+export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRuntimeEnvironment) => {
     Log.info("Building model from sources...");
 
     const config = sre.config;
@@ -10,14 +10,21 @@ export const SubjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRun
     const sources = buildConfig.sources || [];
 
     if (sources?.length === 0) {
-        Log.warn("No sources found to build. Exiting...");
+        Log.warn("No sources found to build. Exiting subjektify-build...");
         return;
     }
 
-    const models = await parseSources(config.namespace, sources);
-    const mergedModel = mergeModels(models);
+    const parser = new SubjektifyParser(config.namespace, sources);
+    const merger = new SubjektifyMerger();
 
-    sre.model.semantic = mergedModel;
+    const astModels = parser.parseAstModels();
+    const subjektModels = parser.parseSubjektModels();
+
+    const mergedAstModel = merger.mergeAstModels(astModels);
+    const mergedSubjektModel = merger.mergeSubjektModels(subjektModels);
+
+    sre.model.ast = mergedAstModel;
+    sre.model.semantic = mergedSubjektModel;
 
     Log.success("Model built successfully.");
 }

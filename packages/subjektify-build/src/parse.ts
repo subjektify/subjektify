@@ -1,32 +1,50 @@
 import fs from "fs";
 import path from "path";
-import { SubjektModel, SubjektParser } from "subjekt"
-import { Log } from "subjektify"
+import { ASTModel, ASTParser, SubjektModel, SubjektParser } from "subjekt"
 
-export const parseSources = async (namespace: string, sources: string[]): Promise<SubjektModel[]> => {
+export class SubjektifyParser {
 
-    const parser = new SubjektParser();
+    private _namespace: string;
+    private _sources: string[];
+    private _astParser: ASTParser;
+    private _subjektParser: SubjektParser;
 
-    // Resolve sources directories
-    const sourcesPaths = sources
-        .map(source => path.join(process.cwd(), source))
-        .filter(sourcePath => fs.statSync(sourcePath).isDirectory());
-    Log.debug(`Building for sources: ${sourcesPaths}`);
+    constructor(namespace: string, sources: string[]) {
+        this._namespace = namespace;
+        this._sources = sources;
+        this._astParser = new ASTParser();
+        this._subjektParser = new SubjektParser();
+    }
 
-    // Resolve .subjekt files
-    const subjektFiles = sourcesPaths
-    .map(sourcePath => {
-        const filesInPath = fs.readdirSync(sourcePath);
-        return filesInPath.map(fileName => path.join(sourcePath, fileName));
-    })
-    .reduce((files, filesInPath) => files.concat(filesInPath), [])
-    .filter(filePath => filePath.endsWith('.subjekt'))
-    .map(filePath => filePath);
-    Log.verbose(`Found .subjekt files: ${subjektFiles}`);
+    public parseAstModels(): ASTModel[] {
+        return this._readSubjektFiles()
+            .map(subjektFile => this._astParser.parse(this._namespace, subjektFile));
+    }
 
-    // Build the subjekt model
-    const subjektContents = subjektFiles.map(subjektFile => fs.readFileSync(subjektFile, 'utf8'));
-    const models = subjektContents.map(subjektFile => parser.parse(namespace, subjektFile));
+    public parseSubjektModels(): SubjektModel[] {
+        return this._readSubjektFiles()
+            .map(subjektFile => this._subjektParser.parse(this._namespace, subjektFile));
+    }
 
-    return models;
+    private _readSubjektFiles(): string[] {
+        return this._resolveSubjektFiles()
+            .map(filePath => fs.readFileSync(filePath, 'utf8'));
+    }
+
+    private _resolveSubjektFiles(): string[] {
+        return this._resolvePaths()
+            .map(sourcePath => {
+                const filesInPath = fs.readdirSync(sourcePath);
+                return filesInPath.map(fileName => path.join(sourcePath, fileName));
+            })
+            .reduce((files, filesInPath) => files.concat(filesInPath), [])
+            .filter(filePath => filePath.endsWith('.subjekt'))
+            .map(filePath => filePath);
+    }
+
+    private _resolvePaths(): string[] {
+        return this._sources
+            .map(source => path.join(process.cwd(), source))
+            .filter(sourcePath => fs.statSync(sourcePath).isDirectory());
+    }
 }

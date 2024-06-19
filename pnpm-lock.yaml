@@ -20,15 +20,15 @@ importers:
 
   packages/sandbox:
     devDependencies:
-      '@subjektifylabs/subjektify-build':
+      '@subjektifylabs/subjektify-toolbox':
         specifier: workspace:*
-        version: link:../subjektify-build
-      '@subjektifylabs/subjektify-codegen':
-        specifier: workspace:*
-        version: link:../subjektify-codegen
+        version: link:../subjektify-toolbox
       subjektify:
-        specifier: 0.0.23
-        version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+        specifier: 0.0.24
+        version: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@20.12.13)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5

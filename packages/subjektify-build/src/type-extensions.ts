@@ -26,7 +26,6 @@ export interface Projection {
 export interface BuildConfig {
     sources?: string[];
     outputDirectory?: string;
-    includePrelude?: boolean;
     projections?: Projection[];
 }
 
