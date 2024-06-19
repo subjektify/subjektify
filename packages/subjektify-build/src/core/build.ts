@@ -31,12 +31,17 @@ export const subjektifyBuildTask = async (taskArguments: any, sre: SubjektifyRun
     const projectedAstModels = projectionApplier.projectAstModel(mergedAstModel);
     const projectedModels = projectionApplier.apply(mergedSemanticModel);
 
-    sre.model.ast = mergedAstModel;
-    sre.model.semantic = mergedSemanticModel;
-    sre.model.projections = projectedModels;
+    Log.verbose(`Merged AST model:  ${JSON.stringify(mergedAstModel)}`);
+    Log.verbose(`Merged semantic model: ${JSON.stringify(mergedSemanticModel)}`);
+
+    sre.model = {
+        ast: mergedAstModel,
+        semantic: mergedSemanticModel,
+        projections: projectedModels
+    };
 
     if (outputDirectory) {
-        Log.info(`Writing ast model to output directory: ${outputDirectory}`);
+        Log.info(`Writing models to output directory: ${outputDirectory}`);
         writer.write(mergedAstModel, projectedAstModels, outputDirectory);
     }
 
