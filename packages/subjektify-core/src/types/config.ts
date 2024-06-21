@@ -19,6 +19,11 @@ export interface SubjektifyConfig {
     license?: string;
 
     /**
+     * Author of the namespace.
+     */
+    author?: string;
+
+    /**
      * Homepage URL for the namespace.
      */
     homepage?: string;

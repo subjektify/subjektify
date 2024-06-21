@@ -49,6 +49,34 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/subjektify-clean:
+    dependencies:
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
+      subjektify:
+        specifier: 0.0.24
+        version: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.12.13
+        version: 20.12.13
+      chai:
+        specifier: ^5.1.1
+        version: 5.1.1
+      mocha:
+        specifier: ^10.4.0
+        version: 10.4.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      sinon:
+        specifier: ^18.0.0
+        version: 18.0.0
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
   packages/subjektify-codegen:
     dependencies:
       hygen:
