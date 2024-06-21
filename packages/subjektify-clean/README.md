@@ -28,7 +28,7 @@ No environment extensions.
 
 ## Usage
 
-You can customize the cleaning process by specifying paths in your `subjektify.config.(js|ts)` file:
+You can customize the cleaning process by specifying paths in your `subjektify.config.ts` file:
 
 ```ts title="subjektify.config.ts"
 import { SubjektifyConfig } from 'subjektify';
