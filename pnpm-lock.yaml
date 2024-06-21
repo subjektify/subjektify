@@ -55,12 +55,12 @@ importers:
         specifier: ^6.2.11
         version: 6.2.11
       subjekt:
-        specifier: ^0.0.4
-        version: 0.0.4
+        specifier: ^0.0.5
+        version: 0.0.5
     devDependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.7
-        version: 0.0.7(subjektify@0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))
+        specifier: ^0.0.12
+        version: 0.0.12(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))
       '@types/node':
         specifier: ^20.12.13
         version: 20.12.13
@@ -80,8 +80,8 @@ importers:
         specifier: ^18.0.0
         version: 18.0.0
       subjektify:
-        specifier: ^0.0.23
-        version: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+        specifier: ^0.0.24
+        version: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -207,10 +207,10 @@ packages:
     peerDependencies:
       subjektify: ^0.0.24
 
-  '@subjektifylabs/subjektify-build@0.0.7':
-    resolution: {integrity: sha512-vyeWFBvUrh0fASccQXrs+1VNu8ptQ7mRw7IOwZwSR3EG8Sir6sdwEo2hm99usxx7BSoNhMgsYcJaDbWTed/fmQ==}
+  '@subjektifylabs/subjektify-build@0.0.12':
+    resolution: {integrity: sha512-v3TtNdstVHNuwFK9bXETx6XRR2vlOLeHNZlwCTObxhse5BrU981T+lv208TV4JEutKPG8g/3lek85l140xDblg==}
     peerDependencies:
-      subjektify: ^0.0.23
+      subjektify: ^0.0.24
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -854,18 +854,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  subjekt@0.0.4:
-    resolution: {integrity: sha512-ct1S+fs6D6uMW+RQxwKVvoncN2r8SEsjmnCewMIBajaSJlwGPqIxvJZfKjB1Fae2MG6nWMAt0+Dy3JzoR45ZOA==}
-
   subjekt@0.0.5:
     resolution: {integrity: sha512-oKhvcby5W29Fo5UzORX5xUldVuICD3rUTpogyZ0CT8pIGs6aZsvZv8PgV2R9RRAZlHcRM6mtdih2gVTPEtgSHw==}
-
-  subjektify@0.0.23:
-    resolution: {integrity: sha512-qAs8WIimMUqOpZJ8zqy/v8hOnlpIsDeZqoyOTEHONA+pn6VN9lw5UseYz2FloYVylgIrKzvfPtThe6nkhvdqmg==}
-    hasBin: true
-    peerDependencies:
-      ts-node: ^10.9.2
-      typescript: ^5.4.5
 
   subjektify@0.0.24:
     resolution: {integrity: sha512-Bw5NjbaFyWz7+kTwlD5iLZtydFXkHYnL96Q5h/zAbQ9S4go73i6GoVMjmEs8+yFHzjl74nz/wcWLgwEZNB71MQ==}
@@ -1045,10 +1035,10 @@ snapshots:
       subjekt: 0.0.5
       subjektify: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
 
-  '@subjektifylabs/subjektify-build@0.0.7(subjektify@0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))':
+  '@subjektifylabs/subjektify-build@0.0.12(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5))':
     dependencies:
-      subjekt: 0.0.4
-      subjektify: 0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
+      subjekt: 0.0.5
+      subjektify: 0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5)
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -1705,24 +1695,10 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  subjekt@0.0.4:
-    dependencies:
-      antlr4ts: 0.5.0-alpha.4
-      colorts: 0.1.63
-
   subjekt@0.0.5:
     dependencies:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63
-
-  subjektify@0.0.23(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5):
-    dependencies:
-      chalk: 4.1.2
-      enquirer: 2.4.1
-      semver: 7.6.2
-      ts-node: 10.9.2(@types/node@20.12.13)(typescript@5.4.5)
-      typescript: 5.4.5
-      yargs: 17.7.2
 
   subjektify@0.0.24(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
