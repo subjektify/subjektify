@@ -1,4 +1,8 @@
-# Subjektify
+<h1 align="center">
+Subjektify
+</h1>
+
+<p align="center"><img src="./subjektify.png" width="100"></p>
 
 [![NPM Version](http://img.shields.io/npm/v/subjektify.svg?style=flat)](https://www.npmjs.org/package/subjektify)
 [![NPM Downloads](https://img.shields.io/npm/dm/subjektify.svg?style=flat)](https://npmcharts.com/compare/subjektify?minimal=true)
