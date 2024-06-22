@@ -1,1 +1,1 @@
-packages/subjektify-core/README.md
+../packages/subjektify-core/README.md
