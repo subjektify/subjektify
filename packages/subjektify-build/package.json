@@ -30,7 +30,7 @@
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
-        "subjektify": "^0.0.24",
+        "subjektify": "^0.0.26",
         "typescript": "^5.5.2"
     }
 }

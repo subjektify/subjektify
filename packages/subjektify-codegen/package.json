@@ -19,21 +19,21 @@
     },
     "dependencies": {
         "hygen": "^6.2.11",
-        "subjekt": "^0.0.5"
+        "subjekt": "^0.0.6"
     },
     "peerDependencies": {
         "@subjektifylabs/subjektify-build": "^0.0.13",
         "subjektify": "^0.0.24"
     },
     "devDependencies": {
-        "@subjektifylabs/subjektify-build": "^0.0.13",
+        "@subjektifylabs/subjektify-build": "^0.0.15",
         "@types/node": "^20.14.8",
         "chai": "^5.1.1",
         "mocha": "^10.5.1",
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
-        "subjektify": "^0.0.24",
+        "subjektify": "^0.0.26",
         "typescript": "^5.5.2"
     }
 }

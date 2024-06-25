@@ -23,8 +23,8 @@
         "subjektify": "0.0.24"
     },
     "devDependencies": {
-        "@subjektifylabs/subjektify-build": "0.0.13",
-        "@subjektifylabs/subjektify-codegen": "0.0.6",
+        "@subjektifylabs/subjektify-build": "0.0.15",
+        "@subjektifylabs/subjektify-codegen": "0.0.8",
         "@types/node": "^20.14.8",
         "chai": "^5.1.1",
         "mocha": "^10.5.1",
