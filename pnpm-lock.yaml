@@ -21,8 +21,8 @@ importers:
   packages/subjektify-build:
     dependencies:
       subjekt:
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.0.6
+        version: 0.0.6
     devDependencies:
       '@types/node':
         specifier: ^20.12.13
@@ -917,6 +917,9 @@ packages:
   subjekt@0.0.5:
     resolution: {integrity: sha512-oKhvcby5W29Fo5UzORX5xUldVuICD3rUTpogyZ0CT8pIGs6aZsvZv8PgV2R9RRAZlHcRM6mtdih2gVTPEtgSHw==}
 
+  subjekt@0.0.6:
+    resolution: {integrity: sha512-4j2bm9Fq0H1/PmOCblEVc0iwvOokxEh46wNgB8spwkQaTU4JxL528ldrwsXoPIA+wqm6qpNyfBoTsG3TisySFg==}
+
   subjektify@0.0.24:
     resolution: {integrity: sha512-Bw5NjbaFyWz7+kTwlD5iLZtydFXkHYnL96Q5h/zAbQ9S4go73i6GoVMjmEs8+yFHzjl74nz/wcWLgwEZNB71MQ==}
     hasBin: true
@@ -1760,6 +1763,11 @@ snapshots:
   strip-json-comments@3.1.1: {}
 
   subjekt@0.0.5:
+    dependencies:
+      antlr4ts: 0.5.0-alpha.4
+      colorts: 0.1.63
+
+  subjekt@0.0.6:
     dependencies:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63
