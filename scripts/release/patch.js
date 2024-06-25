@@ -6,8 +6,8 @@ const packages = [
     "subjektify-build",
     "subjektify-clean",
     "subjektify-codegen",
-    "subjektify-publish",
-    "subjektify-watch",
+    //"subjektify-publish",
+    //"subjektify-watch",
     "subjektify-toolbox",
 ];
 
