@@ -1,6 +1,6 @@
 {
     "name": "@subjektifylabs/subjektify-clean",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Clear the cache and delete all the generated artifacts.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
