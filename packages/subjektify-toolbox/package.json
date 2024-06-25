@@ -18,13 +18,11 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "peerDependencies": {
-        "@subjektifylabs/subjektify-build": "0.0.13",
-        "@subjektifylabs/subjektify-codegen": "0.0.6",
-        "subjektify": "0.0.24"
+        "@subjektifylabs/subjektify-build": "^0.0.13",
+        "@subjektifylabs/subjektify-codegen": "^0.0.6",
+        "subjektify": "^0.0.24"
     },
     "devDependencies": {
-        "@subjektifylabs/subjektify-build": "0.0.17",
-        "@subjektifylabs/subjektify-codegen": "0.0.9",
         "@types/node": "^20.14.8",
         "chai": "^5.1.1",
         "mocha": "^10.5.1",

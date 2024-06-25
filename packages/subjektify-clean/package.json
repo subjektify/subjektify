@@ -21,7 +21,7 @@
         "rimraf": "^5.0.7"
     },
     "peerDependencies": {
-        "subjektify": "0.0.24"
+        "subjektify": "^0.0.24"
     },
     "devDependencies": {
         "@types/node": "^20.14.8",
