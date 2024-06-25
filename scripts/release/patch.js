@@ -18,7 +18,7 @@ function sleep(s) {
 const updateDependencies = (pkg) => {
     console.log(`Updating dependencies for ${pkg}...`);
     try {
-        execSync(`pnpm update --latest`, {
+        execSync(`pnpm update "subjektify" "@subjektifylabs/" --latest`, {
             stdio: 'inherit',
             cwd: path.resolve(process.cwd(), `packages`, pkg)
         });
