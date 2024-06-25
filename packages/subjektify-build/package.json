@@ -1,6 +1,6 @@
 {
     "name": "@subjektifylabs/subjektify-build",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "description": "A core tool designed to facilitate the build process the Subjekt model.",
     "author": "Subjektify Labs",
     "license": "Apache-2.0",
@@ -30,7 +30,7 @@
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
-        "subjektify": "^0.0.26",
+        "subjektify": "^0.0.27",
         "typescript": "^5.5.2"
     }
 }
