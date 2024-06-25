@@ -87,8 +87,8 @@ importers:
         version: 0.0.6
     devDependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.15
-        version: 0.0.15(subjektify@0.0.27(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
+        specifier: ^0.0.17
+        version: 0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
       '@types/node':
         specifier: ^20.14.8
         version: 20.14.8
@@ -108,8 +108,8 @@ importers:
         specifier: ^18.0.0
         version: 18.0.0
       subjektify:
-        specifier: ^0.0.27
-        version: 0.0.27(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        specifier: ^0.0.30
+        version: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
@@ -265,6 +265,11 @@ packages:
     resolution: {integrity: sha512-8kcdquiTqJfwx5mRtZg4/qsBLiHHSs0OI2O00saijA1sQzM1Y3uXHLBOn/tkzK/7hlScTR02H/bwwMOapBSpxA==}
     peerDependencies:
       subjektify: ^0.0.24
+
+  '@subjektifylabs/subjektify-build@0.0.17':
+    resolution: {integrity: sha512-it5BMto3FYjrlwUdQJsvrYWQdxtlMSbsgNZKfypLeRbVSbTNFz+ZCCz1EmgJotyrztgSkQz3tcSE4MvbZr+KQw==}
+    peerDependencies:
+      subjektify: ^0.0.28
 
   '@subjektifylabs/subjektify-codegen@0.0.8':
     resolution: {integrity: sha512-j03BOkaVEpL4XULF6iOEiXgPhFAebLmwUad4Ss5YaFZItjF1Ab6WAfSMQqA6RPQRo7vM1sbilu3qkNY+ww1JHg==}
@@ -952,18 +957,6 @@ packages:
       typescript:
         optional: true
 
-  subjektify@0.0.27:
-    resolution: {integrity: sha512-1xTWJxOx4Nmtsl28GN4OvPqLiVsFfUKoZIldOpaUXjpZe/5txpdCM/rYmNEhRMUDlslQ/LBYd1V8UrVLFFZtvA==}
-    hasBin: true
-    peerDependencies:
-      ts-node: '*'
-      typescript: '*'
-    peerDependenciesMeta:
-      ts-node:
-        optional: true
-      typescript:
-        optional: true
-
   subjektify@0.0.30:
     resolution: {integrity: sha512-kdxISHqgGYvOQECZib3Cq3u2uaElhW5LpuFjahvRCgieUoe3OSqxKkydEEeJtEP5xlH4hvmkbcDonoBttLaSDg==}
     hasBin: true
@@ -1142,10 +1135,10 @@ snapshots:
       subjekt: 0.0.6
       subjektify: 0.0.24(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
 
-  '@subjektifylabs/subjektify-build@0.0.15(subjektify@0.0.27(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
+  '@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
       subjekt: 0.0.6
-      subjektify: 0.0.27(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+      subjektify: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
 
   '@subjektifylabs/subjektify-codegen@0.0.8(@subjektifylabs/subjektify-build@0.0.15(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.24(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
@@ -1839,16 +1832,6 @@ snapshots:
   subjektify@0.0.24(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
       chalk: 4.1.2
-      enquirer: 2.4.1
-      semver: 7.6.2
-      yargs: 17.7.2
-    optionalDependencies:
-      ts-node: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
-      typescript: 5.5.2
-
-  subjektify@0.0.27(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
-    dependencies:
-      chalk: 5.3.0
       enquirer: 2.4.1
       semver: 7.6.2
       yargs: 17.7.2
