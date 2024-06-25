@@ -56,7 +56,7 @@ importers:
         version: 5.0.7
       subjektify:
         specifier: ^0.0.24
-        version: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.8
@@ -81,7 +81,7 @@ importers:
     dependencies:
       '@subjektifylabs/subjektify-build':
         specifier: ^0.0.13
-        version: 0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
+        version: 0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
       hygen:
         specifier: ^6.2.11
         version: 6.2.11
@@ -90,7 +90,7 @@ importers:
         version: 0.0.6
       subjektify:
         specifier: ^0.0.24
-        version: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.8
@@ -164,13 +164,13 @@ importers:
     dependencies:
       '@subjektifylabs/subjektify-build':
         specifier: ^0.0.13
-        version: 0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
+        version: 0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
       '@subjektifylabs/subjektify-codegen':
         specifier: ^0.0.6
-        version: 0.0.9(@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
+        version: 0.0.9(@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
       subjektify:
         specifier: ^0.0.24
-        version: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.8
@@ -198,7 +198,7 @@ importers:
     dependencies:
       subjektify:
         specifier: ^0.0.24
-        version: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.8
@@ -949,6 +949,18 @@ packages:
       typescript:
         optional: true
 
+  subjektify@0.0.31:
+    resolution: {integrity: sha512-vNetIY80fQVO3Afu8B7gHfhItO7uCCYqA83hRj9SP10N0XtVhCSy09BqlWzUW0NRIJsc8u6Podi5hAgPHsvM/w==}
+    hasBin: true
+    peerDependencies:
+      ts-node: '*'
+      typescript: '*'
+    peerDependenciesMeta:
+      ts-node:
+        optional: true
+      typescript:
+        optional: true
+
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -1110,17 +1122,17 @@ snapshots:
 
   '@sinonjs/text-encoding@0.7.2': {}
 
-  '@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
+  '@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
       subjekt: 0.0.6
-      subjektify: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+      subjektify: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
 
-  '@subjektifylabs/subjektify-codegen@0.0.9(@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
+  '@subjektifylabs/subjektify-codegen@0.0.9(@subjektifylabs/subjektify-build@0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
-      '@subjektifylabs/subjektify-build': 0.0.17(subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
+      '@subjektifylabs/subjektify-build': 0.0.17(subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2))
       hygen: 6.2.11
       subjekt: 0.0.6
-      subjektify: 0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
+      subjektify: 0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -1800,6 +1812,16 @@ snapshots:
       colorts: 0.1.63
 
   subjektify@0.0.30(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
+    dependencies:
+      chalk: 5.3.0
+      enquirer: 2.4.1
+      semver: 7.6.2
+      yargs: 17.7.2
+    optionalDependencies:
+      ts-node: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
+      typescript: 5.5.2
+
+  subjektify@0.0.31(ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
       chalk: 5.3.0
       enquirer: 2.4.1
