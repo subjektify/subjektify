@@ -21,7 +21,7 @@
         "subjekt": "^0.0.6"
     },
     "peerDependencies": {
-        "subjektify": "^0.0.27"
+        "subjektify": "^0.0.28"
     },
     "devDependencies": {
         "@types/node": "^20.14.8",
@@ -30,7 +30,7 @@
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "sinon": "^18.0.0",
-        "subjektify": "^0.0.27",
+        "subjektify": "^0.0.28",
         "typescript": "^5.5.2"
     }
 }
