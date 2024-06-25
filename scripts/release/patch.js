@@ -18,7 +18,10 @@ function sleep(s) {
 const updateDependencies = (pkg) => {
     console.log(`Updating dependencies for ${pkg}...`);
     try {
-        execSync(`pnpm -r update --latest`);
+        execSync(`pnpm update --latest`, {
+            stdio: 'inherit',
+            cwd: path.resolve(process.cwd(), `packages`, pkg)
+        });
     } catch (error) {
         console.error(`Failed to update dependencies for ${pkg}:`, error);
         throw error;
