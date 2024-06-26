@@ -8,9 +8,11 @@
         "clean": "pnpm -r clean",
         "build": "pnpm -r build",
         "release": "pnpm -r publish",
+        "release:minor": "node scripts/release/minor.js",
         "release:patch": "node scripts/release/patch.js"
     },
     "devDependencies": {
+        "chalk": "5.3.0",
         "prettier": "^3.3.2",
         "rimraf": "^5.0.7",
         "typescript": "^5.5.2"
