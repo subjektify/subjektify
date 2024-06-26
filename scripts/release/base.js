@@ -18,7 +18,7 @@ const filters = [
     '@subjektifylabs/*'
 ]
 
-// List of packages to release
+// List of packages to release, in order
 const packages = [
     "subjektify-core",
     "subjektify-build",
