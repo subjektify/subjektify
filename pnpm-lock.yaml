@@ -58,8 +58,8 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7
       subjektify:
-        specifier: ^0.0.35
-        version: 0.0.35(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+        specifier: ^0.0.36
+        version: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.9
