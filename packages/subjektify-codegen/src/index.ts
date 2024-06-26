@@ -1,8 +1,7 @@
 import { Log, SubjektifyConfig, SubjektifyRuntimeEnvironment, TaskArguments, extendConfig, task } from "subjektify";
 import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build/dist/core/build";
 import "@subjektifylabs/subjektify-build/dist/core/types";
-
-import "./types";
+import "./core/types";
 
 extendConfig((config: SubjektifyConfig) => {
     if (!config.codegen) {
@@ -32,4 +31,4 @@ export const SubjektifyCodeGenTask = async (taskArguments: TaskArguments, sre: S
     Log.success("Code generated successfully.");
 }
 
-export * from "./types";
+export * from "./core/types";
