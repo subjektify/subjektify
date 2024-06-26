@@ -11,7 +11,7 @@ export interface SubjektifyConfig {
     /**
      * Version of the namespace, following Semantic Versioning (semver).
      */
-    version?: string;
+    version: string;
 
     /**
      * SPDX license identifier for the namespace.
