@@ -27,8 +27,8 @@ importers:
         specifier: ^0.0.6
         version: 0.0.6
       subjektify:
-        specifier: 0.0.33
-        version: 0.0.33(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+        specifier: ^0.0.35
+        version: 0.0.35(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.9
@@ -967,8 +967,8 @@ packages:
       typescript:
         optional: true
 
-  subjektify@0.0.33:
-    resolution: {integrity: sha512-dQEQV9EuhX6vRXu2z0rQsAGhbmKiIGUkF1iZ5GhxshlmHnmBR2wwT2f9V+8HxNV7AWaIJN0Q5JKQaHu9NEMPeA==}
+  subjektify@0.0.35:
+    resolution: {integrity: sha512-LocSMG7n+pN6SWzcQrSibnFPPsSqtOOzbgoBLz3iCpqaPve9Y0jwYQi2bKXqLg4wgg6Bk2bRwTGYcGE+ldaoFw==}
     hasBin: true
     peerDependencies:
       ts-node: '*'
@@ -1853,7 +1853,7 @@ snapshots:
       ts-node: 10.9.2(@types/node@20.14.9)(typescript@5.5.2)
       typescript: 5.5.2
 
-  subjektify@0.0.33(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2):
+  subjektify@0.0.35(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2):
     dependencies:
       chalk: 5.3.0
       enquirer: 2.4.1
