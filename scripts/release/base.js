@@ -36,6 +36,15 @@ const sleep = (seconds) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const execCommand = (command, cwd) => {
+    if (!cwd) cwd = process.cwd();
+    try {
+        execSync(command, { stdio: 'inherit', cwd });
+    } catch (error) {
+        console.error(`${chalk.red('[ERROR]')} Command failed: ${command}`, error);
+        throw error;
+    }
+};
 
 // pnpm does not update peer dependencies when running `pnpm update`, since we only use peer dependencies in our packages, we need to manually update them
 const updateDependencies = (pkg) => {
@@ -51,67 +60,36 @@ const updateDependencies = (pkg) => {
 
     for (dep of filteredDependencies) {
         const location = locations[dep];
-
         const depPackageJsonPath = path.resolve(process.cwd(), `packages`, location, 'package.json');
         const depPackageJson = JSON.parse(fs.readFileSync(depPackageJsonPath, 'utf8'));
         const depVersion = depPackageJson.version;
-
-        peerDependencies[dep] = depVersion;
+        peerDependencies[dep] = `^${depVersion}`;
     }
 
     packageJson.peerDependencies = peerDependencies;
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
-    try {
-        execSync(`pnpm update`, {
-            stdio: 'inherit',
-            cwd: path.resolve(process.cwd(), `packages`, pkg)
-        });
-    } catch (error) {
-        console.error(`${chalk.red('[ERROR]')} Failed to update dependencies for ${pkg}:`, error);
-        throw error;
-    }
+    execCommand(`pnpm update`, path.resolve(process.cwd(), `packages`, pkg));
     console.log(`${chalk.green('[SUCCESS]')} Dependencies updated for ${pkg}.`);
 }
 
 const incrementVersion = (pkg, type) => {
     console.log(`${chalk.yellow('[DEBUG]')} Incrementing version for ${pkg}...`);
-    try {
-        execSync(`pnpm version ${type}`, {
-            stdio: 'inherit',
-            cwd: path.resolve(process.cwd(), `packages`, pkg)
-        });
-    } catch (error) {
-        console.error(`${chalk.red('[ERROR]')} Failed to increment version for ${pkg}:`, error);
-        throw error;
-    }
+    execCommand(`pnpm version ${type}`, path.resolve(process.cwd(), `packages`, pkg));
     console.log(`${chalk.green('[SUCCESS]')} Version incremented for ${pkg}.`);
 }
 
 const commitChanges = (pkg) => {
     console.log(`${chalk.yellow('[DEBUG]')} Committing changes for ${pkg}...`);
-    try {
-        execSync(`git add .`);
-        execSync(`git commit -m "chore(${pkg}): update dependencies and bump version"`);
-        execSync(`git push`);
-    } catch (error) {
-        console.error(`${chalk.red('[ERROR]')} Failed to commit changes for ${pkg}:`, error);
-        throw error;
-    }
+    execCommand(`git add .`);
+    execCommand(`git commit -m "chore(${pkg}): update dependencies and bump version"`);
+    execCommand(`git push`);
     console.log(`${chalk.green('[SUCCESS]')} Changes committed for ${pkg}.`);
 }
 
 const publishPackage = (pkg) => {
     console.log(`${chalk.yellow('[DEBUG]')} Releasing ${pkg}...`);
-    try {
-        execSync(`pnpm publish`, {
-            stdio: 'inherit',
-            cwd: path.resolve(process.cwd(), `packages`, pkg)
-        });
-    } catch (error) {
-        console.error(`Failed to release ${pkg}:`, error);
-        throw error;
-    }
+    execCommand(`pnpm publish`, path.resolve(process.cwd(), `packages`, pkg));
     console.log(`${pkg} released.`);
 }
 
@@ -122,7 +100,7 @@ const _release = async (pkg, type) => {
     commitChanges(pkg);
     publishPackage(pkg, type);
     console.log(`${chalk.green('[SUCCESS]')} Released ${type} version for ${pkg}`);
-    await sleep(10);
+    await sleep(30);
 }
 
 const release = async (type) => {
