@@ -1,35 +1,35 @@
 {
-    "name": "@subjektifylabs/subjektify-clean",
-    "version": "0.0.5",
-    "description": "Clear the cache and delete all the generated artifacts.",
-    "author": "Subjektify Labs",
-    "license": "Apache-2.0",
-    "homepage": "https://subjektify.dev",
-    "repository": "github:subjektify/subjektify",
-    "main": "dist/index",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "clean": "rimraf dist",
-        "build": "tsc",
-        "test": "mocha",
-        "prepublishOnly": "npm run clean && npm run build"
-    },
-    "dependencies": {
-        "rimraf": "^5.0.7"
-    },
-    "peerDependencies": {
-        "subjektify": "^0.0.24"
-    },
-    "devDependencies": {
-        "@types/node": "^20.14.8",
-        "chai": "^5.1.1",
-        "mocha": "^10.5.1",
-        "prettier": "^3.3.2",
-        "rimraf": "^5.0.7",
-        "sinon": "^18.0.0",
-        "typescript": "^5.5.2"
-    }
+  "name": "@subjektifylabs/subjektify-clean",
+  "version": "0.0.5",
+  "description": "Clear the cache and delete all the generated artifacts.",
+  "author": "Subjektify Labs",
+  "license": "Apache-2.0",
+  "homepage": "https://subjektify.dev",
+  "repository": "github:subjektify/subjektify",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "test": "mocha",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "rimraf": "^5.0.7"
+  },
+  "peerDependencies": {
+    "subjektify": "0.0.32"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "chai": "^5.1.1",
+    "mocha": "^10.5.1",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "sinon": "^18.0.0",
+    "typescript": "^5.5.2"
+  }
 }

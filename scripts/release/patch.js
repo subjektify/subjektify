@@ -1,6 +1,23 @@
-const { execSync } = require('child_process');
-const path = require('path');
+// const { execSync } = require('child_process');
+// const path = require('path');
+const chalk = require("chalk");
+const {
+    release,
+} = require("./base");
 
+const patch = async () => {
+    try {
+        release('patch');
+    } catch (error) {
+        console.error(`${chalk.red('[ERROR]')} Failed to release patch version:`, error);
+    }
+};
+
+(async () => {
+    await patch();
+})();
+
+/*
 const packages = [
     "subjektify-core",
     "subjektify-build",
@@ -85,8 +102,4 @@ const patch = async () => {
     } catch (error) {
         console.error(`Failed to patch packages:`, error);
     }
-};
-
-(async () => {
-    await patch();
-})();
+};*/

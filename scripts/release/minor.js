@@ -1,28 +1,13 @@
 const chalk = require("chalk");
 const {
-    updateDependencies,
-    incrementVersion,
-    commitChanges,
-    releasePackage,
-    packages,
-    sleep
+    release,
 } = require("./base");
-
-const _minor = async (pkg) => {
-    updateDependencies(pkg);
-    incrementVersion(pkg);
-    commitChanges(pkg);
-    releasePackage(pkg);
-}
 
 const minor = async () => {
     try {
-        for (pkg of packages) {
-            _minor(pkg);
-            await sleep(30);
-        }
+        release('minor');
     } catch (error) {
-        console.error(`${chalk.red('[ERROR]')} Failed to patch packages:`, error);
+        console.error(`${chalk.red('[ERROR]')} Failed to release minor version:`, error);
     }
 };
 

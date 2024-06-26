@@ -1,37 +1,37 @@
 {
-    "name": "@subjektifylabs/subjektify-codegen",
-    "version": "0.0.10",
-    "description": "A core tool designed to facilitate the code generation process the Subjekt model.",
-    "author": "Subjektify Labs",
-    "license": "Apache-2.0",
-    "homepage": "https://subjektify.dev",
-    "repository": "github:subjektify/subjektify",
-    "main": "dist/index",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "tsc",
-        "clean": "rimraf dist",
-        "test": "mocha",
-        "prepublishOnly": "pnpm clean && pnpm build"
-    },
-    "dependencies": {
-        "hygen": "^6.2.11",
-        "subjekt": "^0.0.6"
-    },
-    "peerDependencies": {
-        "@subjektifylabs/subjektify-build": "^0.0.13",
-        "subjektify": "^0.0.24"
-    },
-    "devDependencies": {
-        "@types/node": "^20.14.8",
-        "chai": "^5.1.1",
-        "mocha": "^10.5.1",
-        "prettier": "^3.3.2",
-        "rimraf": "^5.0.7",
-        "sinon": "^18.0.0",
-        "typescript": "^5.5.2"
-    }
+  "name": "@subjektifylabs/subjektify-codegen",
+  "version": "0.0.10",
+  "description": "A core tool designed to facilitate the code generation process the Subjekt model.",
+  "author": "Subjektify Labs",
+  "license": "Apache-2.0",
+  "homepage": "https://subjektify.dev",
+  "repository": "github:subjektify/subjektify",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "test": "mocha",
+    "prepublishOnly": "pnpm clean && pnpm build"
+  },
+  "dependencies": {
+    "hygen": "^6.2.11",
+    "subjekt": "^0.0.6"
+  },
+  "peerDependencies": {
+    "@subjektifylabs/subjektify-build": "0.0.19",
+    "subjektify": "0.0.32"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "chai": "^5.1.1",
+    "mocha": "^10.5.1",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "sinon": "^18.0.0",
+    "typescript": "^5.5.2"
+  }
 }
