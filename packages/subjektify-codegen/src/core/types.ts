@@ -1,16 +1,8 @@
 import "subjektify/dist/types/config";
 
-export enum CodeGenTarget {
-    Contract = "contract",
-    Client = "client",
-    Server = "server",
-}
+export type CodeGenTarget = "contract" | "client" | "server";
 
-export enum CodeGenLanguage {
-    TypeScript = "typescript",
-    JavaScript = "javascript",
-    Solidity = "solidity"
-}
+export type CodeGenLanguage = "typescript" | "javascript" | "solidity";
 
 export interface CodeGenConfig {
     target: CodeGenTarget;
