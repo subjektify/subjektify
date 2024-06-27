@@ -85,6 +85,9 @@ importers:
       '@subjektifylabs/subjektify-build':
         specifier: ^0.0.22
         version: 0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+      eta:
+        specifier: ^3.4.0
+        version: 3.4.0
       hygen:
         specifier: ^6.2.11
         version: 6.2.11
@@ -538,6 +541,10 @@ packages:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
     hasBin: true
+
+  eta@3.4.0:
+    resolution: {integrity: sha512-tCsc7WXTjrTx4ZjYLplcqrI3o4mYJ+Z6YspeuGL8tbt/hHoMchwBwtKfwM09svEY86iRapY93vUqQttcNuIO5Q==}
+    engines: {node: '>=6.0.0'}
 
   execa@5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
@@ -1388,6 +1395,8 @@ snapshots:
   escape-string-regexp@4.0.0: {}
 
   esprima@4.0.1: {}
+
+  eta@3.4.0: {}
 
   execa@5.1.1:
     dependencies:

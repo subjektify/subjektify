@@ -1,22 +1,31 @@
-import { execSync } from "child_process";
+import { Eta } from 'eta';
+import fs from 'fs';
+import path from 'path';
 import { SubjektModel } from "subjekt";
 import { Log } from "subjektify";
 
-export const render = (target: string, language: string, outputDirectory: string, model: SubjektModel) => {
+export const render = async (target: string, language: string, outputDirectory: string, model: SubjektModel) => {
     try {
         Log.info(`Rendering template for ${target} in ${language} to ${outputDirectory}...`);
 
-        const context = {
-            model: JSON.stringify(model),
-            target,
-            language,
-        };
+        const templateDir = path.resolve(__dirname, '..', '..', `templates`, target, language);
+        const files = fs.readdirSync(templateDir);
 
-        const hygenCommand = `hygen ${target} ${language} --model '${context.model}' --language ${language} --output ${outputDirectory}`;
-        execSync(hygenCommand, { stdio: 'inherit' });
+        const eta = new Eta({ views: templateDir });
 
-        Log.success(`Template rendered successfully to ${outputDirectory}.`);
+        for (const file of files) {
+            const templatePath = path.join(templateDir, file);
+            const outputFileName = file.replace('.eta', language === 'solidity' ? '.sol' : '.ts');
+            const outputPath = path.join(outputDirectory, outputFileName);
+
+            const templateContent = fs.readFileSync(templatePath, 'utf8');
+            const outputContent = eta.render(templateContent, { model, target, language, outputDirectory });
+
+            fs.writeFileSync(outputPath, outputContent);
+        }
+
+        Log.success(`Templates rendered successfully to ${outputDirectory}.`);
     } catch (error) {
-        Log.error(`Failed to render template for ${target} in ${language}: ${error}`);
+        Log.error(`Failed to render templates for ${target} in ${language}: ${error}`);
     }
 };

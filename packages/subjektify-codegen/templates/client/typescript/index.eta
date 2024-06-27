@@ -1,0 +1,5 @@
+---
+to: <%= it.outputDirectory %>/<%= it.model.name %>Client.ts
+---
+
+<%~ includeFile("ClientClass.eta", it) %>

@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-codegen",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A core tool designed to facilitate the code generation process the Subjekt model.",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -9,7 +9,7 @@
   "main": "dist/index",
   "types": "dist/index.d.ts",
   "files": [
-    "_templates",
+    "templates",
     "dist"
   ],
   "scripts": {
@@ -20,6 +20,7 @@
     "prepublishOnly": "pnpm clean && pnpm build"
   },
   "dependencies": {
+    "eta": "^3.4.0",
     "hygen": "^6.2.11",
     "subjekt": "^0.0.6"
   },

@@ -1,0 +1,15 @@
+pragma solidity ^0.8.0;
+
+contract <%= it.model.name %> {
+    // Define state variables
+    <% it.model.states.forEach(state => { %>
+    <%= state.type %> public <%= state.name %>;
+    <% }) %>
+
+    // Define behaviors
+    <% it.model.behaviors.forEach(behavior => { %>
+    function <%= behavior.name %>(<%= behavior.params.map(param => param.type + ' ' + param.name).join(', ') %>) public {
+        // Add behavior implementation here
+    }
+    <% }) %>
+}
