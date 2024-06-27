@@ -20,9 +20,9 @@ const filters = [
 
 // List of packages to release, in order
 const packages = [
-    "subjektify-core",
-    "subjektify-build",
-    "subjektify-clean",
+    //"subjektify-core",
+    //"subjektify-build",
+    //"subjektify-clean",
     "subjektify-codegen",
     //"subjektify-publish",
     //"subjektify-watch",
