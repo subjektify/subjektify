@@ -14,12 +14,14 @@ export const render = async (target: string, language: string, outputDirectory: 
         const eta = new Eta({ views: templateDir });
 
         for (const file of files) {
-            const templatePath = path.join(templateDir, file);
+            const templateExtension = path.extname(file);
+            if (templateExtension !== '.eta') {
+                continue;
+            }
+            const templateName = path.basename(file, templateExtension);
             const outputFileName = file.replace('.eta', language === 'solidity' ? '.sol' : '.ts');
             const outputPath = path.join(outputDirectory, outputFileName);
-
-            const templateContent = fs.readFileSync(templatePath, 'utf8');
-            const outputContent = eta.render(templateContent, { model, target, language, outputDirectory });
+            const outputContent = eta.render(templateName, { model, target, language, outputDirectory });
 
             fs.writeFileSync(outputPath, outputContent);
         }
