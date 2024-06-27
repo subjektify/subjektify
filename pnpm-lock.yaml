@@ -169,8 +169,8 @@ importers:
         specifier: ^0.0.22
         version: 0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
       '@subjektifylabs/subjektify-codegen':
-        specifier: ^0.0.13
-        version: 0.0.13(@subjektifylabs/subjektify-build@0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+        specifier: ^0.0.14
+        version: 0.0.14(@subjektifylabs/subjektify-build@0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
       subjektify:
         specifier: ^0.0.36
         version: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
@@ -269,8 +269,8 @@ packages:
     peerDependencies:
       subjektify: ^0.0.36
 
-  '@subjektifylabs/subjektify-codegen@0.0.13':
-    resolution: {integrity: sha512-GVA4WT0XdrlzVO6YEabU6+l726WaXnEHofNZg5P7hSinuqCfxASMQGvWwf+BB+mDDr6M2/xRjYVe90wC2ez5zg==}
+  '@subjektifylabs/subjektify-codegen@0.0.14':
+    resolution: {integrity: sha512-dJ/YuAdqbedV/QBBQXebKw1tLJXnBFt+eCUfVATysBQhe+DCiZHhTVi4tFNkR4Al6Jo1uyy6El5UM0jhA70UzA==}
     peerDependencies:
       '@subjektifylabs/subjektify-build': ^0.0.22
       subjektify: ^0.0.36
@@ -1134,7 +1134,7 @@ snapshots:
       subjekt: 0.0.6
       subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
 
-  '@subjektifylabs/subjektify-codegen@0.0.13(@subjektifylabs/subjektify-build@0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))':
+  '@subjektifylabs/subjektify-codegen@0.0.14(@subjektifylabs/subjektify-build@0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
       '@subjektifylabs/subjektify-build': 0.0.22(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
       hygen: 6.2.11
