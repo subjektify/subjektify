@@ -1,4 +1,4 @@
-pragma solidity ^0.8.0;
+pragma solidity <%= it.version %>;
 
 contract <%= it.model.name %> {
     // Define state variables

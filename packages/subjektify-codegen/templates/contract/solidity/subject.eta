@@ -1,0 +1,4 @@
+pragma solidity <%= it.version %>;
+
+contract <%= it.subject.name %> {
+}
