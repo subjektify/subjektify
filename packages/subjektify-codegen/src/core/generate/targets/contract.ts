@@ -1,13 +1,14 @@
-import { SubjektModel } from "subjekt";
 import { CodeGenerator } from "./base";
+import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
 
 export class ContractGenerator extends CodeGenerator {
     extension(): string {
         return '.sol';
     }
-    async generate(model: SubjektModel) {
-        Object.keys(model.shapes || {}).forEach(shape => {
-            console.log(shape);
+    async generate(model: SubjektifyModel) {
+        const shapes = model.semantic.shapes || {};
+        Object.keys(shapes || {}).forEach(shape => {
+            const shapeModel = [shape] || {};
         });
         return Promise.resolve();
     }

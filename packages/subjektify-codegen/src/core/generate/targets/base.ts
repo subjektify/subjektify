@@ -3,6 +3,7 @@ import path from "path";
 import { SubjektModel } from "subjekt";
 import { CodeGenConfig } from "../../types";
 import { Eta } from "eta";
+import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
 
 export abstract class CodeGenerator {
     config: CodeGenConfig;
@@ -13,7 +14,7 @@ export abstract class CodeGenerator {
         this.eta = new Eta({ views: this.templatesDirectory() });
     }
 
-    abstract generate(model: SubjektModel): Promise<void>;
+    abstract generate(model: SubjektifyModel): Promise<void>;
     abstract extension(): string;
 
     templates(): string[] {
