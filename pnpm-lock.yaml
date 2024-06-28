@@ -92,8 +92,8 @@ importers:
         specifier: ^6.2.11
         version: 6.2.11
       subjekt:
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       subjektify:
         specifier: ^0.0.36
         version: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
@@ -950,6 +950,9 @@ packages:
 
   subjekt@0.0.6:
     resolution: {integrity: sha512-4j2bm9Fq0H1/PmOCblEVc0iwvOokxEh46wNgB8spwkQaTU4JxL528ldrwsXoPIA+wqm6qpNyfBoTsG3TisySFg==}
+
+  subjekt@0.0.7:
+    resolution: {integrity: sha512-bBxYCuqltDnFRQnwHMAIdGxqiuYWSyLsyUAgGNLQD5MQOEXzIZki6CIrCNteWc3aKR68Fv3KlEhj9VamVX+g6w==}
 
   subjektify@0.0.24:
     resolution: {integrity: sha512-Bw5NjbaFyWz7+kTwlD5iLZtydFXkHYnL96Q5h/zAbQ9S4go73i6GoVMjmEs8+yFHzjl74nz/wcWLgwEZNB71MQ==}
@@ -1849,6 +1852,11 @@ snapshots:
   strip-json-comments@3.1.1: {}
 
   subjekt@0.0.6:
+    dependencies:
+      antlr4ts: 0.5.0-alpha.4
+      colorts: 0.1.63
+
+  subjekt@0.0.7:
     dependencies:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63

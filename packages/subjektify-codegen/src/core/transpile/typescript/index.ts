@@ -39,11 +39,12 @@ export class TypescriptTranspiler extends CodeTranspiler {
         for (const shapeId of Object.keys(shapes)) {
             const shape = shapes[shapeId];
             const shapeType = shape.type;
+            const shapeName = this._shapeName(shapeId);
 
             if (this._isSimpleShape(shapeType)) {
-                types[shapeId] = shape;
+                types[shapeName] = shape;
             } else if (this._isAggregateShape(shapeType)) {
-                types[shapeId] = shape;
+                types[shapeName] = shape;
             }
         }
 
@@ -61,5 +62,11 @@ export class TypescriptTranspiler extends CodeTranspiler {
 
     private _isAggregateShape(shapeType: string): boolean {
         return ['enum', 'list', 'map', 'structure', 'union'].includes(shapeType);
+    }
+
+    private _shapeName(shapeId: string): string {
+        const [namespace, identifier] = shapeId.split('#');
+        const [identifierStr, memberStr] = identifier.split('$');
+        return identifierStr;
     }
 }

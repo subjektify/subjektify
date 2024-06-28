@@ -1,5 +1,5 @@
 {
     "name": "<%= it.namespace %>",
     "version": "<%= it.version %>",
-    "license": "<%= it.license %>
+    "license": "<%= it.license %>" 
 }
