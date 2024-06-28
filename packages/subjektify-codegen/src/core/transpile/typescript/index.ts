@@ -1,6 +1,7 @@
 import path from "path";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build";
 import { CodeTranspiler } from "../base";
+import { parse } from "../../parse";
 
 export class TypescriptTranspiler extends CodeTranspiler {
 
@@ -26,6 +27,12 @@ export class TypescriptTranspiler extends CodeTranspiler {
         generator.write(path.join(outputDir, 'src', 'index' + this.extension()), indexFile);
 
         // Create model files
+        const parsedModel = parse(model.semantic);
         
+        // Write types
+        const typesFile = generator.eta.render('types.eta', {
+            model: parsedModel
+        });
+        generator.write(path.join(outputDir, 'src', 'types' + this.extension()), typesFile);
     }
 }

@@ -15,5 +15,8 @@ export class ClientGenerator extends CodeGenerator {
             license: this.subjektifyConfig.license,
          });
         this.write(path.join(outputDir, 'package.json'), packageJson);
+
+        // Create the client source code
+        this.transpiler.transpile(model);
     }
 }

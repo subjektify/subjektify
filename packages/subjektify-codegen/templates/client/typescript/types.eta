@@ -1,3 +1,7 @@
-<% types.forEach(function(type){ %>
+<% model.simpleShapes.forEach(function(type){ %>
+export type <%= type.name %> = type.value
+<% }) %>
+
+<% model.aggregateShapes.forEach(function(type){ %>
 export type <%= type.name %> = type.value
 <% }) %>
