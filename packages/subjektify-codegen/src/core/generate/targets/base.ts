@@ -52,7 +52,7 @@ export abstract class CodeGenerator {
     outputDirectory(): string {
         return this.config.outputDirectory ? 
             path.resolve(process.cwd(), this.config.outputDirectory) : 
-            path.resolve(process.cwd(), this.config.target, this.config.version || 'latest');
+            path.resolve(process.cwd(), this.config.target);
     }
 
     mkdir(directory: string) {

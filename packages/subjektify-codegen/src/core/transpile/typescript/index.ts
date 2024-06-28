@@ -1,7 +1,7 @@
 import path from "path";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build";
 import { CodeTranspiler } from "../base";
-import { parse } from "../../parse";
+import { Shapes } from "subjekt";
 
 export class TypescriptTranspiler extends CodeTranspiler {
 
@@ -24,15 +24,42 @@ export class TypescriptTranspiler extends CodeTranspiler {
         const indexFile = generator.eta.render('index.eta', {
             model: model
         });
-        generator.write(path.join(outputDir, 'src', 'index' + this.extension()), indexFile);
+        generator.write(path.join(outputDir, 'src', `index${this.extension()}`), indexFile);
 
-        // Create model files
-        const parsedModel = parse(model.semantic);
-        
-        // Write types
+        // Transpile the model
+        this._transpile(model);
+    }
+
+    private _transpile(model: SubjektifyModel) {
+        const shapes = model.semantic.shapes || {};
+        const generator = this.generator;
+
+        const types: Shapes = {};
+
+        for (const shapeId of Object.keys(shapes)) {
+            const shape = shapes[shapeId];
+            const shapeType = shape.type;
+
+            if (this._isSimpleShape(shapeType)) {
+                types[shapeId] = shape;
+            } else if (this._isAggregateShape(shapeType)) {
+                types[shapeId] = shape;
+            }
+        }
+
+        // Write the types
         const typesFile = generator.eta.render('types.eta', {
-            model: parsedModel
+            types: types
         });
-        generator.write(path.join(outputDir, 'src', 'types' + this.extension()), typesFile);
+        generator.write(path.join(generator.outputDirectory(), 'src', `types${this.extension()}`), typesFile);
+
+    }
+
+    private _isSimpleShape(shapeType: string): boolean {
+        return ['address', 'blob', 'boolean', 'bytes', 'document', 'double', 'int', 'integer', 'string', 'timestamp', 'uint'].includes(shapeType);
+    }
+
+    private _isAggregateShape(shapeType: string): boolean {
+        return ['enum', 'list', 'map', 'structure', 'union'].includes(shapeType);
     }
 }

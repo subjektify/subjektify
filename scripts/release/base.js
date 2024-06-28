@@ -14,6 +14,7 @@ const locations = {
 
 // Filters to match dependencies that need to be updated
 const filters = [
+    'subjekt',
     'subjektify',
     '@subjektifylabs/*'
 ]
