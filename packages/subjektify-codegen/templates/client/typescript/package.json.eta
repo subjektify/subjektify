@@ -1,0 +1,4 @@
+{
+    "name": "<%= it.namespace %>",
+    "version": "<%= it.version %>"
+}

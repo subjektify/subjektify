@@ -8,6 +8,7 @@ export interface CodeGenConfig {
     target: CodeGenTarget;
     language: CodeGenLanguage;
     outputDirectory?: string;
+    packageName?: string;
     version?: string;
 }
 

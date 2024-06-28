@@ -1,21 +1,30 @@
 import fs from "fs";
 import path from "path";
-import { SubjektModel } from "subjekt";
 import { CodeGenConfig } from "../../types";
 import { Eta } from "eta";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
+import { SubjektifyConfig } from "subjektify";
 
 export abstract class CodeGenerator {
     config: CodeGenConfig;
+    subjektifyConfig: SubjektifyConfig;
     eta: Eta;
 
-    constructor(config: CodeGenConfig) {
+    constructor(config: CodeGenConfig, subjektifyConfig: SubjektifyConfig) {
         this.config = config;
+        this.subjektifyConfig = subjektifyConfig;
         this.eta = new Eta({ views: this.templatesDirectory() });
     }
 
     abstract generate(model: SubjektifyModel): Promise<void>;
     abstract extension(): string;
+
+    createOutputDirectory(): string {
+        if (!fs.existsSync(this.outputDirectory())) {
+            fs.mkdirSync(this.outputDirectory(), { recursive: true });
+        }
+        return this.outputDirectory();
+    }
 
     templates(): string[] {
         return fs.readdirSync(this.templatesDirectory())
