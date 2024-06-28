@@ -4,20 +4,23 @@ import { CodeGenConfig } from "../../types";
 import { Eta } from "eta";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
 import { SubjektifyConfig } from "subjektify";
+import { CodeTranspiler, TranspilerFactory } from '../../transpile';
 
 export abstract class CodeGenerator {
+
     config: CodeGenConfig;
     subjektifyConfig: SubjektifyConfig;
     eta: Eta;
+    transpiler: CodeTranspiler;
 
     constructor(config: CodeGenConfig, subjektifyConfig: SubjektifyConfig) {
         this.config = config;
         this.subjektifyConfig = subjektifyConfig;
         this.eta = new Eta({ views: this.templatesDirectory() });
+        this.transpiler = TranspilerFactory.transpiler(this);
     }
 
     abstract generate(model: SubjektifyModel): Promise<void>;
-    abstract extension(): string;
 
     createOutputDirectory(): string {
         if (!fs.existsSync(this.outputDirectory())) {
@@ -50,6 +53,12 @@ export abstract class CodeGenerator {
         return this.config.outputDirectory ? 
             path.resolve(process.cwd(), this.config.outputDirectory) : 
             path.resolve(process.cwd(), this.config.target, this.config.version || 'latest');
+    }
+
+    mkdir(directory: string) {
+        if(!fs.existsSync(directory)) {
+            fs.mkdirSync(directory, { recursive: true });
+        }
     }
 
     write(outputPath: string, outputContent: string) {

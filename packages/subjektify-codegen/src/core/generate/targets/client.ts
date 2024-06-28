@@ -4,10 +4,6 @@ import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/type
 
 export class ClientGenerator extends CodeGenerator {
 
-    extension(): string {
-        return this.config.language == 'typescript' ? '.ts' : '.js';
-    }
-
     async generate(model: SubjektifyModel) {
         
         const outputDir = this.createOutputDirectory();
@@ -16,13 +12,8 @@ export class ClientGenerator extends CodeGenerator {
         const packageJson = this.eta.render('package.json.eta', { 
             namespace: this.config.packageName || this.subjektifyConfig.namespace,
             version: this.subjektifyConfig.version,
+            license: this.subjektifyConfig.license,
          });
         this.write(path.join(outputDir, 'package.json'), packageJson);
-
-        // Create tsconfig.json for TypeScript projects.
-        if (this.config.language == 'typescript') {
-            const tsconfig = this.eta.render('tsconfig.json.eta', {});
-            this.write(path.join(outputDir, 'tsconfig.json'), tsconfig);
-        }
     }
 }
