@@ -2,6 +2,7 @@ import path from "path";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build";
 import { CodeTranspiler } from "../base";
 import { Shapes } from "subjekt";
+import { Log } from "subjektify";
 
 export class TypescriptTranspiler extends CodeTranspiler {
 
@@ -40,6 +41,8 @@ export class TypescriptTranspiler extends CodeTranspiler {
             const shape = shapes[shapeId];
             const shapeType = shape.type;
             const shapeName = this._shapeName(shapeId);
+
+            Log.debug(`Transpiling shape: ${shapeName} of type: ${shapeType}`);
 
             if (this._isSimpleShape(shapeType)) {
                 types[shapeName] = shape;
