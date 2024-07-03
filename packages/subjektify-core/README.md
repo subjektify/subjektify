@@ -11,7 +11,7 @@ Subjektify offers a comprehensive platform that streamlines the process of dApp 
 
 ## Quick Start
 
-You can start a new Subjektify namespace in a snap:
+You can add Subjektify to your project in a snap:
 
 ```bash
 npx subjektify init
