@@ -83,8 +83,8 @@ importers:
   packages/subjektify-codegen:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.23
-        version: 0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+        specifier: ^0.0.24
+        version: 0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))
       eta:
         specifier: ^3.4.0
         version: 3.4.0
@@ -96,29 +96,29 @@ importers:
         version: 0.0.11
       subjektify:
         specifier: ^0.0.36
-        version: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
     devDependencies:
       '@types/node':
-        specifier: ^20.14.9
-        version: 20.14.9
+        specifier: ^20.14.10
+        version: 20.14.10
       chai:
         specifier: ^5.1.1
         version: 5.1.1
       mocha:
-        specifier: ^10.5.2
-        version: 10.5.2
+        specifier: ^10.6.0
+        version: 10.6.0
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
       rimraf:
-        specifier: ^5.0.7
-        version: 5.0.7
+        specifier: ^5.0.8
+        version: 5.0.8
       sinon:
         specifier: ^18.0.0
         version: 18.0.0
       typescript:
-        specifier: ^5.5.2
-        version: 5.5.2
+        specifier: ^5.5.3
+        version: 5.5.3
 
   packages/subjektify-core:
     dependencies:
@@ -269,6 +269,11 @@ packages:
 
   '@subjektifylabs/subjektify-build@0.0.23':
     resolution: {integrity: sha512-GVE9HUgx/+JtNZEpMc7XV9/BORab3vwzfODcMCxMHU8eveayff1io+NM4Es8LyLVyvmHHkqUIcWBaWFBwdMFnw==}
+    peerDependencies:
+      subjektify: ^0.0.36
+
+  '@subjektifylabs/subjektify-build@0.0.24':
+    resolution: {integrity: sha512-ct69Zut9/uZ5UXQTBUWfBaGXuck9wszPMzvJw9rn6XaT197T5VOcTbU53RYxprdGxevDdnc+npb6y8rrhnzn9Q==}
     peerDependencies:
       subjektify: ^0.0.36
 
@@ -1180,6 +1185,11 @@ snapshots:
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+
+  '@subjektifylabs/subjektify-build@0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))':
+    dependencies:
+      subjekt: 0.0.11
+      subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
 
   '@subjektifylabs/subjektify-codegen@0.0.21(@subjektifylabs/subjektify-build@0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))':
     dependencies:
