@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
-import { ASTModel } from "subjekt";
+import { AstModel } from "subjekt";
 
 export class SubjektifyBuildWriter {
 
-    public write(astModel: ASTModel, astProjections: Record<string, ASTModel>, outputDirectory: string) {
+    public write(astModel: AstModel, astProjections: Record<string, AstModel>, outputDirectory: string) {
 
         const absoluteOutputDirectory = path.join(process.cwd(), outputDirectory);
 

@@ -22,7 +22,7 @@
   "dependencies": {
     "eta": "^3.4.0",
     "hygen": "^6.2.11",
-    "subjekt": "^0.0.7"
+    "subjekt": "^0.0.11"
   },
   "peerDependencies": {
     "@subjektifylabs/subjektify-build": "^0.0.22",

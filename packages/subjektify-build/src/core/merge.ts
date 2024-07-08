@@ -1,8 +1,8 @@
-import { ASTModel, SubjektModel } from "subjekt";
+import { AstModel, SubjektModel } from "subjekt";
 
 export class SubjektifyMerger {
 
-    public mergeAstModels(models: ASTModel[]): ASTModel {
+    public mergeAstModels(models: AstModel[]): AstModel {
         return models.reduce((mergedModel, model) => {
             return mergedModel;
         });

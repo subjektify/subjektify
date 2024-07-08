@@ -1,4 +1,4 @@
-import { ASTModel, SubjektModel } from "subjekt";
+import { AstModel, SubjektModel } from "subjekt";
 import { Projection, ProjectionArtifact } from "./types";
 
 export class ProjectionApplier {
@@ -13,7 +13,7 @@ export class ProjectionApplier {
         return {};
     }
 
-    public projectAstModel(model: ASTModel): Record<string, ASTModel> {
+    public projectAstModel(model: AstModel): Record<string, AstModel> {
         return {};
     }
 

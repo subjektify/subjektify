@@ -1,22 +1,22 @@
 import fs from "fs";
 import path from "path";
-import { ASTModel, ASTParser, SubjektModel, SubjektParser } from "subjekt"
+import { AstModel, AstParser, SubjektModel, SubjektParser } from "subjekt"
 
 export class SubjektifyParser {
 
     private _namespace: string;
     private _sources: string[];
-    private _astParser: ASTParser;
+    private _astParser: AstParser;
     private _subjektParser: SubjektParser;
 
     constructor(namespace: string, sources: string[]) {
         this._namespace = namespace;
         this._sources = sources;
-        this._astParser = new ASTParser();
+        this._astParser = new AstParser();
         this._subjektParser = new SubjektParser();
     }
 
-    public parseAstModels(): ASTModel[] {
+    public parseAstModels(): AstModel[] {
         return this._readSubjektFiles()
             .map(subjektFile => this._astParser.parse(this._namespace, subjektFile));
     }

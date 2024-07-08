@@ -1,4 +1,4 @@
-import { ASTModel, SubjektModel } from "subjekt";
+import { AstModel, SubjektModel } from "subjekt";
 import "subjektify/dist/types/config";
 import "subjektify/dist/types/runtime";
 
@@ -38,12 +38,12 @@ declare module "subjektify/dist/types/config" {
 }
 
 export interface ProjectionArtifact {
-    ast: ASTModel;
+    ast: AstModel;
     semantic: SubjektModel;
 }
 
 export interface SubjektifyModel {
-    ast: ASTModel;
+    ast: AstModel;
     semantic: SubjektModel;
     projections: Record<string, ProjectionArtifact>;
 }
