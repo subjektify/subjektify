@@ -169,36 +169,36 @@ importers:
   packages/subjektify-toolbox:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.23
-        version: 0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+        specifier: ^0.0.24
+        version: 0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))
       '@subjektifylabs/subjektify-codegen':
-        specifier: ^0.0.21
-        version: 0.0.21(@subjektifylabs/subjektify-build@0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+        specifier: ^0.0.22
+        version: 0.0.22(@subjektifylabs/subjektify-build@0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))
       subjektify:
         specifier: ^0.0.36
-        version: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+        version: 0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
     devDependencies:
       '@types/node':
-        specifier: ^20.14.9
-        version: 20.14.9
+        specifier: ^20.14.10
+        version: 20.14.10
       chai:
         specifier: ^5.1.1
         version: 5.1.1
       mocha:
-        specifier: ^10.5.2
-        version: 10.5.2
+        specifier: ^10.6.0
+        version: 10.6.0
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
       rimraf:
-        specifier: ^5.0.7
-        version: 5.0.7
+        specifier: ^5.0.8
+        version: 5.0.8
       sinon:
         specifier: ^18.0.0
         version: 18.0.0
       typescript:
-        specifier: ^5.5.2
-        version: 5.5.2
+        specifier: ^5.5.3
+        version: 5.5.3
 
   packages/subjektify-watch:
     dependencies:
@@ -267,20 +267,15 @@ packages:
   '@sinonjs/text-encoding@0.7.2':
     resolution: {integrity: sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ==}
 
-  '@subjektifylabs/subjektify-build@0.0.23':
-    resolution: {integrity: sha512-GVE9HUgx/+JtNZEpMc7XV9/BORab3vwzfODcMCxMHU8eveayff1io+NM4Es8LyLVyvmHHkqUIcWBaWFBwdMFnw==}
-    peerDependencies:
-      subjektify: ^0.0.36
-
   '@subjektifylabs/subjektify-build@0.0.24':
     resolution: {integrity: sha512-ct69Zut9/uZ5UXQTBUWfBaGXuck9wszPMzvJw9rn6XaT197T5VOcTbU53RYxprdGxevDdnc+npb6y8rrhnzn9Q==}
     peerDependencies:
       subjektify: ^0.0.36
 
-  '@subjektifylabs/subjektify-codegen@0.0.21':
-    resolution: {integrity: sha512-1FpklkKwNiQobd/0Vpl2KL9TrJqjRCfSsvQI65D1IeY+hwFb3se8TYuI/sIYmVE/JBnPiyrl+clAtk1HoqM4Tw==}
+  '@subjektifylabs/subjektify-codegen@0.0.22':
+    resolution: {integrity: sha512-RJxhBcqy9cE6DKlcajPJxbAwXZXvHjf8buPKp8DOE0jUBFus468nfN5YjnhNX8dv8fwmbyZHD1jY5HhyR9onZA==}
     peerDependencies:
-      '@subjektifylabs/subjektify-build': ^0.0.22
+      '@subjektifylabs/subjektify-build': ^0.0.24
       subjektify: ^0.0.36
 
   '@tsconfig/node10@1.0.11':
@@ -792,11 +787,6 @@ packages:
     engines: {node: '>= 14.0.0'}
     hasBin: true
 
-  mocha@10.5.2:
-    resolution: {integrity: sha512-9btlN3JKCefPf+vKd/kcKz2SXxi12z6JswkGfaAF0saQvnsqLJk504ZmbxhSoENge08E9dsymozKgFMTl5PQsA==}
-    engines: {node: '>= 14.0.0'}
-    hasBin: true
-
   mocha@10.6.0:
     resolution: {integrity: sha512-hxjt4+EEB0SA0ZDygSS015t65lJw/I2yRCS3Ae+SJ5FrbzrXgfYwJr96f0OvIXdj7h4lv/vLCrH3rkiuizFSvw==}
     engines: {node: '>= 14.0.0'}
@@ -980,9 +970,6 @@ packages:
 
   subjekt@0.0.11:
     resolution: {integrity: sha512-+sQv0ouExfJThVoxTytl9XD91B3OAlctOBtjNfaGwp33peaWV30RJm1ZbEFCMQQ3pBqj80XIP7Li1YWvPOsQ8Q==}
-
-  subjekt@0.0.7:
-    resolution: {integrity: sha512-bBxYCuqltDnFRQnwHMAIdGxqiuYWSyLsyUAgGNLQD5MQOEXzIZki6CIrCNteWc3aKR68Fv3KlEhj9VamVX+g6w==}
 
   subjektify@0.0.24:
     resolution: {integrity: sha512-Bw5NjbaFyWz7+kTwlD5iLZtydFXkHYnL96Q5h/zAbQ9S4go73i6GoVMjmEs8+yFHzjl74nz/wcWLgwEZNB71MQ==}
@@ -1181,23 +1168,18 @@ snapshots:
 
   '@sinonjs/text-encoding@0.7.2': {}
 
-  '@subjektifylabs/subjektify-build@0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))':
-    dependencies:
-      subjekt: 0.0.11
-      subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
-
   '@subjektifylabs/subjektify-build@0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))':
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
 
-  '@subjektifylabs/subjektify-codegen@0.0.21(@subjektifylabs/subjektify-build@0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))':
+  '@subjektifylabs/subjektify-codegen@0.0.22(@subjektifylabs/subjektify-build@0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)))(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))':
     dependencies:
-      '@subjektifylabs/subjektify-build': 0.0.23(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2))
+      '@subjektifylabs/subjektify-build': 0.0.24(subjektify@0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3))
       eta: 3.4.0
       hygen: 6.2.11
-      subjekt: 0.0.7
-      subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.9)(typescript@5.5.2))(typescript@5.5.2)
+      subjekt: 0.0.11
+      subjektify: 0.0.36(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -1723,29 +1705,6 @@ snapshots:
       yargs-parser: 20.2.4
       yargs-unparser: 2.0.0
 
-  mocha@10.5.2:
-    dependencies:
-      ansi-colors: 4.1.1
-      browser-stdout: 1.3.1
-      chokidar: 3.6.0
-      debug: 4.3.4(supports-color@8.1.1)
-      diff: 5.0.0
-      escape-string-regexp: 4.0.0
-      find-up: 5.0.0
-      glob: 8.1.0
-      he: 1.2.0
-      js-yaml: 4.1.0
-      log-symbols: 4.1.0
-      minimatch: 5.0.1
-      ms: 2.1.3
-      serialize-javascript: 6.0.0
-      strip-json-comments: 3.1.1
-      supports-color: 8.1.1
-      workerpool: 6.2.1
-      yargs: 16.2.0
-      yargs-parser: 20.2.4
-      yargs-unparser: 2.0.0
-
   mocha@10.6.0:
     dependencies:
       ansi-colors: 4.1.3
@@ -1951,11 +1910,6 @@ snapshots:
   strip-json-comments@3.1.1: {}
 
   subjekt@0.0.11:
-    dependencies:
-      antlr4ts: 0.5.0-alpha.4
-      colorts: 0.1.63
-
-  subjekt@0.0.7:
     dependencies:
       antlr4ts: 0.5.0-alpha.4
       colorts: 0.1.63
