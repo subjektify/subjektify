@@ -55,6 +55,7 @@ export class TypescriptTranspiler extends CodeTranspiler {
         const typesFile = generator.eta.render('types.eta', {
             types: types
         });
+        Log.verbose(`Writing types file:\n${typesFile}`);
         generator.write(path.join(generator.outputDirectory(), 'src', `types${this.extension()}`), typesFile);
 
     }
