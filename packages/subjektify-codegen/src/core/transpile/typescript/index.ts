@@ -1,13 +1,12 @@
 import path from "path";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build";
 import { CodeTranspiler } from "../base";
-import { Shapes } from "subjekt";
 import { Log } from "subjektify";
 
 export class TypescriptTranspiler extends CodeTranspiler {
 
     extension(): string {
-        return '.ts';
+        return 'ts';
     }
 
     async transpile(model: SubjektifyModel) {
@@ -25,7 +24,7 @@ export class TypescriptTranspiler extends CodeTranspiler {
         const indexFile = generator.eta.render('index.eta', {
             model: model
         });
-        generator.write(path.join(outputDir, 'src', `index${this.extension()}`), indexFile);
+        generator.write(path.join(outputDir, 'src', `index.${this.extension()}`), indexFile);
 
         // Transpile the model
         this._transpile(model);
@@ -56,7 +55,7 @@ export class TypescriptTranspiler extends CodeTranspiler {
             types
         });
         Log.verbose(`Writing types file:\n${typesFile}`);
-        generator.write(path.join(generator.outputDirectory(), 'src', `types${this.extension()}`), typesFile);
+        generator.write(path.join(generator.outputDirectory(), 'src', `types.${this.extension()}`), typesFile);
 
     }
 
