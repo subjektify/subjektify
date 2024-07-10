@@ -35,7 +35,7 @@ export class TypescriptTranspiler extends CodeTranspiler {
         const shapes = model.semantic.shapes || {};
         const generator = this.generator;
 
-        const types: Shapes = {};
+        const types: { [key: string]: string } = {};
 
         for (const shapeId of Object.keys(shapes)) {
             const shape = shapes[shapeId];
@@ -45,15 +45,15 @@ export class TypescriptTranspiler extends CodeTranspiler {
             Log.debug(`Transpiling shape: ${shapeName} of type: ${shapeType}`);
 
             if (this._isSimpleShape(shapeType)) {
-                types[shapeName] = shape;
+                types[shapeName] = shapeType;
             } else if (this._isAggregateShape(shapeType)) {
-                types[shapeName] = shape;
+                types[shapeName] = shapeType;
             }
         }
 
         // Write the types
         const typesFile = generator.eta.render('types.eta', {
-            types: types
+            types
         });
         Log.verbose(`Writing types file:\n${typesFile}`);
         generator.write(path.join(generator.outputDirectory(), 'src', `types${this.extension()}`), typesFile);
