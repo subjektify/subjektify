@@ -1,4 +1,8 @@
-import { Log, SubjektifyConfig, SubjektifyRuntimeEnvironment, TaskArguments, extendConfig, task } from "subjektify";
+/**
+ * Copyright (c) 2024 Subjektify Labs Ltd.
+ */
+
+import { SubjektifyConfig, SubjektifyRuntimeEnvironment, TaskArguments, extendConfig, task } from "subjektify";
 import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build/dist/core/build";
 import "@subjektifylabs/subjektify-build/dist/core/types";
 import { subjektifyCodeGenTask } from "./core/codegen";
@@ -8,7 +12,6 @@ extendConfig((config: SubjektifyConfig) => {
     if (!config.codegen) {
         config.codegen = [];
     }
-    Log.verbose(`Extending config with codegen: ${JSON.stringify(config.codegen)}`);
 });
 
 task("codegen", "Builds your Subjekt model and adds the artifacts to the runtime environment", async (taskArguments: TaskArguments, sre: SubjektifyRuntimeEnvironment) => {
