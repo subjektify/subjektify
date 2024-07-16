@@ -1,1 +1,1 @@
-export * from './solidity';
+export * from "./solidity";

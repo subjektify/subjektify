@@ -2,13 +2,12 @@ import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/type
 import { CodeGenerator } from "../generate/targets";
 
 export abstract class CodeTranspiler {
+  generator: CodeGenerator;
 
-    generator: CodeGenerator;
+  constructor(generator: CodeGenerator) {
+    this.generator = generator;
+  }
 
-    constructor(generator: CodeGenerator) {
-        this.generator = generator;
-    }
-
-    abstract extension(): string;
-    abstract transpile(model: SubjektifyModel): Promise<void>;
+  abstract extension(): string;
+  abstract transpile(model: SubjektifyModel): Promise<void>;
 }

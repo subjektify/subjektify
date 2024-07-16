@@ -1,12 +1,11 @@
 import "subjektify/dist/types/config";
 
 export interface WatchConfig {
-    paths?: string[];
+  paths?: string[];
 }
 
 declare module "subjektify/dist/types/config" {
-
-    export interface SubjektifyConfig {
-        watch?: WatchConfig;
-    }
+  export interface SubjektifyConfig {
+    watch?: WatchConfig;
+  }
 }

@@ -6,7 +6,5 @@ import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/type
 import { CodeTranspiler } from "../../../def";
 
 export class TypescriptClientTranspiler extends CodeTranspiler {
-    
-    async transpile(model: SubjektifyModel) {
-    }
+  async transpile(model: SubjektifyModel) {}
 }

@@ -6,8 +6,7 @@ import { CodeGenerator } from "../def";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
 
 export class ContractGenerator extends CodeGenerator {
-
-    async generate(model: SubjektifyModel) {
-        return Promise.resolve();
-    }
+  async generate(model: SubjektifyModel) {
+    return Promise.resolve();
+  }
 }

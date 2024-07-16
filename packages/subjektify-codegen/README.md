@@ -29,29 +29,29 @@ The plugin adds a `model` object to the Subjektify Runtime Environment, containi
 `subjektify-codegen` is configurable from the `subjektify.config.(js|ts)`. Here’s a basic example of how to use `subjektify-codegen` to generate code from a Subjekt model:
 
 ```ts title="subjektify.config.ts"
-import { SubjektifyConfig, CodeGenTarget, CodeGenLanguage } from 'subjektify';
+import { SubjektifyConfig, CodeGenTarget, CodeGenLanguage } from "subjektify";
 
 const config: SubjektifyConfig = {
-    namespace: "my.namespace",
-    version: "0.1.0",
-    license: "MIT",
-    codegen: [
-        {
-            target: CodeGenTarget.Client,
-            language: CodeGenLanguage.TypeScript,
-            outputDirectory: "generated/client"
-        },
-        {
-            target: CodeGenTarget.Server,
-            language: CodeGenLanguage.TypeScript,
-            outputDirectory: "generated/server"
-        },
-        {
-            target: CodeGenTarget.Contract,
-            language: CodeGenLanguage.Solidity,
-            outputDirectory: "generated/contracts"
-        }
-    ]
+  namespace: "my.namespace",
+  version: "0.1.0",
+  license: "MIT",
+  codegen: [
+    {
+      target: CodeGenTarget.Client,
+      language: CodeGenLanguage.TypeScript,
+      outputDirectory: "generated/client",
+    },
+    {
+      target: CodeGenTarget.Server,
+      language: CodeGenLanguage.TypeScript,
+      outputDirectory: "generated/server",
+    },
+    {
+      target: CodeGenTarget.Contract,
+      language: CodeGenLanguage.Solidity,
+      outputDirectory: "generated/contracts",
+    },
+  ],
 };
 
 export default config;

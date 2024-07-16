@@ -5,7 +5,7 @@
 import { nanoid } from "nanoid";
 
 export class IdUtil {
-    static id(size?: number) {
-        return nanoid(size);
-    }
+  static id(size?: number) {
+    return nanoid(size);
+  }
 }

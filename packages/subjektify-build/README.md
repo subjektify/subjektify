@@ -31,27 +31,27 @@ This object contains both the AST model and the semantic model for the Subjekt f
 `subjektify-build` is configurable from the `subjektify.config.(js|ts)`. Here’s a basic example of how to use `subjektify-build` to parse and build a Subjekt model:
 
 ```ts title="subjektify.config.ts"
-import { SubjektifyConfig } from 'subjektify';
+import { SubjektifyConfig } from "subjektify";
 
 const config: SubjektifyConfig = {
-    namespace: "my.namespace",
-    version: "0.1.0",
-    license: "MIT",
-    build: {
-        sources: ["subjects"],
-        output: "build",
-        projections: [
-            {
-                abstract: false,
-                transformations: [
-                    {
-                        type: "excludeByTrait",
-                        args: { traits: ["internal"] }
-                    }
-                ]
-            }
-        ]
-    }
+  namespace: "my.namespace",
+  version: "0.1.0",
+  license: "MIT",
+  build: {
+    sources: ["subjects"],
+    output: "build",
+    projections: [
+      {
+        abstract: false,
+        transformations: [
+          {
+            type: "excludeByTrait",
+            args: { traits: ["internal"] },
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export default config;
@@ -62,5 +62,4 @@ export default config;
 1. **Model Parsing**: The build process starts by parsing Subjekt model files from the specified `sources`. These files should be in `.subjekt` format.
 2. **Validation**: Once parsed, the models are validated to ensure they adhere to the expected syntax and semantics.
 3. **Projections and Transformations**: The build configuration allows defining projections and transformations that modify or generate different views of the model. These transformations are applied based on the specified `projections`.
-4. **Output**: Finally, the transformed models are  written to the specified `output` directory.
-
+4. **Output**: Finally, the transformed models are written to the specified `output` directory.

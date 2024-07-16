@@ -1,3 +1,3 @@
 export interface Validator<T> {
-    validate(value?: T): void;
+  validate(value?: T): void;
 }

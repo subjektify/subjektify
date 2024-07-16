@@ -1,26 +1,26 @@
 import { Log } from "../util";
-import { describeCli } from './def';
-import { run } from './run';
+import { describeCli } from "./def";
+import { run } from "./run";
 
 async function main() {
-    // Parse CLI arguments
-    let args = await parseCli();
+  // Parse CLI arguments
+  let args = await parseCli();
 
-    // Set global logging level
-    args.debug && Log.setDebug(args.debug);
-    args.verbose && Log.setVerbose(args.verbose);
+  // Set global logging level
+  args.debug && Log.setDebug(args.debug);
+  args.verbose && Log.setVerbose(args.verbose);
 
-    // Run the command
-    return run(args);
+  // Run the command
+  return run(args);
 }
 
 function parseCli() {
-    return describeCli().parse();
+  return describeCli().parse();
 }
 
 main()
-    .then(() => process.exit(process.exitCode))
-    .catch((error) => {
-        Log.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(process.exitCode))
+  .catch((error) => {
+    Log.error(error);
+    process.exit(1);
+  });

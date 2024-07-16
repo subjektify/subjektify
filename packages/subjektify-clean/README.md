@@ -31,16 +31,16 @@ No environment extensions.
 You can customize the cleaning process by specifying paths in your `subjektify.config.ts` file:
 
 ```ts title="subjektify.config.ts"
-import { SubjektifyConfig } from 'subjektify';
+import { SubjektifyConfig } from "subjektify";
 import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
-    namespace: "my.dapp",
-    version: "1.0.0",
-    license: "MIT",
-    clean: {
-        paths: ["dist", "build", "artifacts"]
-    }
+  namespace: "my.dapp",
+  version: "1.0.0",
+  license: "MIT",
+  clean: {
+    paths: ["dist", "build", "artifacts"],
+  },
 };
 
 export default config;

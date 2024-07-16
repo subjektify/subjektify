@@ -1,2 +1,2 @@
-export * from './def';
-export * from './manager';
+export * from "./def";
+export * from "./manager";

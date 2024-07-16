@@ -39,16 +39,16 @@ npx subjektify watch
 You can customize the file watching process by specifying paths in your `subjektify.config.ts` file:
 
 ```ts title="subjektify.config.ts"
-import { SubjektifyConfig } from 'subjektify';
+import { SubjektifyConfig } from "subjektify";
 import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
-    namespace: "my.dapp",
-    version: "1.0.0",
-    license: "MIT",
-    watch: {
-        paths: ["src/models"],
-    }
+  namespace: "my.dapp",
+  version: "1.0.0",
+  license: "MIT",
+  watch: {
+    paths: ["src/models"],
+  },
 };
 
 export default config;

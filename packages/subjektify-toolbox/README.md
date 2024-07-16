@@ -79,41 +79,41 @@ npx subjektify deploy
 Here’s a more comprehensive example configuration in `subjektify.config.ts`:
 
 ```ts title="subjektify.config.ts"
-import { SubjektifyConfig } from 'subjektify';
+import { SubjektifyConfig } from "subjektify";
 
 const config: SubjektifyConfig = {
-    namespace: "my.dapp",
-    version: "1.0.0",
-    license: "MIT",
-    clean: {
-        paths: ["dist", "build", "artifacts"]
+  namespace: "my.dapp",
+  version: "1.0.0",
+  license: "MIT",
+  clean: {
+    paths: ["dist", "build", "artifacts"],
+  },
+  build: {
+    sources: ["subjects"],
+    outputDirectory: "artifacts",
+    projections: {
+      MyProjection: {
+        transformations: [
+          {
+            type: "excludeByTrait",
+            args: { traits: ["internal"] },
+          },
+        ],
+      },
     },
-    build: {
-        sources: ["subjects"],
-        outputDirectory: "artifacts",
-        projections: {
-            MyProjection: {
-                transformations: [
-                    {
-                        type: "excludeByTrait",
-                        args: { traits: ["internal"] }
-                    }
-                ]
-            }
-        }
+  },
+  codegen: [
+    {
+      target: "client",
+      language: "typescript",
+      outputDirectory: "src/client",
     },
-    codegen: [
-        {
-            target: "client",
-            language: "typescript",
-            outputDirectory: "src/client"
-        },
-        {
-            target: "contract",
-            language: "solidity",
-            outputDirectory: "contracts/generated"
-        }
-    ]
+    {
+      target: "contract",
+      language: "solidity",
+      outputDirectory: "contracts/generated",
+    },
+  ],
 };
 
 export default config;

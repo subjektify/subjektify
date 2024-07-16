@@ -1,3 +1,3 @@
-export * from './base';
-export * from './factory';
-export * from './typescript';
+export * from "./base";
+export * from "./factory";
+export * from "./typescript";
