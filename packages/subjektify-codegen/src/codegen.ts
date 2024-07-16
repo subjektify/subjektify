@@ -3,14 +3,16 @@
  */
 
 import { Log, SubjektifyRuntimeEnvironment, TaskArguments } from "subjektify";
-import { ConfigValidator, ModelValidator } from "./validate";
+import { ModelValidator } from "./validate";
+import { generate } from "./generator";
 
 export const subjektifyCodeGenTask = async (taskArguments: TaskArguments, sre: SubjektifyRuntimeEnvironment) => {
-    const configValidator = new ConfigValidator();
-    const modelValidator = new ModelValidator();
 
-    configValidator.validate(sre.config.codegen);
+    // Validate the model exists before generating code
+    const modelValidator = new ModelValidator();
     modelValidator.validate(sre.model);
-    
+
+    await generate(sre);
+
     Log.success("Code generated successfully!");
 }
