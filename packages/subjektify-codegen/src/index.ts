@@ -4,9 +4,8 @@
 
 import { SubjektifyConfig, SubjektifyRuntimeEnvironment, TaskArguments, extendConfig, task } from "subjektify";
 import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build/dist/core/build";
-import "@subjektifylabs/subjektify-build/dist/core/types";
-import { subjektifyCodeGenTask } from "./core/codegen";
-import "./core/types";
+import { subjektifyCodeGenTask } from "./codegen";
+import "./types";
 
 extendConfig((config: SubjektifyConfig) => {
     if (!config.codegen) {
@@ -19,4 +18,4 @@ task("codegen", "Builds your Subjekt model and adds the artifacts to the runtime
     await subjektifyCodeGenTask(taskArguments, sre);
 });
 
-export * from "./core/types";
+export * from "./types";
