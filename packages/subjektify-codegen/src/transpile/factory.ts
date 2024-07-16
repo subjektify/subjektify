@@ -17,15 +17,16 @@ export class CodeTranspilerFactory {
   static transpiler(
     config: CodeGenConfig,
     subjektifyConfig: SubjektifyConfig,
+    outputDirectory: string
   ): CodeTranspiler {
     const { target } = config;
     switch (target) {
       case "client":
-        return this._clientTranspiler(config, subjektifyConfig);
+        return this._clientTranspiler(config, subjektifyConfig, outputDirectory);
       case "contract":
-        return this._contractTranspiler(config, subjektifyConfig);
+        return this._contractTranspiler(config, subjektifyConfig, outputDirectory);
       case "server":
-        return this._serverTranspiler(config, subjektifyConfig);
+        return this._serverTranspiler(config, subjektifyConfig, outputDirectory);
       default:
         throw new Error(`Unknown target: ${target}`);
     }
@@ -34,13 +35,14 @@ export class CodeTranspilerFactory {
   private static _clientTranspiler(
     config: CodeGenConfig,
     subjektifyConfig: SubjektifyConfig,
+    outputDirectory: string
   ): CodeTranspiler {
     const { language } = config;
     switch (language) {
       case "javascript":
-        return new JavascriptClientTranspiler(config, subjektifyConfig);
+        return new JavascriptClientTranspiler(config, subjektifyConfig, outputDirectory);
       case "typescript":
-        return new TypescriptClientTranspiler(config, subjektifyConfig);
+        return new TypescriptClientTranspiler(config, subjektifyConfig, outputDirectory);
       default:
         throw new Error(`Unknown language: ${language}`);
     }
@@ -49,11 +51,12 @@ export class CodeTranspilerFactory {
   private static _contractTranspiler(
     config: CodeGenConfig,
     subjektifyConfig: SubjektifyConfig,
+    outputDirectory: string
   ): CodeTranspiler {
     const { language } = config;
     switch (language) {
       case "solidity":
-        return new SolidityContractTranspiler(config, subjektifyConfig);
+        return new SolidityContractTranspiler(config, subjektifyConfig, outputDirectory);
       default:
         throw new Error(`Unknown language: ${language}`);
     }
@@ -62,13 +65,14 @@ export class CodeTranspilerFactory {
   private static _serverTranspiler(
     config: CodeGenConfig,
     subjektifyConfig: SubjektifyConfig,
+    outputDirectory: string
   ): CodeTranspiler {
     const { language } = config;
     switch (language) {
       case "javascript":
-        return new JavascriptServerTranspiler(config, subjektifyConfig);
+        return new JavascriptServerTranspiler(config, subjektifyConfig, outputDirectory);
       case "typescript":
-        return new TypescriptServerTranspiler(config, subjektifyConfig);
+        return new TypescriptServerTranspiler(config, subjektifyConfig, outputDirectory);
       default:
         throw new Error(`Unknown language: ${language}`);
     }

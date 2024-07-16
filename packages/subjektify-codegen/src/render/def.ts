@@ -5,13 +5,15 @@
 import path from "path";
 import { Eta } from "eta";
 import { CodeGenConfig } from "../types";
+import { FsUtil } from "../util";
 
 export class TemplateRenderer {
   readonly templatePath: string;
   eta: Eta;
   config: CodeGenConfig;
+  outputDirectory: string;
 
-  constructor(config: CodeGenConfig) {
+  constructor(config: CodeGenConfig, outputDirectory: string) {
     this.templatePath = path.join(
       __dirname,
       "..",
@@ -23,9 +25,12 @@ export class TemplateRenderer {
     this.eta = new Eta({
       views: this.templatePath,
     });
+    this.outputDirectory = outputDirectory;
   }
 
-  render(template: string, data: any): string {
-    return this.eta.render(template, data);
+  render(template: string, data: any, fileName: string): void {
+    const outputPath = path.join(this.outputDirectory, fileName);
+    const content = this.eta.render(template, data);
+    FsUtil.writeFile(outputPath, content);
   }
 }

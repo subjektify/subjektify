@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2024 Subjektify Labs Ltd.
+ */
+
 import "subjektify/dist/types/config";
 
 export type CodeGenTarget = "contract" | "client" | "server";

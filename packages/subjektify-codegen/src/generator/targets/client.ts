@@ -7,6 +7,14 @@ import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/type
 
 export class ClientGenerator extends CodeGenerator {
   async generate(model: SubjektifyModel) {
-    return Promise.resolve();
+    this._generatePackageJson();
+  }
+
+  _generatePackageJson() {
+    this.renderer.render("package.json.eta", {
+      namespace: this.config.packageName || this.subjektifyConfig.namespace,
+      version: this.subjektifyConfig.version,
+      license: this.subjektifyConfig.license,
+    }, "package.json");
   }
 }

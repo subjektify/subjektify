@@ -10,8 +10,8 @@ import { CodeGenConfig } from "../types";
 export abstract class CodeTranspiler {
   renderer: TemplateRenderer;
 
-  constructor(config: CodeGenConfig, subjektifyConfig: SubjektifyConfig) {
-    this.renderer = new TemplateRenderer(config);
+  constructor(config: CodeGenConfig, subjektifyConfig: SubjektifyConfig, outputDirectory: string) {
+    this.renderer = new TemplateRenderer(config, outputDirectory);
   }
 
   abstract transpile(model: SubjektifyModel): Promise<void>;
