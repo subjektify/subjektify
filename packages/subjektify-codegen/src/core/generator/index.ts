@@ -1,2 +1,2 @@
-export * from './def';
-export * from './registry';
+export * from "./def";
+export * from "./registry";

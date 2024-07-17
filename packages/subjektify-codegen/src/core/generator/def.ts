@@ -10,33 +10,32 @@ import { CodeGenConfig, CodeGenLanguage, CodeGenTarget } from "../../types";
 import { FsUtil } from "../util";
 
 export abstract class AbstractCodeGenerator {
+  config: CodeGenConfig;
+  sre: SubjektifyRuntimeEnvironment;
 
-    config: CodeGenConfig;
-    sre: SubjektifyRuntimeEnvironment;
+  constructor(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment) {
+    this.config = config;
+    this.sre = sre;
+    CodeGeneratorRegistry.instance().register(this);
+  }
 
-    constructor(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment) {
-        this.config = config;
-        this.sre = sre;
-        CodeGeneratorRegistry.instance().register(this);
-    }
+  abstract target(): CodeGenTarget;
+  abstract language(): CodeGenLanguage;
+  abstract generate(model: SubjektifyModel): Promise<void>;
 
-    abstract target(): CodeGenTarget;
-    abstract language(): CodeGenLanguage;
-    abstract generate(model: SubjektifyModel): Promise<void>;
+  async run() {
+    const model = this.sre.model;
+    this.createOutputDirectory();
+    await this.generate(model);
+  }
 
-    async run() {
-        const model = this.sre.model;
-        this.createOutputDirectory();
-        await this.generate(model);
-    }
+  createOutputDirectory(): void {
+    FsUtil.mkdir(this.outputDirectory());
+  }
 
-    createOutputDirectory(): void {
-      FsUtil.mkdir(this.outputDirectory());
-    }
-  
-    outputDirectory(): string {
-      return this.config.outputDirectory
-        ? path.resolve(process.cwd(), this.config.outputDirectory)
-        : path.resolve(process.cwd(), this.config.target);
-    }
+  outputDirectory(): string {
+    return this.config.outputDirectory
+      ? path.resolve(process.cwd(), this.config.outputDirectory)
+      : path.resolve(process.cwd(), this.config.target);
+  }
 }

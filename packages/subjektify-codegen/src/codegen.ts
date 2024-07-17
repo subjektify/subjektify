@@ -5,7 +5,6 @@
 import { Log, SubjektifyRuntimeEnvironment, TaskArguments } from "subjektify";
 
 export const subjektifyCodeGenTask = async (
-    taskArguments: TaskArguments,
-    sre: SubjektifyRuntimeEnvironment,
-) => {
-}
+  taskArguments: TaskArguments,
+  sre: SubjektifyRuntimeEnvironment,
+) => {};
