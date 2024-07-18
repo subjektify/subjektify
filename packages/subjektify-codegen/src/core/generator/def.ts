@@ -24,8 +24,6 @@ export abstract class AbstractCodeGenerator implements CodeGenerator {
     this.renderer = new TemplateRenderer(this.outputDirectory());
   }
 
-  abstract target(): CodeGenTarget;
-  abstract language(): CodeGenLanguage;
   abstract generate(model: SubjektifyModel): Promise<void>;
 
   async run() {

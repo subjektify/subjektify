@@ -4,7 +4,13 @@
 
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { CodeGenerator } from "./def";
-import { TypescriptClientGenerator } from "../../generators";
+import {
+  JavascriptClientGenerator,
+  JavascriptServerGenerator,
+  SolidityContractGenerator,
+  TypescriptClientGenerator,
+  TypescriptServerGenerator,
+} from "../../generators";
 
 export class CodeGeneratorRegistry {
   private static _instance: CodeGeneratorRegistry;
@@ -46,6 +52,10 @@ export class CodeGeneratorRegistry {
     switch (target) {
       case "client":
         return this._clientGenerator(config, sre);
+      case "contract":
+        return this._contractGenerator(config, sre);
+      case "server":
+        return this._serverGenerator(config, sre);
       default:
         throw new Error(`Unknown codegen target: ${target}`);
     }
@@ -57,8 +67,38 @@ export class CodeGeneratorRegistry {
   ): CodeGenerator {
     const { language } = config;
     switch (language) {
+      case "javascript":
+        return new JavascriptClientGenerator(config, sre);
       case "typescript":
         return new TypescriptClientGenerator(config, sre);
+      default:
+        throw new Error(`Unknown codegen language: ${language}`);
+    }
+  }
+
+  private _contractGenerator(
+    config: any,
+    sre: SubjektifyRuntimeEnvironment,
+  ): CodeGenerator {
+    const { language } = config;
+    switch (language) {
+      case "solidity":
+        return new SolidityContractGenerator(config, sre);
+      default:
+        throw new Error(`Unknown codegen language: ${language}`);
+    }
+  }
+
+  private _serverGenerator(
+    config: any,
+    sre: SubjektifyRuntimeEnvironment,
+  ): CodeGenerator {
+    const { language } = config;
+    switch (language) {
+      case "javascript":
+        return new JavascriptServerGenerator(config, sre);
+      case "typescript":
+        return new TypescriptServerGenerator(config, sre);
       default:
         throw new Error(`Unknown codegen language: ${language}`);
     }
