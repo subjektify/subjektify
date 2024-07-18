@@ -9,22 +9,9 @@ export const subjektifyCodeGenTask = async (
   taskArguments: TaskArguments,
   sre: SubjektifyRuntimeEnvironment,
 ) => {
-  const codegenConfig = sre.config.codegen;
-
-  if (!codegenConfig) {
-    throw new Error("No codegen configuration found.");
-  }
-
-  for (const config of codegenConfig) {
-    const generator = CodeGeneratorRegistry.instance().generator(config);
-
-    if (!generator) {
-      Log.warn(
-        `No generator found for target: ${config.target} and language: ${config.language}. Skipping...`,
-      );
-      continue;
-    }
-
+  const generators = CodeGeneratorRegistry.instance().generators(sre);
+  for (const generator of generators) {
     await generator.run();
   }
+  Log.success("Code generation completed successfully.");
 };

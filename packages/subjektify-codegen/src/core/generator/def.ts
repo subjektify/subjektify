@@ -5,12 +5,15 @@
 import path from "path";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
-import { CodeGeneratorRegistry } from "./registry";
 import { TemplateRenderer } from "../renderer";
 import { CodeGenConfig, CodeGenLanguage, CodeGenTarget } from "../../types";
 import { FsUtil } from "../util";
 
-export abstract class AbstractCodeGenerator {
+export interface CodeGenerator {
+  run(): Promise<void>;
+}
+
+export abstract class AbstractCodeGenerator implements CodeGenerator {
   config: CodeGenConfig;
   sre: SubjektifyRuntimeEnvironment;
   renderer: TemplateRenderer;
@@ -19,7 +22,6 @@ export abstract class AbstractCodeGenerator {
     this.config = config;
     this.sre = sre;
     this.renderer = new TemplateRenderer(this.outputDirectory());
-    CodeGeneratorRegistry.instance().register(this);
   }
 
   abstract target(): CodeGenTarget;

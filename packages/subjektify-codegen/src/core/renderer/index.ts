@@ -7,18 +7,17 @@ import { Eta } from "eta";
 import { FsUtil } from "../util";
 
 export class TemplateRenderer {
-    basePath: string;
-    eta: Eta;
+  basePath: string;
+  eta: Eta;
 
-    constructor(basePath: string) {
-        this.basePath = basePath;
-        this.eta = new Eta();
-    }
+  constructor(basePath: string) {
+    this.basePath = basePath;
+    this.eta = new Eta();
+  }
 
-    render(template: string, fileName: string, data: any): void {
-        const content = this.eta.render(template, data);
-        const filePath = path.resolve(this.basePath, fileName);
-        FsUtil.writeFile(filePath, content);
-    }
-
+  render(template: string, fileName: string, data: any): void {
+    const content = this.eta.render(template, data);
+    const filePath = path.join(this.basePath, fileName);
+    FsUtil.writeFile(filePath, content);
+  }
 }

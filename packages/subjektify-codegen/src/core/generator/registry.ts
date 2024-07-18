@@ -2,13 +2,14 @@
  * Copyright (c) 2024 Subjektify Labs Ltd.
  */
 
-import { AbstractCodeGenerator } from "./def";
-import { CodeGenConfig } from "../../types";
+import { SubjektifyRuntimeEnvironment } from "subjektify";
+import { CodeGenerator } from "./def";
+import { TypescriptClientGenerator } from "../../generators";
 
 export class CodeGeneratorRegistry {
   private static _instance: CodeGeneratorRegistry;
 
-  registry: AbstractCodeGenerator[];
+  registry: CodeGenerator[];
 
   private constructor() {
     this.registry = [];
@@ -21,18 +22,45 @@ export class CodeGeneratorRegistry {
     return CodeGeneratorRegistry._instance;
   }
 
-  register(generator: AbstractCodeGenerator) {
-    this.registry.push(generator);
-  }
-
-  generators(): AbstractCodeGenerator[] {
+  generators(sre: SubjektifyRuntimeEnvironment): CodeGenerator[] {
+    this._load(sre);
     return this.registry;
   }
 
-  generator(config: CodeGenConfig): AbstractCodeGenerator | undefined {
-    const { target, language } = config;
-    return this.registry.find(
-      (g) => g.target() === target && g.language() === language,
-    );
+  private _load(sre: SubjektifyRuntimeEnvironment) {
+    const codegenConfigs = sre.config.codegen;
+    if (!codegenConfigs) {
+      throw new Error("No codegen configuration found.");
+    }
+    for (const config of codegenConfigs) {
+      const generator = this._generator(config, sre);
+      this.registry.push(generator);
+    }
+  }
+
+  private _generator(
+    config: any,
+    sre: SubjektifyRuntimeEnvironment,
+  ): CodeGenerator {
+    const { target } = config;
+    switch (target) {
+      case "client":
+        return this._clientGenerator(config, sre);
+      default:
+        throw new Error(`Unknown codegen target: ${target}`);
+    }
+  }
+
+  private _clientGenerator(
+    config: any,
+    sre: SubjektifyRuntimeEnvironment,
+  ): CodeGenerator {
+    const { language } = config;
+    switch (language) {
+      case "typescript":
+        return new TypescriptClientGenerator(config, sre);
+      default:
+        throw new Error(`Unknown codegen language: ${language}`);
+    }
   }
 }
