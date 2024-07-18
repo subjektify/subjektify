@@ -3,7 +3,7 @@
  */
 
 import { AbstractCodeGenerator } from "./def";
-import { CodeGenLanguage, CodeGenTarget } from "../../types";
+import { CodeGenConfig } from "../../types";
 
 export class CodeGeneratorRegistry {
   private static _instance: CodeGeneratorRegistry;
@@ -29,10 +29,8 @@ export class CodeGeneratorRegistry {
     return this.registry;
   }
 
-  generator(
-    target: CodeGenTarget,
-    language: CodeGenLanguage,
-  ): AbstractCodeGenerator | undefined {
+  generator(config: CodeGenConfig): AbstractCodeGenerator | undefined {
+    const { target, language } = config;
     return this.registry.find(
       (g) => g.target() === target && g.language() === language,
     );
