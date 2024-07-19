@@ -6,7 +6,7 @@ import path from "path";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
 import { TemplateRenderer } from "../renderer";
-import { CodeGenConfig, CodeGenLanguage, CodeGenTarget } from "../../types";
+import { CodeGenConfig } from "../../types";
 import { FsUtil } from "../util";
 
 export interface CodeGenerator {
