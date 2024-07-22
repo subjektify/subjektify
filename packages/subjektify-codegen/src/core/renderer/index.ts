@@ -8,16 +8,19 @@ import { FsUtil } from "../util";
 
 export class TemplateRenderer {
   basePath: string;
+  extension: string;
   eta: Eta;
 
-  constructor(basePath: string) {
+  constructor(basePath: string, extension: string) {
     this.basePath = basePath;
-    this.eta = new Eta();
+    this.extension = extension;
+    this.eta = new Eta({ views: basePath });
   }
 
-  render(template: string, fileName: string, data: any): void {
-    const content = this.eta.render(template, data);
-    const filePath = path.join(this.basePath, fileName);
+  render(template: string, fileName: string, data: any, extension?: string): void {
+    const ext = extension || this.extension;
+    const content = this.eta.render(`${template}.eta`, data);
+    const filePath = path.join(this.basePath, `${fileName}.${ext}`);
     FsUtil.writeFile(filePath, content);
   }
 }

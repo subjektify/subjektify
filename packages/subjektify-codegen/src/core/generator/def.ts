@@ -8,6 +8,7 @@ import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/type
 import { TemplateRenderer } from "../renderer";
 import { CodeGenConfig } from "../../types";
 import { FsUtil } from "../util";
+import { SymbolTransformer } from "../transformer";
 
 export interface CodeGenerator {
   run(): Promise<void>;
@@ -17,13 +18,16 @@ export abstract class AbstractCodeGenerator implements CodeGenerator {
   config: CodeGenConfig;
   sre: SubjektifyRuntimeEnvironment;
   renderer: TemplateRenderer;
+  transformer: SymbolTransformer;
 
   constructor(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment) {
     this.config = config;
     this.sre = sre;
-    this.renderer = new TemplateRenderer(this.outputDirectory());
+    this.renderer = new TemplateRenderer(this.outputDirectory(), this.extension());
+    this.transformer = new SymbolTransformer(sre.model);
   }
 
+  abstract extension(): string;
   abstract generate(model: SubjektifyModel): Promise<void>;
 
   async run() {
