@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-codegen",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "A core tool designed to facilitate the code generation process the Subjekt model.",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/node": "^20.14.11",
     "chai": "^5.1.1",
-    "mocha": "^10.6.0",
+    "mocha": "^10.7.0",
     "prettier": "^3.3.3",
     "rimraf": "^5.0.9",
     "sinon": "^18.0.0",
