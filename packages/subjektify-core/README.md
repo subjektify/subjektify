@@ -45,4 +45,4 @@ Comprehensive documentation for Subjektify is available to help you get started 
 - [**API Reference**](https://subjektify.dev/docs/reference)
 - [**Blog**](https://subjektify.dev/blog)
 
-## [Development Guide](./DEVELOPMENT.md)
+## [Development Guide](https://github.com/subjektify/subjektify/blob/main/packages/subjektify-core/DEVELOPMENT.md)
