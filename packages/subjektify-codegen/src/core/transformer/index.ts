@@ -1,22 +1,13 @@
-import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
-import { Shapes } from "subjekt";
+import { Shapes, SubjektModel } from "subjekt";
 
 export class SymbolTransformer {
-  model: SubjektifyModel;
+  model: SubjektModel;
 
-  constructor(model: SubjektifyModel) {
+  constructor(model: SubjektModel) {
     this.model = model;
   }
 
-  simpleTypes(): Shapes {
-    return {};
-  }
-
-  aggregateTypes(): Shapes {
-    return {};
-  }
-
-  subjectTypes(): Shapes {
-    return {};
+  transform<IN, OUT>(element: IN): OUT {
+    return element as any;
   }
 }
