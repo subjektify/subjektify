@@ -11,8 +11,8 @@ export function describeCli() {
       () => {},
     )
     .command(
-      "codegen",
-      "Generates contracts, clients, and server stubs after building the project",
+      "build",
+      "Builds the Subjekt model",
       () => {},
       () => {},
     )
@@ -23,8 +23,14 @@ export function describeCli() {
       () => {},
     )
     .command(
-      "build",
-      "Builds the Subjekt model",
+      "codegen",
+      "Generates contracts, clients, and server stubs after building the project",
+      () => {},
+      () => {},
+    )
+    .command(
+      "compile",
+      "Compiles the namespace's artifacts",
       () => {},
       () => {},
     )

@@ -128,6 +128,9 @@ importers:
       enquirer:
         specifier: ^2.4.1
         version: 2.4.1
+      eta:
+        specifier: ^3.4.0
+        version: 3.4.0
       semver:
         specifier: ^7.6.2
         version: 7.6.2

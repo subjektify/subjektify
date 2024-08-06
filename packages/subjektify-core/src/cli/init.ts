@@ -1,4 +1,4 @@
-import { Log } from "../util";
+import { Log, TemplateWriter } from "../util";
 import { Prompt } from "./prompt";
 
 export const init = async (args: any): Promise<void> => {
@@ -42,13 +42,18 @@ const promptNamespace = async () => {
 const createJavascriptNamespace = async () => {
   Log.verbose("Creating a new Javascript namespace.");
   const namespace = await promptNamespace();
-  // Create a new namespace with a default configuration
+  const writer = new TemplateWriter("javascript");
+  writer.render("package.json", { namespace }, process.cwd());
+  writer.render("subjektify.config.js", { namespace }, process.cwd());
 };
 
 const createTypescriptNamespace = async () => {
   Log.verbose("Creating a new Typescript namespace.");
   const namespace = await promptNamespace();
-  // Create a new namespace with a default configuration
+  const writer = new TemplateWriter("typescript");
+  writer.render("package.json", { namespace }, process.cwd());
+  writer.render("tsconfig.json", {}, process.cwd());
+  writer.render("subjektify.config.ts", { namespace }, process.cwd());
 };
 
 const createEmptyConfig = async () => {
