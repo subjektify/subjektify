@@ -9,7 +9,7 @@
     "build": "pnpm -r build",
     "prettier": "prettier . --write",
     "prettier:check": "prettier . --check",
-    "release": "pnpm -r publish",
+    "release": "pnpm release:patch",
     "release:minor": "node scripts/release/minor.js",
     "release:patch": "node scripts/release/patch.js"
   },

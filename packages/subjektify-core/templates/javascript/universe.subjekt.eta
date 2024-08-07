@@ -1,0 +1,12 @@
+// This is where you can define your model.
+subject Tree {
+    state: Dimensions
+    behavior: [PlantTree]
+}
+
+structure Dimensions {
+    radius: double
+    height: double
+}
+
+behavior PlantTree

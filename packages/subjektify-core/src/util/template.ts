@@ -12,11 +12,21 @@ export class TemplateWriter {
             useWith: true,
             views: path.resolve(__dirname, "..", "..", "templates", directory)
         });
+        this.eta.templatesSync
+    }
+
+    public writeProjectFiles(namespace: string): void {
+        this.write(".gitignore", {});
+        this.write("README.md", { namespace });
+        this.write("package.json", { namespace });
+        fs.mkdirSync(path.join(process.cwd(), "subjects"));
+        this.write("universe.subjekt", {}, path.join(process.cwd(), "subjects"));
     }
     
-    public render(fileName: string, data: any, outputPath: string): void {
+    public write(fileName: string, data: any, overrideOutput?: string): void {
         const templateName = `${fileName}.eta`;
         const fileContent = this.eta.render(templateName, data);
+        const outputPath = overrideOutput || process.cwd();
         const filePath = path.join(outputPath, fileName);
         fs.writeFileSync(filePath, fileContent);
     }

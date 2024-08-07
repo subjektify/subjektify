@@ -43,19 +43,22 @@ const createJavascriptNamespace = async () => {
   Log.verbose("Creating a new Javascript namespace.");
   const namespace = await promptNamespace();
   const writer = new TemplateWriter("javascript");
-  writer.render("package.json", { namespace }, process.cwd());
-  writer.render("subjektify.config.js", { namespace }, process.cwd());
+  writer.writeProjectFiles(namespace);
+  writer.write("subjektify.config.js", { namespace });
+
 };
 
 const createTypescriptNamespace = async () => {
   Log.verbose("Creating a new Typescript namespace.");
   const namespace = await promptNamespace();
   const writer = new TemplateWriter("typescript");
-  writer.render("package.json", { namespace }, process.cwd());
-  writer.render("tsconfig.json", {}, process.cwd());
-  writer.render("subjektify.config.ts", { namespace }, process.cwd());
+  writer.writeProjectFiles(namespace);
+  writer.write("tsconfig.json", {});
+  writer.write("subjektify.config.ts", { namespace });
 };
 
 const createEmptyConfig = async () => {
   Log.verbose("Creating an empty configuration file.");
+  const writer = new TemplateWriter("empty");
+  writer.write("subjektify.config.js", {});
 };
