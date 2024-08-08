@@ -1,6 +1,6 @@
 {
   "name": "subjektify",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Decentralized applications development environment for professionals",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -36,7 +36,7 @@
   "dependencies": {
     "chalk": "4.1.2",
     "enquirer": "^2.4.1",
-    "eta": "^3.4.0",
+    "eta": "^3.4.1",
     "semver": "^7.6.3",
     "yargs": "^17.7.2"
   },
