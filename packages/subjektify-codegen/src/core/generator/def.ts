@@ -4,7 +4,7 @@
 
 import path from "path";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
-import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/core/types";
+import { SubjektifyModel } from "@subjektifylabs/subjektify-build/dist/types";
 import { TemplateRenderer } from "../renderer";
 import { CodeGenConfig } from "../../types";
 import { FsUtil } from "../util";

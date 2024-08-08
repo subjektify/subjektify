@@ -83,8 +83,8 @@ importers:
   packages/subjektify-codegen:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.27
-        version: 0.0.27(subjektify@0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))
+        specifier: ^0.0.28
+        version: 0.0.28(subjektify@0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))
       eta:
         specifier: ^3.4.1
         version: 3.4.1
@@ -272,6 +272,11 @@ packages:
 
   '@subjektifylabs/subjektify-build@0.0.27':
     resolution: {integrity: sha512-NtYpKMg85oFp92cN9zAHQf9vi+m0hrcknoCcD3c6Ot+WV98d7GWk3cvZR6k0xvzmJhPAaTmSB42wFtz3yYMrHw==}
+    peerDependencies:
+      subjektify: ^0.0.39
+
+  '@subjektifylabs/subjektify-build@0.0.28':
+    resolution: {integrity: sha512-NTBSrRaYK7IqBkHbCna0FSJYGygTd6ZqmPurohrfy7rczNd1OibDHzieoewXfsaZXMlzxk+HIkJpTTQrXw23ow==}
     peerDependencies:
       subjektify: ^0.0.39
 
@@ -970,6 +975,11 @@ snapshots:
   '@sinonjs/text-encoding@0.7.2': {}
 
   '@subjektifylabs/subjektify-build@0.0.27(subjektify@0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))':
+    dependencies:
+      subjekt: 0.0.11
+      subjektify: 0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
+
+  '@subjektifylabs/subjektify-build@0.0.28(subjektify@0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))':
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.39(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
