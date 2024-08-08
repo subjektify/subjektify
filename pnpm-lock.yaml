@@ -83,11 +83,11 @@ importers:
   packages/subjektify-codegen:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.25
-        version: 0.0.25(subjektify@0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))
+        specifier: ^0.0.26
+        version: 0.0.26(subjektify@0.0.38(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))
       eta:
-        specifier: ^3.4.0
-        version: 3.4.0
+        specifier: ^3.4.1
+        version: 3.4.1
       nanoid:
         specifier: ^5.0.7
         version: 5.0.7
@@ -95,8 +95,8 @@ importers:
         specifier: ^0.0.11
         version: 0.0.11
       subjektify:
-        specifier: ^0.0.37
-        version: 0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
+        specifier: ^0.0.38
+        version: 0.0.38(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
     devDependencies:
       '@types/node':
         specifier: ^20.14.14
@@ -274,6 +274,11 @@ packages:
     resolution: {integrity: sha512-9XY/b0kRYNBe9E/azpZ4WS+7cT6pTTTvDFWxAWviXt/hf0D4fIKTTDHUEXgGYHzSnPHBf6T22n3tZ7a4/0H5aA==}
     peerDependencies:
       subjektify: ^0.0.37
+
+  '@subjektifylabs/subjektify-build@0.0.26':
+    resolution: {integrity: sha512-ymy143Do0GzPhhW4Q4M/X1vsj5h4dmOcUlWvoTa3xxIRJSn2GiX15C6HcNU1P7Fdnc4liIxSE+uz9AEdXJKoRw==}
+    peerDependencies:
+      subjektify: ^0.0.38
 
   '@subjektifylabs/subjektify-codegen@0.0.31':
     resolution: {integrity: sha512-Y8sGkrAxX/PnbpIP18nN8bPE0odKo/LCz5dML7rVgrPnf42XWDp9iSNoXqEWQDwBBTVTVQY9aXFYhhtSKCjLEQ==}
@@ -481,10 +486,6 @@ packages:
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
-
-  eta@3.4.0:
-    resolution: {integrity: sha512-tCsc7WXTjrTx4ZjYLplcqrI3o4mYJ+Z6YspeuGL8tbt/hHoMchwBwtKfwM09svEY86iRapY93vUqQttcNuIO5Q==}
-    engines: {node: '>=6.0.0'}
 
   eta@3.4.1:
     resolution: {integrity: sha512-a5+UIcEuj3wYx3FoXFh05O5GAs10uTd2GTEYlaCALE2Ds03ZkKlAXzHpXA/6ZSZ6Xwka/IuDjFY+wKDmw2RNDg==}
@@ -990,6 +991,11 @@ snapshots:
       subjekt: 0.0.11
       subjektify: 0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
 
+  '@subjektifylabs/subjektify-build@0.0.26(subjektify@0.0.38(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))':
+    dependencies:
+      subjekt: 0.0.11
+      subjektify: 0.0.38(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
+
   '@subjektifylabs/subjektify-codegen@0.0.31(@subjektifylabs/subjektify-build@0.0.25(subjektify@0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)))(subjektify@0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))':
     dependencies:
       '@subjektifylabs/subjektify-build': 0.0.25(subjektify@0.0.37(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4))
@@ -1166,8 +1172,6 @@ snapshots:
   escalade@3.1.2: {}
 
   escape-string-regexp@4.0.0: {}
-
-  eta@3.4.0: {}
 
   eta@3.4.1: {}
 
