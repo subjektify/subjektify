@@ -1,5 +1,26 @@
+import "@subjektifylabs/subjektify-toolbox";
+
 module.exports = {
     namespace: "<%= namespace %>",
     version: "0.1.0",
-    license: "MIT"
+    license: "MIT",
+    build: {
+        sources: ["subjects"],
+        outputDirectory: "artifacts"
+    },
+    clean: {
+        paths: ["artifacts", "generated"]
+    }
+    codegen: [
+        {
+            target: "client",
+            language: "javascript",
+            outputDirectory: "generated/client"
+        },
+        {
+            target: "contract",
+            language: "solidity",
+            outputDirectory: "generated/contracts"
+        }
+    ]
 }

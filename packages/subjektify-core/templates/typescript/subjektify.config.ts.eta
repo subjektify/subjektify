@@ -1,9 +1,29 @@
-import { SubjektifyConfig} from "subjektify";
+import { SubjektifyConfig } from "subjektify";
+import "@subjektifylabs/subjektify-toolbox";
 
 const config: SubjektifyConfig = {
     namespace: "<%= namespace %>",
     version: "0.1.0",
-    license: "MIT"
+    license: "MIT",
+    build: {
+        sources: ["subjects"],
+        outputDirectory: "artifacts"
+    },
+    clean: {
+        paths: ["artifacts", "generated"]
+    }
+    codegen: [
+        {
+            target: "client",
+            language: "typescript",
+            outputDirectory: "generated/client"
+        },
+        {
+            target: "contract",
+            language: "solidity",
+            outputDirectory: "generated/contracts"
+        }
+    ]
 }
 
 export default config;
