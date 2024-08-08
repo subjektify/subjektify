@@ -1,5 +1,5 @@
 import { AstModel, SubjektModel } from "subjekt";
-import { Projection, ProjectionArtifact } from "./types";
+import { Projection, ProjectionArtifact } from "../types";
 
 export class ProjectionApplier {
   private _projections: Projection[];

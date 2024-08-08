@@ -17,13 +17,13 @@ const filters = ["subjekt", "subjektify", "@subjektifylabs/*"];
 
 // List of packages to release, in order
 const packages = [
-  "subjektify-core",
+  //"subjektify-core",
   "subjektify-build",
   //"subjektify-clean",
-  "subjektify-codegen",
+  //"subjektify-codegen",
   //"subjektify-publish",
   //"subjektify-watch",
-  "subjektify-toolbox",
+  //"subjektify-toolbox",
 ];
 
 // Because this is an adhoc process, we can wait for a few seconds to give NPM time to update the packages in the registry

@@ -1,11 +1,22 @@
 import {
+  extendConfig,
   extendEnvironment,
+  SubjektifyConfig,
   SubjektifyRuntimeEnvironment,
   task,
 } from "subjektify";
-import { subjektifyBuildTask } from "./core/build";
+import { subjektifyBuildTask } from "./build";
 
-import "./core/types";
+import "./types";
+
+extendConfig((config: SubjektifyConfig) => {
+  if (!config.build) {
+    config.build = {
+      sources: ["subjects"],
+      outputDirectory: "artifacts",
+    };
+  }
+});
 
 extendEnvironment((sre: SubjektifyRuntimeEnvironment) => {
   sre.model = {
@@ -23,4 +34,4 @@ task(
   },
 );
 
-export * from "./core/types";
+export * from "./types";
