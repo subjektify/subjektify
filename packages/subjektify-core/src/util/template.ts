@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { Eta } from "eta";
+import { Log } from "./Log";
 
 export class TemplateWriter {
     directory: string;
@@ -16,10 +17,13 @@ export class TemplateWriter {
     }
 
     public writeProjectFiles(namespace: string): void {
+        const subjectsPath = path.join(process.cwd(), "subjects");
+        if (!fs.existsSync(subjectsPath)) {
+            fs.mkdirSync(subjectsPath);
+        }
         this.write(".gitignore", {});
         this.write("README.md", { namespace });
         this.write("package.json", { namespace });
-        fs.mkdirSync(path.join(process.cwd(), "subjects"));
         this.write("universe.subjekt", {}, path.join(process.cwd(), "subjects"));
     }
     
@@ -28,6 +32,10 @@ export class TemplateWriter {
         const fileContent = this.eta.render(templateName, data);
         const outputPath = overrideOutput || process.cwd();
         const filePath = path.join(outputPath, fileName);
+        if (fs.existsSync(filePath)) {
+            Log.warn(`File ${filePath} already exists. Skipping...`);
+            return;
+        }
         fs.writeFileSync(filePath, fileContent);
     }
 
