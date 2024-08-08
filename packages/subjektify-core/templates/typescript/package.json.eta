@@ -1,10 +1,10 @@
 {
-    name: "<%= namespace %>",
-    version: "0.1.0",
-    license: "MIT",
-    devDependencies: {
-        "@subjektifylabs/subjektify-toolbox": "^0.0.24",
-        "subjektify": "^0.0.36",
+    "name": "<%= namespace %>",
+    "version": "0.1.0",
+    "license": "MIT",
+    "devDependencies": {
+        "@subjektifylabs/subjektify-toolbox": "^0.0.30",
+        "subjektify": "^0.0.39",
         "typescript": "^5.5.2"
     }
 }
