@@ -58,8 +58,8 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10
       subjektify:
-        specifier: ^0.0.40
-        version: 0.0.40(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
+        specifier: ^0.0.41
+        version: 0.0.41(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
     devDependencies:
       '@types/node':
         specifier: ^20.14.14
@@ -68,8 +68,8 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1
       mocha:
-        specifier: ^10.7.0
-        version: 10.7.0
+        specifier: ^10.7.3
+        version: 10.7.3
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
