@@ -24,7 +24,7 @@ task(
   "Generate clients, contracts, and servers from the Subjekt model",
   async (taskArguments: TaskArguments, sre: SubjektifyRuntimeEnvironment) => {
     await subjektifyBuildTask(taskArguments, sre);
-    //await subjektifyCodeGenTask(taskArguments, sre);
+    await subjektifyCodeGenTask(taskArguments, sre);
   },
 );
 

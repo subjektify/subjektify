@@ -11,6 +11,7 @@ import {
   TypescriptClientGenerator,
   TypescriptServerGenerator,
 } from "../../generators";
+import { CodeGenConfig } from "../../types";
 
 export class CodeGeneratorRegistry {
   private static _instance: CodeGeneratorRegistry;
@@ -45,7 +46,7 @@ export class CodeGeneratorRegistry {
   }
 
   private _generator(
-    config: any,
+    config: CodeGenConfig,
     sre: SubjektifyRuntimeEnvironment,
   ): CodeGenerator {
     const { target } = config;
@@ -62,7 +63,7 @@ export class CodeGeneratorRegistry {
   }
 
   private _clientGenerator(
-    config: any,
+    config: CodeGenConfig,
     sre: SubjektifyRuntimeEnvironment,
   ): CodeGenerator {
     const { language } = config;
@@ -77,7 +78,7 @@ export class CodeGeneratorRegistry {
   }
 
   private _contractGenerator(
-    config: any,
+    config: CodeGenConfig,
     sre: SubjektifyRuntimeEnvironment,
   ): CodeGenerator {
     const { language } = config;
@@ -90,7 +91,7 @@ export class CodeGeneratorRegistry {
   }
 
   private _serverGenerator(
-    config: any,
+    config: CodeGenConfig,
     sre: SubjektifyRuntimeEnvironment,
   ): CodeGenerator {
     const { language } = config;

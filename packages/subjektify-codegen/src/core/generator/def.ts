@@ -9,21 +9,6 @@ import { TemplateRenderer } from "../renderer";
 import { CodeGenConfig } from "../../types";
 import { FsUtil } from "../util";
 import { SymbolTransformer } from "../transformer";
-import { SymbolProvider } from "../symbol";
-
-export interface ICodeGenerator {
-  createSymbolProvider(): SymbolProvider;
-  generateBehavior(): Promise<void>;
-  generateEnum(): Promise<void>;
-  generateError(): Promise<void>;
-  generateEvent(): Promise<void>;
-  generateList(): Promise<void>;
-  generateMap(): Promise<void>;
-  generateStructure(): Promise<void>;
-  generateSubject(): Promise<void>;
-  beforeGeneration(): Promise<void>;
-  afterGeneration(): Promise<void>;
-}
 
 export interface CodeGenerator {
   run(): Promise<void>;
@@ -41,7 +26,7 @@ export abstract class AbstractCodeGenerator implements CodeGenerator {
     this.renderer = new TemplateRenderer(this.outputDirectory(), this.extension());
     this.transformer = new SymbolTransformer(sre.model.semantic);
   }
-
+  
   abstract extension(): string;
   abstract generate(model: SubjektifyModel): Promise<void>;
 
