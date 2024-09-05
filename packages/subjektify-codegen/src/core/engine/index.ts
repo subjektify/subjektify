@@ -1,4 +1,7 @@
-//import { SubjektModel } from "subjekt";
+/**
+ * Copyright (c) 2024 Subjektify Labs Ltd.
+ */
+
 import { CodeGenerator, CodeGeneratorRegistry } from "../generator";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 
