@@ -27,12 +27,12 @@ importers:
         specifier: ^0.0.11
         version: 0.0.11
       subjektify:
-        specifier: ^0.0.41
-        version: 0.0.41(ts-node@10.9.2(@types/node@20.14.14)(typescript@5.5.4))(typescript@5.5.4)
+        specifier: ^0.0.42
+        version: 0.0.42(ts-node@10.9.2(@types/node@20.16.5)(typescript@5.5.4))(typescript@5.5.4)
     devDependencies:
       '@types/node':
-        specifier: ^20.14.14
-        version: 20.14.14
+        specifier: ^20.16.5
+        version: 20.16.5
       chai:
         specifier: ^5.1.1
         version: 5.1.1
@@ -818,6 +818,18 @@ packages:
       typescript:
         optional: true
 
+  subjektify@0.0.42:
+    resolution: {integrity: sha512-eaPZnBaS0nhsyMShc6x6bm0jLPqmzXCReuai+bDQw0t4G671qOTC88J1VPfgTEzZfDC2hdYY5Hee3F+9ZpJ4Rw==}
+    hasBin: true
+    peerDependencies:
+      ts-node: '*'
+      typescript: '*'
+    peerDependenciesMeta:
+      ts-node:
+        optional: true
+      typescript:
+        optional: true
+
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -1497,6 +1509,17 @@ snapshots:
       yargs: 17.7.2
     optionalDependencies:
       ts-node: 10.9.2(@types/node@20.14.14)(typescript@5.5.4)
+      typescript: 5.5.4
+
+  subjektify@0.0.42(ts-node@10.9.2(@types/node@20.16.5)(typescript@5.5.4))(typescript@5.5.4):
+    dependencies:
+      chalk: 4.1.2
+      enquirer: 2.4.1
+      eta: 3.5.0
+      semver: 7.6.3
+      yargs: 17.7.2
+    optionalDependencies:
+      ts-node: 10.9.2(@types/node@20.16.5)(typescript@5.5.4)
       typescript: 5.5.4
 
   supports-color@7.2.0:
