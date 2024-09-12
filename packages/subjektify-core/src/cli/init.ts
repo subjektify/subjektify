@@ -45,7 +45,6 @@ const createJavascriptNamespace = async () => {
   const writer = new TemplateWriter("javascript");
   writer.writeProjectFiles(namespace);
   writer.write("subjektify.config.js", { namespace });
-
 };
 
 const createTypescriptNamespace = async () => {

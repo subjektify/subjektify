@@ -1,9 +1,9 @@
 import { Log, SubjektifyRuntimeEnvironment } from "subjektify";
-import { 
+import {
   SubjektifyParser,
   SubjektifyMerger,
   ProjectionApplier,
-  SubjektifyBuildWriter
+  SubjektifyBuildWriter,
 } from "./core";
 
 export const subjektifyBuildTask = async (

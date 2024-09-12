@@ -5,25 +5,19 @@
 import { CodeGenerator } from "./def";
 
 export class CodeGeneratorRunner {
+  private _generator?: CodeGenerator;
 
-    private _generator?: CodeGenerator;
+  constructor() {}
 
-    constructor() {
+  generator(generator: CodeGenerator): CodeGeneratorRunner {
+    this._generator = generator;
+    return this;
+  }
+
+  run(): Promise<void> {
+    if (!this._generator) {
+      throw new Error("No generator found.");
     }
-
-    generator(generator: CodeGenerator): CodeGeneratorRunner {
-        this._generator = generator;
-        return this;
-    }
-
-    run(): Promise<void> {
-        if (!this._generator) {
-            throw new Error("No generator found.");
-        }
-        return this._runRoutine();
-    }
-
-    private _runRoutine(): Promise<void> {
-        return this._generator!.run();
-    }
+    return this._generator!.run();
+  }
 }

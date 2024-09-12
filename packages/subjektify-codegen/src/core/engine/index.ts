@@ -2,21 +2,21 @@
  * Copyright (c) 2024 Subjektify Labs Ltd.
  */
 
-
 import { CodeGenerator, CodeGeneratorRegistry } from "../generator";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 
 export class CodeGenEngine {
-    private generators: CodeGenerator[];
-    private sre: SubjektifyRuntimeEnvironment;
+  private generators: CodeGenerator[];
+  private sre: SubjektifyRuntimeEnvironment;
 
-    constructor(sre: SubjektifyRuntimeEnvironment) {
-        this.sre = sre;
-        this.generators = CodeGeneratorRegistry.instance().generators(sre);
-    }
+  constructor(sre: SubjektifyRuntimeEnvironment) {
+    const registry = new CodeGeneratorRegistry();
+    this.generators = registry.generators(sre);
+    this.sre = sre;
+  }
 
-    generate(): Promise<void> {
-        const promises = this.generators.map((generator) => generator.run());
-        return Promise.all(promises).then(() => {});
-    }
+  generate(): Promise<void> {
+    const promises = this.generators.map((generator) => generator.run());
+    return Promise.all(promises).then(() => {});
+  }
 }

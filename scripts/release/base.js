@@ -5,7 +5,7 @@ const chalk = require("chalk");
 
 // Lookup table for package names and their respective locations in the monorepo
 const locations = {
-  "subjektify": "subjektify-core",
+  subjektify: "subjektify-core",
   "@subjektifylabs/subjektify-build": "subjektify-build",
   "@subjektifylabs/subjektify-clean": "subjektify-clean",
   "@subjektifylabs/subjektify-codegen": "subjektify-codegen",

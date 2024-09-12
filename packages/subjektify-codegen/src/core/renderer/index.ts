@@ -17,7 +17,12 @@ export class TemplateRenderer {
     this.eta = new Eta({ views: basePath });
   }
 
-  render(template: string, fileName: string, data: any, extension?: string): void {
+  render(
+    template: string,
+    fileName: string,
+    data: any,
+    extension?: string,
+  ): void {
     const ext = extension || this.extension;
     const content = this.eta.render(`${template}.eta`, data);
     const filePath = path.join(this.basePath, `${fileName}.${ext}`);

@@ -23,10 +23,13 @@ export abstract class AbstractCodeGenerator implements CodeGenerator {
   constructor(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment) {
     this.config = config;
     this.sre = sre;
-    this.renderer = new TemplateRenderer(this.outputDirectory(), this.extension());
+    this.renderer = new TemplateRenderer(
+      this.outputDirectory(),
+      this.extension(),
+    );
     this.transformer = new SymbolTransformer(sre.model.semantic);
   }
-  
+
   abstract extension(): string;
   abstract generate(model: SubjektifyModel): Promise<void>;
 

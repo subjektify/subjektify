@@ -1,2 +1,1 @@
-export class SymbolReference {
-}
+export class SymbolReference {}

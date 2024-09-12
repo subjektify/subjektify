@@ -1,2 +1,1 @@
-export class SymbolDependency {
-}
+export class SymbolDependency {}
