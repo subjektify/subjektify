@@ -7,7 +7,7 @@ export class TypescriptClientGenerator extends AbstractCodeGenerator {
   async generate() {
     this.renderer.render("index", "index", {});
     this.renderer.render("tsconfig.json", "tsconfig", {}, "json");
-    this.renderer.render(
+    /*this.renderer.render(
       "package.json",
       "package",
       {
@@ -16,6 +16,6 @@ export class TypescriptClientGenerator extends AbstractCodeGenerator {
         license: this.sre.config.license,
       },
       "json",
-    );
+    );*/
   }
 }
