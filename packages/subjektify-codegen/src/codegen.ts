@@ -3,7 +3,7 @@
  */
 
 import { Log, SubjektifyRuntimeEnvironment, TaskArguments } from "subjektify";
-import { CodeGenEngine } from "./core";
+//import { CodeGenEngine } from "./core";
 
 export const subjektifyCodeGenTask = async (
   taskArguments: TaskArguments,
@@ -11,8 +11,8 @@ export const subjektifyCodeGenTask = async (
 ) => {
   Log.info("Running code generation...");
 
-  const engine = new CodeGenEngine(sre);
-  await engine.generate();
+  //const engine = new CodeGenEngine(sre);
+  //await engine.generate();
 
   Log.success("Code generation completed successfully.");
 };
