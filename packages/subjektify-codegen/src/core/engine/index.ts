@@ -15,7 +15,7 @@ export class CodeGenEngine {
     this.sre = sre;
   }
 
-  generate(): Promise<void> {
+  async generate(): Promise<void> {
     const promises = this.generators.map((generator) => generator.run());
     return Promise.all(promises).then(() => {});
   }
