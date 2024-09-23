@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-clean",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Clear the cache and delete all the generated artifacts.",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -21,7 +21,7 @@
     "rimraf": "^5.0.10"
   },
   "peerDependencies": {
-    "subjektify": "^0.0.47"
+    "subjektify": "^0.0.48"
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
