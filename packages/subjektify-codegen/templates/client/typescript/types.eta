@@ -1,3 +1,0 @@
-<% Object.keys(it.types).forEach(function(name){ %>
-export type <%= name %> = <%= it.types[name] %>;
-<% }) %>

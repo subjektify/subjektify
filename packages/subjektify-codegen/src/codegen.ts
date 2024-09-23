@@ -12,7 +12,7 @@ export const subjektifyCodeGenTask = async (
   Log.info("Running code generation...");
 
   const engine = new CodeGenEngine(sre);
-  await engine.generate();
+  await engine.run();
 
   Log.success("Code generation completed successfully.");
 };
