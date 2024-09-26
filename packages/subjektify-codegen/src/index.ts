@@ -9,7 +9,7 @@ import {
     task,
     TaskArguments,
   } from "subjektify";
-  import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build/dist/build";
+  import { subjektifyBuildTask } from "@subjektifylabs/subjektify-build";
   import { subjektifyCodeGenTask } from "./codegen";
   import "./types";
   
