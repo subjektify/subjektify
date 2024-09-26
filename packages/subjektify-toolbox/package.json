@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-toolbox",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "A collection of essential tools and plugins recommended to start developing with Subjektify.",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -18,10 +18,10 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "peerDependencies": {
-    "@subjektifylabs/subjektify-build": "^0.0.42",
-    "@subjektifylabs/subjektify-clean": "^0.0.21",
-    "@subjektifylabs/subjektify-codegen": "^0.0.47",
-    "subjektify": "^0.0.53"
+    "@subjektifylabs/subjektify-build": "^0.0.43",
+    "@subjektifylabs/subjektify-clean": "^0.0.22",
+    "@subjektifylabs/subjektify-codegen": "^0.0.48",
+    "subjektify": "^0.0.54"
   },
   "devDependencies": {
     "@types/node": "^20.16.9",
