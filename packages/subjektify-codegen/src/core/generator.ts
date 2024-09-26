@@ -6,7 +6,11 @@ import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { CodeGenConfig } from "../types";
 import { FsUtil } from "../util";
 
-export abstract class AbstractCodeGenerator {
+export interface CodeGenerator {
+    run(): Promise<void>;
+}
+
+export abstract class AbstractCodeGenerator implements CodeGenerator {
 
     protected config: CodeGenConfig;
     protected sre: SubjektifyRuntimeEnvironment;

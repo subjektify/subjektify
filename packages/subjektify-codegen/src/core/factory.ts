@@ -4,11 +4,11 @@
 
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { CodeGenConfig } from "../types";
-import { AbstractCodeGenerator } from "./generator";
+import { CodeGenerator } from "./generator";
 import { EmptyGenerator } from "../generators";
 
 export class CodeGeneratorFactory {
-    static generator(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment): AbstractCodeGenerator {
+    static generator(config: CodeGenConfig, sre: SubjektifyRuntimeEnvironment): CodeGenerator {
         switch (config.target) {
             default:
                 return new EmptyGenerator(config, sre);

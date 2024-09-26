@@ -1,6 +1,6 @@
 import { SubjektifyRuntimeEnvironment } from "subjektify";
-import { AbstractCodeGenerator } from "../core";
 import { CodeGenConfig } from "../types";
+import { AbstractCodeGenerator } from "../core";
 
 export class EmptyGenerator extends AbstractCodeGenerator {
 
@@ -11,7 +11,7 @@ export class EmptyGenerator extends AbstractCodeGenerator {
     extension(): string {
         return "md";
     }
-    
+
     async generate(): Promise<void> {
         console.log("Hello, World!");
     }
