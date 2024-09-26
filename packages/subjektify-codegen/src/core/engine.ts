@@ -3,15 +3,15 @@
  */
 
 import { SubjektifyRuntimeEnvironment } from "subjektify";
-import { AbstractCodeGenerator } from "./generator";
 import { CodeGeneratorFactory } from "./factory";
+import { AbstractCodeGenerator } from "./generator";
 
 export class CodeGenEngine {
 
     private _generators: AbstractCodeGenerator[];
 
     constructor(sre: SubjektifyRuntimeEnvironment) {
-        this._generators = sre.config.codegen?.map(config => CodeGeneratorFactory.generator(config, sre)) ?? [];
+        this._generators = (sre.config.codegen || []).map(config => CodeGeneratorFactory.generator(config, sre));
     }
     
     async run(): Promise<void> {

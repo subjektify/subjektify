@@ -11,7 +11,8 @@ export class EmptyGenerator extends AbstractCodeGenerator {
     extension(): string {
         return "md";
     }
-    async generate() {
+    
+    async generate(): Promise<void> {
         console.log("Hello, World!");
     }
 }
