@@ -98,8 +98,8 @@ importers:
   packages/subjektify-codegen:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.38
-        version: 0.0.38(subjektify@0.0.49(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.39
+        version: 0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
       eta:
         specifier: ^3.5.0
         version: 3.5.0
@@ -110,8 +110,8 @@ importers:
         specifier: ^0.0.11
         version: 0.0.11
       subjektify:
-        specifier: ^0.0.49
-        version: 0.0.49(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+        specifier: ^0.0.50
+        version: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
     devDependencies:
       '@types/node':
         specifier: ^20.16.9
@@ -301,6 +301,11 @@ packages:
     resolution: {integrity: sha512-6/Srji1Fz7evLhBpwgzKzHtUwDNE+PQiYphVyoXxheW/CfBhQO6MTVuKVaXt6hxaYxG1+4X4ZDNuIZz925fB8A==}
     peerDependencies:
       subjektify: ^0.0.49
+
+  '@subjektifylabs/subjektify-build@0.0.39':
+    resolution: {integrity: sha512-hnY4rIddfwE9UW+qroS7tp3MGsAh0E6JaaLYSPJGyi1htcRGDO563e1KiH3GZSB/IA/1LUzXg9wBdlT7ZzQLdA==}
+    peerDependencies:
+      subjektify: ^0.0.50
 
   '@subjektifylabs/subjektify-clean@0.0.17':
     resolution: {integrity: sha512-F+n4uAw0dn/eYwSVvEeqtR4x/BissFqvG8cOzFRbdKfeKJ+dwRdQEyy4eAsxbE/ni0oexIu2fw9RTGM1UVb89g==}
@@ -1036,6 +1041,11 @@ snapshots:
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.49(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+
+  '@subjektifylabs/subjektify-build@0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
+    dependencies:
+      subjekt: 0.0.11
+      subjektify: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
 
   '@subjektifylabs/subjektify-clean@0.0.17(subjektify@0.0.49(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
