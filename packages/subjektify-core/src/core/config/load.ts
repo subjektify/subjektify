@@ -49,6 +49,7 @@ export class SubjektifyConfigLoader {
       if (e instanceof SubjektifyError) {
         throw e;
       }
+      console.error(e);
       Log.error(`Error loading config file: ${e}`);
       throw new SubjektifyError(ERRORS.CONFIG.LOAD_ERROR);
     }
