@@ -1,6 +1,6 @@
 import { SubjektifyRuntimeEnvironment } from "subjektify";
-import { CodeGenConfig } from "../types";
 import { AbstractCodeGenerator } from "../core";
+import { CodeGenConfig } from "../types";
 
 export class EmptyGenerator extends AbstractCodeGenerator {
 
