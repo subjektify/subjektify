@@ -187,17 +187,17 @@ importers:
   packages/subjektify-toolbox:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.39
-        version: 0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.40
+        version: 0.0.40(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
       '@subjektifylabs/subjektify-clean':
-        specifier: ^0.0.18
-        version: 0.0.18(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.19
+        version: 0.0.19(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
       '@subjektifylabs/subjektify-codegen':
-        specifier: ^0.0.44
-        version: 0.0.44(@subjektifylabs/subjektify-build@0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.45
+        version: 0.0.45(@subjektifylabs/subjektify-build@0.0.40(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
       subjektify:
-        specifier: ^0.0.50
-        version: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+        specifier: ^0.0.51
+        version: 0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
     devDependencies:
       '@types/node':
         specifier: ^20.16.9
@@ -297,26 +297,21 @@ packages:
   '@sinonjs/text-encoding@0.7.3':
     resolution: {integrity: sha512-DE427ROAphMQzU4ENbliGYrBSYPXF+TtLg9S8vzeA+OF4ZKzoDdzfL8sxuMUGS/lgRhM6j1URSk9ghf7Xo1tyA==}
 
-  '@subjektifylabs/subjektify-build@0.0.39':
-    resolution: {integrity: sha512-hnY4rIddfwE9UW+qroS7tp3MGsAh0E6JaaLYSPJGyi1htcRGDO563e1KiH3GZSB/IA/1LUzXg9wBdlT7ZzQLdA==}
-    peerDependencies:
-      subjektify: ^0.0.50
-
   '@subjektifylabs/subjektify-build@0.0.40':
     resolution: {integrity: sha512-5TrOKONYSG2PHWmmxSuLJM4h4qcvpKzuFiUT3aXx9PKD7rzwu1P20HLVJF5FxhPuonn69UDFpkl5wVy7qa5tSg==}
     peerDependencies:
       subjektify: ^0.0.51
 
-  '@subjektifylabs/subjektify-clean@0.0.18':
-    resolution: {integrity: sha512-RkblpUkYRLa0QZYzRhiw1iRjVPSlQIQ0AELpID4huaD6qtrOetTsuJusiXDJiXhHB5Td9CaoXngbWwizosuxsA==}
+  '@subjektifylabs/subjektify-clean@0.0.19':
+    resolution: {integrity: sha512-18vbZn6NQ0yb7df58Tz7A3+yQaGfBqPC7C+VDaGE/tQVB+CDIO5WSQ4Gq4v4WpAC7IEpAlFzweFiJtSEsrOtsg==}
     peerDependencies:
-      subjektify: ^0.0.50
+      subjektify: ^0.0.51
 
-  '@subjektifylabs/subjektify-codegen@0.0.44':
-    resolution: {integrity: sha512-maBm2/OiU4BHQ3Vf091dPKq0fSYrbaeGsqILpWn9i3jTi775eiMAeKET2850w6wahXILyu2PVmbmeMCSyF4b0g==}
+  '@subjektifylabs/subjektify-codegen@0.0.45':
+    resolution: {integrity: sha512-XvjN65WnVP/OcpErz05Pef/eSkBgVyXw3vaAsB95mkg6aKFNQDXdKNYdvLERgBTe2d/7jzC02pLarRnKVPMNNA==}
     peerDependencies:
-      '@subjektifylabs/subjektify-build': ^0.0.39
-      subjektify: ^0.0.50
+      '@subjektifylabs/subjektify-build': ^0.0.40
+      subjektify: ^0.0.51
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -841,18 +836,6 @@ packages:
       typescript:
         optional: true
 
-  subjektify@0.0.50:
-    resolution: {integrity: sha512-a1xGwVvPVBQWpPf1U+efIe52Su5q3jUTlhb6nhLYCNn+uPbjdxat9gCYQXjvx9tVtXzGjz95q5qW5h4IU+6kRA==}
-    hasBin: true
-    peerDependencies:
-      ts-node: '*'
-      typescript: '*'
-    peerDependenciesMeta:
-      ts-node:
-        optional: true
-      typescript:
-        optional: true
-
   subjektify@0.0.51:
     resolution: {integrity: sha512-20oKxKvUbauZ1k/HxTtCS+zbWDEvJDcT+CEepFTad/XoHuiIwPLJftBwkBbWSF/FrQJaqP/On5r1/KHtyREJVA==}
     hasBin: true
@@ -1037,28 +1020,23 @@ snapshots:
 
   '@sinonjs/text-encoding@0.7.3': {}
 
-  '@subjektifylabs/subjektify-build@0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
-    dependencies:
-      subjekt: 0.0.11
-      subjektify: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
-
   '@subjektifylabs/subjektify-build@0.0.40(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
 
-  '@subjektifylabs/subjektify-clean@0.0.18(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
+  '@subjektifylabs/subjektify-clean@0.0.19(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
       rimraf: 5.0.10
-      subjektify: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+      subjektify: 0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
 
-  '@subjektifylabs/subjektify-codegen@0.0.44(@subjektifylabs/subjektify-build@0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
+  '@subjektifylabs/subjektify-codegen@0.0.45(@subjektifylabs/subjektify-build@0.0.40(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
-      '@subjektifylabs/subjektify-build': 0.0.39(subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+      '@subjektifylabs/subjektify-build': 0.0.40(subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
       eta: 3.5.0
       nanoid: 5.0.7
       subjekt: 0.0.11
-      subjektify: 0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+      subjektify: 0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -1570,17 +1548,6 @@ snapshots:
     optionalDependencies:
       ts-node: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
       typescript: 5.5.2
-
-  subjektify@0.0.50(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2):
-    dependencies:
-      chalk: 4.1.2
-      enquirer: 2.4.1
-      eta: 3.5.0
-      semver: 7.6.3
-      yargs: 17.7.2
-    optionalDependencies:
-      ts-node: 10.9.2(@types/node@20.16.9)(typescript@5.6.2)
-      typescript: 5.6.2
 
   subjektify@0.0.51(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2):
     dependencies:
