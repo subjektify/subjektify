@@ -22,6 +22,8 @@ const packages = [
   "subjektify-clean",
   "subjektify-codegen",
   //"subjektify-compile",
+  //"subjektify-deploy",
+  //"subjektify-docgen",
   //"subjektify-publish",
   //"subjektify-watch",
   "subjektify-toolbox",
