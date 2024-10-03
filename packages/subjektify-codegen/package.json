@@ -1,6 +1,6 @@
 {
   "name": "@subjektifylabs/subjektify-codegen",
-  "version": "0.0.49",
+  "version": "0.0.50",
   "description": "A core tool designed to facilitate the code generation process the Subjekt model.",
   "author": "Subjektify Labs",
   "license": "Apache-2.0",
@@ -13,8 +13,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && pnpm copytemplates",
     "clean": "rimraf dist",
+    "copytemplates": "copyfiles -u 1 src/templates/**/* dist/",
     "test": "mocha",
     "prepublishOnly": "pnpm clean && pnpm build"
   },
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/node": "^20.16.10",
     "chai": "^5.1.1",
+    "copyfiles": "^2.4.1",
     "mocha": "^10.7.3",
     "prettier": "^3.3.3",
     "rimraf": "^5.0.10",

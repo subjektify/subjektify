@@ -15,8 +15,6 @@ export const subjektifyCodeGenTask = async (
   for (const generator of generators) {
     await generator.run();
   }
-  //const engine = new CodeGenEngine(sre);
-  //await engine.run();
 
   Log.success("Code generation completed successfully.");
 };

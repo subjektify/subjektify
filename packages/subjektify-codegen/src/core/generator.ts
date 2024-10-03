@@ -1,6 +1,7 @@
 /**
  * Copyright (c) 2024 Subjektify Labs Ltd.
  */
+
 import path from "path";
 import { SubjektifyRuntimeEnvironment } from "subjektify";
 import { CodeGenConfig } from "../types";
