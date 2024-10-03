@@ -22,12 +22,12 @@ export abstract class AbstractCodeGenerator implements CodeGenerator {
         this.sre = sre;
         this.renderer = new TemplateRenderer(
             config,
-            this.extension(),
+            this.defaultExtension(),
             this.getOutputDirectory(),
         );
     }
 
-    abstract extension(): string;
+    abstract defaultExtension(): string;
     abstract generate(): Promise<void>;
 
     async run() {
