@@ -187,21 +187,21 @@ importers:
   packages/subjektify-toolbox:
     dependencies:
       '@subjektifylabs/subjektify-build':
-        specifier: ^0.0.43
-        version: 0.0.43(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.44
+        version: 0.0.44(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))
       '@subjektifylabs/subjektify-clean':
-        specifier: ^0.0.22
-        version: 0.0.22(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.23
+        version: 0.0.23(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))
       '@subjektifylabs/subjektify-codegen':
-        specifier: ^0.0.48
-        version: 0.0.48(@subjektifylabs/subjektify-build@0.0.43(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+        specifier: ^0.0.49
+        version: 0.0.49(@subjektifylabs/subjektify-build@0.0.44(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))
       subjektify:
-        specifier: ^0.0.54
-        version: 0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+        specifier: ^0.0.55
+        version: 0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)
     devDependencies:
       '@types/node':
-        specifier: ^20.16.9
-        version: 20.16.9
+        specifier: ^20.16.10
+        version: 20.16.10
       chai:
         specifier: ^5.1.1
         version: 5.1.1
@@ -297,26 +297,21 @@ packages:
   '@sinonjs/text-encoding@0.7.3':
     resolution: {integrity: sha512-DE427ROAphMQzU4ENbliGYrBSYPXF+TtLg9S8vzeA+OF4ZKzoDdzfL8sxuMUGS/lgRhM6j1URSk9ghf7Xo1tyA==}
 
-  '@subjektifylabs/subjektify-build@0.0.43':
-    resolution: {integrity: sha512-IM6phDoqxKIIWtraRIqAbHL81UAYK9xRV0ai4GtP61h6PEFWtDrv9gqFUueCnpfqJdlZ9FEH084f5AcgcCcahQ==}
-    peerDependencies:
-      subjektify: ^0.0.54
-
   '@subjektifylabs/subjektify-build@0.0.44':
     resolution: {integrity: sha512-Ln1KerbZovH8CLS86UojLcgOKe5+qYr+OxWlypDVK/5FDTfadb/oETm/vpo0jzMwmdIz+Qjbb8J+N2a0b0hmJw==}
     peerDependencies:
       subjektify: ^0.0.55
 
-  '@subjektifylabs/subjektify-clean@0.0.22':
-    resolution: {integrity: sha512-BT50Gg4wOmGwFZuJFLekttIS5DNr/RgMsj3Q/0F3wgfpAKhWuIxLDyLo62Iw56uKQMwYVazpaoZm6dnCjK39bA==}
+  '@subjektifylabs/subjektify-clean@0.0.23':
+    resolution: {integrity: sha512-0htqXNEa8U6V6Gkqyj5ZOMUH9tOKOtu1IltK8kN7QGzM7XnNXWjRCEu8Uxt002Q0JANuWuyDMmhbD/O7XlplFw==}
     peerDependencies:
-      subjektify: ^0.0.54
+      subjektify: ^0.0.55
 
-  '@subjektifylabs/subjektify-codegen@0.0.48':
-    resolution: {integrity: sha512-4rhR4U4L/PSmiEDFwr70m1Yz1oAxNPCjoQFlPH3IIiG6TJ4CHA8VVvtOq37e+MQaXwlIOoyHstqVvh9FAka8Bw==}
+  '@subjektifylabs/subjektify-codegen@0.0.49':
+    resolution: {integrity: sha512-Wsf1YlPxNdVGBhrUucshOAcokPeE/cFQsDjDnBV/7w8Ei2WWLThOqMR5aJKi16TFKUgddjRzvmGFL/jBK8NICQ==}
     peerDependencies:
-      '@subjektifylabs/subjektify-build': ^0.0.43
-      subjektify: ^0.0.54
+      '@subjektifylabs/subjektify-build': ^0.0.44
+      subjektify: ^0.0.55
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -338,9 +333,6 @@ packages:
 
   '@types/node@20.16.5':
     resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
-
-  '@types/node@20.16.9':
-    resolution: {integrity: sha512-rkvIVJxsOfBejxK7I0FO5sa2WxFmJCzoDwcd88+fq/CUfynNywTo/1/T6hyFz22CyztsnLS9nVlHOnTI36RH5w==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -847,18 +839,6 @@ packages:
       typescript:
         optional: true
 
-  subjektify@0.0.54:
-    resolution: {integrity: sha512-vbXZXN2hV5tlUqVUfehxZHQH4t92sEE43PWEyv7DxeE02t4GzoVOUOjNLUZdq6eOnAvFpS+VLHFyaB5x55u8pg==}
-    hasBin: true
-    peerDependencies:
-      ts-node: '*'
-      typescript: '*'
-    peerDependenciesMeta:
-      ts-node:
-        optional: true
-      typescript:
-        optional: true
-
   subjektify@0.0.55:
     resolution: {integrity: sha512-jLCBvxF2WiAjg9GZal4HSXarJUhYMRoQnTt3GnG+2/kqD+vL6UT6qY34W3YkUGyGsPj50rf2YMZ1tGCHvH4Ajw==}
     hasBin: true
@@ -1043,28 +1023,23 @@ snapshots:
 
   '@sinonjs/text-encoding@0.7.3': {}
 
-  '@subjektifylabs/subjektify-build@0.0.43(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
-    dependencies:
-      subjekt: 0.0.11
-      subjektify: 0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
-
   '@subjektifylabs/subjektify-build@0.0.44(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
       subjekt: 0.0.11
       subjektify: 0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)
 
-  '@subjektifylabs/subjektify-clean@0.0.22(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
+  '@subjektifylabs/subjektify-clean@0.0.23(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
       rimraf: 5.0.10
-      subjektify: 0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+      subjektify: 0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)
 
-  '@subjektifylabs/subjektify-codegen@0.0.48(@subjektifylabs/subjektify-build@0.0.43(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))':
+  '@subjektifylabs/subjektify-codegen@0.0.49(@subjektifylabs/subjektify-build@0.0.44(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)))(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))':
     dependencies:
-      '@subjektifylabs/subjektify-build': 0.0.43(subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2))
+      '@subjektifylabs/subjektify-build': 0.0.44(subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2))
       eta: 3.5.0
       nanoid: 5.0.7
       subjekt: 0.0.11
-      subjektify: 0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2)
+      subjektify: 0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2)
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -1083,10 +1058,6 @@ snapshots:
       undici-types: 6.19.8
 
   '@types/node@20.16.5':
-    dependencies:
-      undici-types: 6.19.8
-
-  '@types/node@20.16.9':
     dependencies:
       undici-types: 6.19.8
 
@@ -1583,17 +1554,6 @@ snapshots:
       ts-node: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
       typescript: 5.5.2
 
-  subjektify@0.0.54(ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2))(typescript@5.6.2):
-    dependencies:
-      chalk: 4.1.2
-      enquirer: 2.4.1
-      eta: 3.5.0
-      semver: 7.6.3
-      yargs: 17.7.2
-    optionalDependencies:
-      ts-node: 10.9.2(@types/node@20.16.9)(typescript@5.6.2)
-      typescript: 5.6.2
-
   subjektify@0.0.55(ts-node@10.9.2(@types/node@20.16.10)(typescript@5.6.2))(typescript@5.6.2):
     dependencies:
       chalk: 4.1.2
@@ -1671,25 +1631,6 @@ snapshots:
       typescript: 5.6.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
-
-  ts-node@10.9.2(@types/node@20.16.9)(typescript@5.6.2):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.11
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 20.16.9
-      acorn: 8.12.1
-      acorn-walk: 8.3.4
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.6.2
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    optional: true
 
   type-detect@4.0.8: {}
 
